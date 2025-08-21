@@ -11,11 +11,12 @@
   <noscript>This quiz requires JavaScript.</noscript>
   <script src="app.js"></script>
 </body>
-<script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
   (function(){
-    emailjs.init("4e05gESRCcXdlqDkI"); // same publicKey
+    emailjs.init({
+      publicKey: "4e05gESRCcXdlqDkI"
+    });
   })();
 </script>
-
 </html>

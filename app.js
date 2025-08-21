@@ -373,29 +373,29 @@ function onSubmit() {
 }
 
 function sendEmail(res) {
-    const settings = state.settings;
-    if (settings.emailProvider === "emailjs") {
-        emailjs.send(
-            settings.emailConfig.serviceID,
-            settings.emailConfig.templateID,
-            {
-                username: state.user.username,
-                fullname: state.user.fullName,
-                score: `${res.points}/${res.total}`,
-                percent: `${Math.round((res.points / res.total) * 100)}%`,
-                startedAt: state.startTime.toISOString(),
-                submittedAt: state.endTime.toISOString(),
-                answers: JSON.stringify(state.answers, null, 2),
-                recipients: settings.emailRecipients.join(", ")
-            },
-            settings.emailConfig.publicKey
-        ).then(() => {
-            alert("Results emailed successfully!");
-        }).catch(err => {
-            console.error("Email failed:", err);
-            alert("Error sending email. Please notify your instructor.");
-        });
-    }
+  const settings = state.settings;
+
+  if (settings.emailProvider === "emailjs") {
+    emailjs.send(
+      settings.emailConfig.serviceID,
+      settings.emailConfig.templateID,
+      {
+        username: state.user.username,
+        fullname: state.user.fullName,
+        score: `${res.points}/${res.total}`,
+        percent: `${Math.round((res.points/res.total)*100)}%`,
+        startedAt: state.startTime.toISOString(),
+        submittedAt: state.endTime.toISOString(),
+        answers: JSON.stringify(state.answers, null, 2)
+      }
+    ).then(() => {
+      alert("✅ Results emailed successfully!");
+    }).catch(err => {
+      console.error("❌ Email failed:", err);
+      alert("Error sending email. Please notify your instructor.");
+    });
+  }
 }
+
 
 window.addEventListener("DOMContentLoaded", init);
