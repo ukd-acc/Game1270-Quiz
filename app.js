@@ -24,22 +24,31 @@ async function loadJSON(path) {
 }
 
 async function init() {
-  // Try to load users.json; fall back to users.sample.json for first-time setup.
-  try {
-    state.users = await loadJSON("users.json");
-  } catch(_) {
-    state.users = await loadJSON("users.sample.json");
-  }
-  state.quiz = await loadJSON("quiz.json");
+    try {
+        state.users = await loadJSON("users.json");
+    } catch (_) {
+        state.users = await loadJSON("users.sample.json");
+    }
 
-  // Simple router: show login or quiz
-  if (localStorage.getItem("quiz_user")) {
-    state.user = JSON.parse(localStorage.getItem("quiz_user"));
-    renderApp();
-  } else {
-    renderLogin();
-  }
+    // load settings.json
+    const settings = await loadJSON("settings.json");
+    state.settings = settings;
+    state.quiz = { quizId: settings.quizId, title: settings.title, course: settings.course, sections: [] };
+
+    // dynamically load each section JSON
+    for (const sec of settings.sections) {
+        const data = await loadJSON(sec.file);
+        state.quiz.sections.push(data);
+    }
+
+    if (localStorage.getItem("quiz_user")) {
+        state.user = JSON.parse(localStorage.getItem("quiz_user"));
+        renderApp();
+    } else {
+        renderLogin();
+    }
 }
+
 
 function qs(sel){ return document.querySelector(sel); }
 function qsa(sel){ return Array.from(document.querySelectorAll(sel)); }
@@ -102,23 +111,24 @@ function logout() {
 }
 
 function renderApp() {
-  state.startTime = new Date();
-  document.body.innerHTML = `
+    state.startTime = new Date();
+    document.body.innerHTML = `
     <div class="container">
       <div class="card">
         <div class="header">
-          <h1>${state.quiz.title}</h1>
+          <img src="${state.settings.logo}" alt="Logo" style="height:60px"/>
+          <div>
+            <h1>${state.quiz.title}</h1>
+            <div class="notice">${state.quiz.course}</div>
+          </div>
           <div class="flex">
             <span class="badge">${state.user.fullName} (${state.user.username})</span>
             <button class="secondary" id="logoutBtn">Sign out</button>
           </div>
         </div>
-        <div class="notice">All answers are auto-graded on submission. Your score will be shown and a CSV will download for record-keeping.</div>
+        <div class="notice">All answers are auto-graded on submission.</div>
         <hr/>
-
-        <div id="section-matching"></div>
-        <div id="section-tf"></div>
-
+        <div id="sections"></div>
         <hr/>
         <div class="flex">
           <button id="submitBtn">Submit Quiz</button>
@@ -128,40 +138,55 @@ function renderApp() {
       </div>
     </div>
   `;
-  qs("#logoutBtn").addEventListener("click", logout);
-  qs("#submitBtn").addEventListener("click", onSubmit);
-  qs("#clearBtn").addEventListener("click", () => { if (confirm("Clear all answers?")) { state.answers = { matching:{}, tf:{} }; renderApp(); } });
+    qs("#logoutBtn").addEventListener("click", logout);
+    qs("#submitBtn").addEventListener("click", onSubmit);
+    qs("#clearBtn").addEventListener("click", () => {
+        if (confirm("Clear all answers?")) { state.answers = { matching: {}, tf: {} }; renderApp(); }
+    });
 
-  const matching = state.quiz.sections.find(s => s.type === "matching");
-  const tf = state.quiz.sections.find(s => s.type === "true_false");
-  renderMatching(matching);
-  renderTF(tf);
+    const container = qs("#sections");
+    state.quiz.sections.forEach(sec => {
+        if (sec.type === "matching") renderMatching(sec, container);
+        if (sec.type === "true_false") renderTF(sec, container);
+    });
 }
 
-function renderMatching(sec) {
-  const el = qs("#section-matching");
-  const bankTiles = sec.word_bank.map(w => `<div class="tile" draggable="true" data-letter="${w.letter}"><strong>${w.letter}</strong> — ${w.text}</div>`).join("");
-  const prompts = sec.prompts.map((p, i) => {
-    const idx = i + 1;
-    const letter = state.answers.matching[idx] || "";
-    const filled = letter ? "filled" : "";
-    return `
+function renderMatching(sec, container) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "section-matching";
+    container.appendChild(wrapper);
+
+    // Build word bank tiles
+    const bankTiles = sec.word_bank.map(w => `
+    <div class="tile" draggable="true" data-letter="${w.letter}">
+      <strong>${w.letter}</strong> — ${w.text}
+    </div>
+  `).join("");
+
+    // Build prompts with drop zones
+    const prompts = sec.prompts.map((p, i) => {
+        const idx = i + 1;
+        const letter = state.answers.matching[idx] || "";
+        const filled = letter ? "filled" : "";
+        return `
       <div class="prompt" data-idx="${idx}">
-        <div><strong>${String(idx).padStart(2,"0")}</strong></div>
+        <div><strong>${String(idx).padStart(2, "0")}</strong></div>
         <div>${p}</div>
-        <div class="drop ${filled}" data-idx="${idx}">${letter ? `<div class="tile" data-letter="${letter}"><strong>${letter}</strong></div>` : "Drop letter here"}</div>
+        <div class="drop ${filled}" data-idx="${idx}">
+          ${letter ? `<div class="tile" data-letter="${letter}"><strong>${letter}</strong></div>` : "Drop letter here"}
+        </div>
       </div>
     `;
-  }).join("");
+    }).join("");
 
-  el.innerHTML = `
+    wrapper.innerHTML = `
     <h2>${sec.title}</h2>
     <div class="notice">${sec.instructions}</div>
     <div class="wordbank" id="wordbank">${bankTiles}</div>
     <div id="prompts">${prompts}</div>
   `;
 
-  enableDnD();
+    enableDnD(); // Reuse your existing drag-and-drop handler
 }
 
 function enableDnD() {
@@ -230,41 +255,53 @@ function returnTileToBank(letter){
   }
 }
 
-function renderTF(sec) {
-  const el = qs("#section-tf");
-  const rows = sec.questions.map((q, i) => {
-    const idx = i + 1;
-    const val = state.answers.tf[idx] || "";
-    return `
+function renderTF(sec, container) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "section-tf";
+    container.appendChild(wrapper);
+
+    const rows = sec.questions.map((q, i) => {
+        const idx = i + 1;
+        const val = state.answers.tf[idx] || "";
+        return `
       <div class="tf-row">
-        <div><strong>${String(idx).padStart(2,"0")}</strong></div>
+        <div><strong>${String(idx).padStart(2, "0")}</strong></div>
         <div>${q}</div>
         <div class="flex">
-          <label class="flex"><input type="radio" name="tf_${idx}" value="T" ${val==="T"?"checked":""}/> True</label>
-          <label class="flex"><input type="radio" name="tf_${idx}" value="F" ${val==="F"?"checked":""}/> False</label>
+          <label class="flex">
+            <input type="radio" name="tf_${idx}" value="T" ${val === "T" ? "checked" : ""}/> True
+          </label>
+          <label class="flex">
+            <input type="radio" name="tf_${idx}" value="F" ${val === "F" ? "checked" : ""}/> False
+          </label>
           <button class="secondary" data-clear="${idx}">Clear</button>
         </div>
       </div>
     `;
-  }).join("");
-  el.innerHTML = `
+    }).join("");
+
+    wrapper.innerHTML = `
     <h2>${sec.title}</h2>
     <div class="notice">${sec.instructions}</div>
     ${rows}
   `;
-  qsa('input[type="radio"]').forEach(r => {
-    r.addEventListener("change", () => {
-      const [_, idx] = r.name.split("_");
-      state.answers.tf[idx] = r.value;
+
+    // Radio button change handlers
+    qsa('input[type="radio"]').forEach(r => {
+        r.addEventListener("change", () => {
+            const [_, idx] = r.name.split("_");
+            state.answers.tf[idx] = r.value;
+        });
     });
-  });
-  qsa('button[data-clear]').forEach(b => {
-    b.addEventListener("click", () => {
-      const idx = b.getAttribute("data-clear");
-      delete state.answers.tf[idx];
-      renderTF(sec);
+
+    // Clear buttons
+    qsa('button[data-clear]').forEach(b => {
+        b.addEventListener("click", () => {
+            const idx = b.getAttribute("data-clear");
+            delete state.answers.tf[idx];
+            renderTF(sec, container); // rerender this section
+        });
     });
-  });
 }
 
 function gradeQuiz() {
@@ -327,44 +364,38 @@ function showSummary(res) {
   window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"});
 }
 
-function downloadCSV(res) {
-  const startISO = state.startTime.toISOString();
-  const endISO = state.endTime.toISOString();
-  const durationSec = Math.round((state.endTime - state.startTime)/1000);
-  const matching = state.quiz.sections.find(s => s.type === "matching");
-  const tf = state.quiz.sections.find(s => s.type === "true_false");
+function onSubmit() {
+    if (!confirm("Submit your answers? You will immediately see your score.")) return;
+    state.endTime = new Date();
+    const res = gradeQuiz();
+    showSummary(res);
+    sendEmail(res);
+}
 
-  const header = [
-    "quizId","username","fullName","startedAt","submittedAt","durationSec",
-    "matchingCorrect","matchingTotal","tfCorrect","tfTotal","points","total","percent"
-  ];
-
-  const percent = Math.round((res.points/res.total)*100);
-  const row = [
-    state.quiz.quizId, state.user.username, state.user.fullName, startISO, endISO, durationSec,
-    res.matchingCorrect, res.totalMatching, res.tfCorrect, res.totalTF, res.points, res.total, percent
-  ];
-
-  // Include detailed answers as extra columns
-  for (let i=1; i<=matching.prompts.length; i++) {
-    header.push(`Q${i}_match`);
-    row.push(state.answers.matching[i] || "");
-  }
-  for (let i=1; i<=tf.questions.length; i++) {
-    header.push(`Q${i}_TF`);
-    row.push(state.answers.tf[i] || "");
-  }
-
-  const csv = [header.join(","), row.map(v => (typeof v==="string" && v.includes(",") ? `"${v}"` : v)).join(",")].join("\n");
-  const blob = new Blob([csv], {type:"text/csv"});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `${state.user.username}-${state.quiz.quizId}-${endISO.replace(/[:.]/g,"-")}.csv`;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
+function sendEmail(res) {
+    const settings = state.settings;
+    if (settings.emailProvider === "emailjs") {
+        emailjs.send(
+            settings.emailConfig.serviceID,
+            settings.emailConfig.templateID,
+            {
+                username: state.user.username,
+                fullname: state.user.fullName,
+                score: `${res.points}/${res.total}`,
+                percent: `${Math.round((res.points / res.total) * 100)}%`,
+                startedAt: state.startTime.toISOString(),
+                submittedAt: state.endTime.toISOString(),
+                answers: JSON.stringify(state.answers, null, 2),
+                recipients: settings.emailRecipients.join(", ")
+            },
+            settings.emailConfig.publicKey
+        ).then(() => {
+            alert("Results emailed successfully!");
+        }).catch(err => {
+            console.error("Email failed:", err);
+            alert("Error sending email. Please notify your instructor.");
+        });
+    }
 }
 
 window.addEventListener("DOMContentLoaded", init);
