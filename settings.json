@@ -8,8 +8,7 @@
     { "file": "truefalse.json" }
   ],
   "emailRecipients": [
-    "instructor1@austincc.edu",
-    "instructor2@austincc.edu"
+    "utsab.das@austincc.edu",
   ],
   "emailProvider": "emailjs",
   "emailConfig": {

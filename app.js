@@ -380,6 +380,7 @@ function sendEmail(res) {
       settings.emailConfig.serviceID,
       settings.emailConfig.templateID,
       {
+        to_email: "utsab.das@austincc.edu",
         username: state.user.username,
         fullname: state.user.fullName,
         score: `${res.points}/${res.total}`,
