@@ -22,13 +22,10 @@
   <!-- Load EmailJS first -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    (function() {
-      emailjs.init({
-        publicKey: "YoOVqMfQaR_h1LIj6" // same as in settings.json
-      });
-    })();
+    emailjs.init("YoOVqMfQaR_h1LIj6"); // 👈 your public key, plain string
   </script>
-
+  <script src="app.js"></script>
+  
   <!-- Then load app logic -->
   <script src="app.js"></script>
 </body>
