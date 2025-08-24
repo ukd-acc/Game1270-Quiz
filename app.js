@@ -368,7 +368,6 @@ function onSubmit() {
     if (!confirm("Submit your answers? You will immediately see your score.")) return;
     state.endTime = new Date();
     const res = gradeQuiz();
-    showSummary(res);
     sendEmail(res);
 }
 
@@ -396,6 +395,7 @@ function sendEmail(res) {
       templateParams
     ).then(() => {
       alert("✅ Results emailed successfully!");
+      showSummary(res);
     }).catch(err => {
       console.error("❌ Email failed:", err);
       alert("Error sending email. Please notify your instructor.");
