@@ -9,14 +9,27 @@
 </head>
 <body>
   <noscript>This quiz requires JavaScript.</noscript>
+
+  <!-- Logo -->
+  <header style="text-align:center; margin: 1em 0;">
+    <img src="acc_logo.png" alt="ACC Logo" style="max-height:80px;" />
+    <h1>GAME1270 Quiz #1</h1>
+  </header>
+
+  <!-- Quiz root -->
+  <div id="app"></div>
+
+  <!-- Load EmailJS first -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init({
+        publicKey: "YoOVqMfQaR_h1LIj6" // same as in settings.json
+      });
+    })();
+  </script>
+
+  <!-- Then load app logic -->
   <script src="app.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init({
-      publicKey: "YoOVqMfQaR_h1LIj6"
-    });
-  })();
-</script>
 </html>
