@@ -142,7 +142,7 @@ function renderApp() {
 }
 
 /* ---------- MATCHING ---------- */
-function renderMatchingSection(section, container) {
+function renderMatchingSection(section) {
   const wrapper = document.createElement("div");
   wrapper.className = "matching-section";
 
@@ -215,7 +215,7 @@ function renderMatchingSection(section, container) {
     wrapper.appendChild(row);
   });
 
-  container.appendChild(wrapper);
+  return wrapper;
 
   // Enable drag & drop for word bank
   enableDnD();
