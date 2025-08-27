@@ -35,8 +35,29 @@ hr{border:none;height:1px;background:rgba(255,255,255,.08);margin:16px 0}
 .login .card{padding:24px}
 .login-actions{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:10px}
 
-.wordbank{display:flex;flex-wrap:wrap;gap:8px;padding:10px;background:#0f1736;border:1px dashed rgba(255,255,255,.15);border-radius:12px}
-.tile{user-select:none;padding:8px 10px;border-radius:10px;background:#1a244a;border:1px solid rgba(255,255,255,.12);font-weight:700;cursor:grab}
+.wordbank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
+  background: #0f1736;
+  border: 1px dashed rgba(255,255,255,.15);
+  border-radius: 12px;
+}
+
+.tile {
+  display: inline-block;
+  user-select: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: #1a244a;
+  border: 1px solid rgba(255,255,255,.12);
+  font-weight: 700;
+  cursor: grab;
+  white-space: nowrap;   /* prevent wrapping inside tiles */
+  flex: 0 0 auto;        /* don't stretch in flexbox */
+}
+
 .tile.dragging{opacity:.6;transform:scale(.96)}
 .prompt{display:grid;grid-template-columns:40px 1fr 120px;gap:10px;align-items:center;padding:10px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:#0f1736;margin-bottom:8px}
 .drop{min-height:38px;border:1px dashed rgba(255,255,255,.18);border-radius:10px;display:flex;align-items:center;justify-content:center}
