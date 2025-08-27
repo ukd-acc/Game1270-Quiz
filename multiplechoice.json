@@ -17,12 +17,13 @@
       "answer": ["To learn something", "To waste time", "To be bored", "To be antisocial"]
     },
     {
-      "question": "Why did Nintendo win the console wars of 1990?",
-      "answer": ["Strong library of games", "Better graphics", "Who knows?"]
+      "question": "Which of the following was not in the console wars of the 1990s?",
+      "answer": ["Nintendo", "Sega ", "Xbox", "Playstation"]
     },
     {
-      "question": "The name of the first true game designed to be played on a computer in 1961?",
-      "answer": "O"
+      "question": "What was the earliest version of a Monopoly-like game and why was it made?",
+      "answer": ["The Landlord's Game, to teach people how to enhance their wealth", "Auction Monopoly, as an entertaining simulation of wealthy landowners", 
+      "The Landlord's Game, to teach the consequences of land monopolies and how renting increased the wealth gap", "Auciton Monopoly, to teach people how to enhance their wealth"]
     },
     {
       "question": "Which company did Nolan Bushnell and Ted Dabney found?",
