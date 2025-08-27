@@ -144,7 +144,7 @@ function renderApp() {
 /* ---------- MATCHING ---------- */
 function renderMatchingSection(section, container) {
   const wrapper = document.createElement("div");
-  wrapper.className = "section matching";
+  wrapper.className = "matching-section";
 
   const header = document.createElement("h2");
   header.textContent = section.title;

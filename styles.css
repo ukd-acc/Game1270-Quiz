@@ -107,3 +107,14 @@ hr{border:none;height:1px;background:rgba(255,255,255,.08);margin:16px 0}
   opacity: 0; /* invisible but still clickable */
   cursor: pointer;
 }
+
+.matching-section {
+  margin-bottom: 24px;
+}
+
+.matching-section .prompt {
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* number | question | drop+select */
+  gap: 12px;
+  align-items: center;
+}
