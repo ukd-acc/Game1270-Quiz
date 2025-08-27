@@ -1,57 +1,49 @@
-
-/* Minimal, self-contained quiz app with login, matching + T/F, and auto-grading.
-   - Edit users.sample.json to set usernames/passwords, then rename to users.json.
-   - Edit quiz.json to change quiz content.
-   - Host the folder anywhere static (GitHub Pages, Netlify, S3, local web server).
-*/
+/* Quiz app with login, matching + T/F, auto-grading, and emailjs integration */
 
 const state = {
   user: null,
   quiz: null,
   users: null,
-  answers: {
-    matching: {},
-    tf: {}
-  },
+  answers: {},
   startTime: null,
-  endTime: null
+  endTime: null,
+  settings: null
 };
 
 async function loadJSON(path) {
-  const res = await fetch(path, {cache: "no-store"});
+  const res = await fetch(path, { cache: "no-store" });
   if (!res.ok) throw new Error("Failed to load " + path);
   return res.json();
 }
 
 async function init() {
-    try {
-        state.users = await loadJSON("users.json");
-    } catch (_) {
-        state.users = await loadJSON("users.sample.json");
-    }
+  try {
+    state.users = await loadJSON("users.json");
+  } catch (_) {
+    state.users = await loadJSON("users.sample.json");
+  }
 
-    // load settings.json
-    const settings = await loadJSON("settings.json");
-    state.settings = settings;
-    state.quiz = { quizId: settings.quizId, title: settings.title, course: settings.course, sections: [] };
+  // load settings.json
+  const settings = await loadJSON("settings.json");
+  state.settings = settings;
+  state.quiz = { quizId: settings.quizId, title: settings.title, course: settings.course, sections: [] };
 
-    // dynamically load each section JSON
-    for (const sec of settings.sections) {
-        const data = await loadJSON(sec.file);
-        state.quiz.sections.push(data);
-    }
+  // dynamically load each section JSON
+  for (const sec of settings.sections) {
+    const data = await loadJSON(sec.file);
+    state.quiz.sections.push(data);
+  }
 
-    if (localStorage.getItem("quiz_user")) {
-        state.user = JSON.parse(localStorage.getItem("quiz_user"));
-        renderApp();
-    } else {
-        renderLogin();
-    }
+  if (localStorage.getItem("quiz_user")) {
+    state.user = JSON.parse(localStorage.getItem("quiz_user"));
+    renderApp();
+  } else {
+    renderLogin();
+  }
 }
 
-
-function qs(sel){ return document.querySelector(sel); }
-function qsa(sel){ return Array.from(document.querySelectorAll(sel)); }
+function qs(sel) { return document.querySelector(sel); }
+function qsa(sel) { return Array.from(document.querySelectorAll(sel)); }
 
 function renderLogin() {
   document.body.innerHTML = `
@@ -81,8 +73,6 @@ function renderLogin() {
           </div>
           <div class="notice">No account? Ask your instructor.</div>
         </div>
-        <hr/>
-        <div class="footer">This demo stores results on your device and allows you to download a CSV upon submission.</div>
       </div>
     </div>
   `;
@@ -111,23 +101,19 @@ function logout() {
 }
 
 function renderApp() {
-    state.startTime = new Date();
-    document.body.innerHTML = `
+  state.startTime = new Date();
+  document.body.innerHTML = `
     <div class="container">
       <div class="card">
         <div class="header">
-          <img src="${state.settings.logo}" alt="Logo" style="height:60px"/>
-          <div>
-            <h1>${state.quiz.title}</h1>
-            <div class="notice">${state.quiz.course}</div>
-          </div>
+          <img src="${state.settings.logo}" alt="Logo" style="max-width:100%; height:auto"/>
+          <h1>${state.quiz.title}</h1>
+          <div class="notice">${state.quiz.course}</div>
           <div class="flex">
             <span class="badge">${state.user.fullName} (${state.user.username})</span>
             <button class="secondary" id="logoutBtn">Sign out</button>
           </div>
         </div>
-        <div class="notice">All answers are auto-graded on submission.</div>
-        <hr/>
         <div id="sections"></div>
         <hr/>
         <div class="flex">
@@ -138,205 +124,144 @@ function renderApp() {
       </div>
     </div>
   `;
-    qs("#logoutBtn").addEventListener("click", logout);
-    qs("#submitBtn").addEventListener("click", onSubmit);
-    qs("#clearBtn").addEventListener("click", () => {
-        if (confirm("Clear all answers?")) { state.answers = { matching: {}, tf: {} }; renderApp(); }
-    });
-
-    const container = qs("#sections");
-    state.quiz.sections.forEach(sec => {
-        if (sec.type === "matching") renderMatching(sec, container);
-        if (sec.type === "true_false") renderTF(sec, container);
-    });
-}
-
-function renderMatching(q, index, wordBank) {
-  const container = document.createElement("div");
-  container.className = "matching-question";
-
-  const prompt = document.createElement("p");
-  prompt.textContent = `${index + 1}. ${q.question}`;
-  container.appendChild(prompt);
-
-  // Answer area for drag-drop
-  const answerArea = document.createElement("div");
-  answerArea.className = "answer-area";
-  answerArea.textContent = "Drop here or select...";
-  answerArea.dataset.index = index;
-
-  // Drag/drop events
-  answerArea.ondrop = (e) => {
-    e.preventDefault();
-    const value = e.dataTransfer.getData("text/plain");
-    answerArea.textContent = value;
-    state.answers[`matching-${index}`] = value;
-  };
-  answerArea.ondragover = (e) => e.preventDefault();
-
-  // Dropdown fallback
-  const select = document.createElement("select");
-  select.innerHTML = `<option value="">-- Select --</option>` +
-    wordBank.map(opt => `<option value="${opt.letter}">${opt.letter}: ${opt.text}</option>`).join("");
-
-  select.onchange = () => {
-    const value = select.value;
-    answerArea.textContent = value ? value : "Drop here or select...";
-    state.answers[`matching-${index}`] = value;
-  };
-
-  container.appendChild(answerArea);
-  container.appendChild(select);
-
-  return container;
-}
-
-
-function enableDnD() {
-  qsa(".tile[draggable]").forEach(t => {
-    t.addEventListener("dragstart", e => {
-      t.classList.add("dragging");
-      e.dataTransfer.setData("text/plain", t.dataset.letter);
-    });
-    t.addEventListener("dragend", () => t.classList.remove("dragging"));
-  });
-  qsa(".drop").forEach(d => {
-    d.addEventListener("dragover", e => { e.preventDefault(); });
-    d.addEventListener("drop", e => {
-      e.preventDefault();
-      const letter = e.dataTransfer.getData("text/plain");
-      const idx = d.dataset.idx;
-      // If drop target already has a tile, return it to bank first
-      if (d.querySelector(".tile")) {
-        const existing = d.querySelector(".tile").dataset.letter;
-        returnTileToBank(existing);
-      }
-      // If this letter is currently used elsewhere, free it
-      const used = qsa(`.drop .tile[data-letter="${letter}"]`);
-      used.forEach(u => {
-        u.parentElement.classList.remove("filled");
-        u.parentElement.innerHTML = "Drop letter here";
-      });
-
-      state.answers.matching[idx] = letter;
-      d.classList.add("filled");
-      d.innerHTML = `<div class="tile" data-letter="${letter}"><strong>${letter}</strong></div>`;
-    });
+  qs("#logoutBtn").addEventListener("click", logout);
+  qs("#submitBtn").addEventListener("click", onSubmit);
+  qs("#clearBtn").addEventListener("click", () => {
+    if (confirm("Clear all answers?")) { state.answers = {}; renderApp(); }
   });
 
-  // Return-on-click: clicking a placed tile returns it to bank
-  qsa(".drop .tile").forEach(t => {
-    t.addEventListener("click", () => {
-      const letter = t.dataset.letter;
-      const parent = t.closest(".drop");
-      delete state.answers.matching[parent.dataset.idx];
-      parent.classList.remove("filled");
-      parent.innerHTML = "Drop letter here";
-      returnTileToBank(letter);
-    });
+  const container = qs("#sections");
+  state.quiz.sections.forEach(sec => {
+    if (sec.type === "matching") {
+      container.appendChild(renderMatchingSection(sec));
+    }
+    if (sec.type === "true_false") {
+      container.appendChild(renderTFSection(sec));
+    }
   });
 }
 
-function returnTileToBank(letter){
-  const bank = qs("#wordbank");
-  const existing = bank.querySelector(`.tile[data-letter="${letter}"]`);
-  if (!existing) {
-    const wb = state.quiz.sections.find(s => s.type === "matching").word_bank;
-    const item = wb.find(x => x.letter === letter);
+/* ---------- MATCHING ---------- */
+function renderMatchingSection(section) {
+  const wrapper = document.createElement("div");
+  wrapper.className = "section matching";
+  wrapper.innerHTML = `<h2>${section.title}</h2><p>${section.instructions}</p>`;
+
+  // Word bank
+  const bank = document.createElement("div");
+  bank.id = "wordbank";
+  bank.className = "word-bank";
+  section.word_bank.forEach(item => {
     const tile = document.createElement("div");
     tile.className = "tile";
-    tile.setAttribute("draggable","true");
-    tile.dataset.letter = letter;
-    tile.innerHTML = `<strong>${letter}</strong> — ${item.text}`;
-    bank.appendChild(tile);
-    // enable drag events on this new tile
+    tile.setAttribute("draggable", "true");
+    tile.dataset.letter = item.letter;
+    tile.innerHTML = `<strong>${item.letter}</strong> — ${item.text}`;
     tile.addEventListener("dragstart", e => {
-      tile.classList.add("dragging");
-      e.dataTransfer.setData("text/plain", tile.dataset.letter);
+      e.dataTransfer.setData("text/plain", item.letter);
     });
-    tile.addEventListener("dragend", () => tile.classList.remove("dragging"));
-  }
+    bank.appendChild(tile);
+  });
+  wrapper.appendChild(bank);
+
+  // Prompts
+  section.prompts.forEach((q, idx) => {
+    const div = document.createElement("div");
+    div.className = "prompt";
+    div.dataset.idx = idx;
+
+    div.innerHTML = `<p>${idx + 1}. ${q.question}</p>
+      <div class="drop" data-idx="${idx}">Drop letter here</div>
+      <select>
+        <option value="">-- Select --</option>
+        ${section.word_bank.map(opt => `<option value="${opt.letter}">${opt.letter}: ${opt.text}</option>`).join("")}
+      </select>`;
+
+    const drop = div.querySelector(".drop");
+    drop.addEventListener("dragover", e => e.preventDefault());
+    drop.addEventListener("drop", e => {
+      e.preventDefault();
+      const letter = e.dataTransfer.getData("text/plain");
+      state.answers[`matching-${idx}`] = letter;
+      drop.innerHTML = `<div class="tile" data-letter="${letter}"><strong>${letter}</strong></div>`;
+    });
+
+    const select = div.querySelector("select");
+    select.addEventListener("change", () => {
+      const val = select.value;
+      state.answers[`matching-${idx}`] = val;
+      drop.innerHTML = val ? `<div class="tile" data-letter="${val}"><strong>${val}</strong></div>` : "Drop letter here";
+    });
+
+    wrapper.appendChild(div);
+  });
+
+  return wrapper;
 }
 
-function renderTrueFalse(q, index) {
-  const container = document.createElement("div");
-  container.className = "truefalse-question";
+/* ---------- TRUE/FALSE ---------- */
+function renderTFSection(section) {
+  const wrapper = document.createElement("div");
+  wrapper.className = "section truefalse";
+  wrapper.innerHTML = `<h2>${section.title}</h2><p>${section.instructions}</p>`;
 
-  const prompt = document.createElement("p");
-  prompt.textContent = `${index + 1}. ${q.question}`;
-  container.appendChild(prompt);
+  section.questions.forEach((q, idx) => {
+    const div = document.createElement("div");
+    div.className = "tf-row";
+    div.innerHTML = `<p>${idx + 1}. ${q.question}</p>`;
 
-  const trueBtn = document.createElement("input");
-  trueBtn.type = "radio";
-  trueBtn.name = `tf-${index}`;
-  trueBtn.value = "true";
-  trueBtn.onchange = () => {
-    state.answers[`tf-${index}`] = true;
-  };
+    const trueInput = document.createElement("input");
+    trueInput.type = "radio";
+    trueInput.name = `tf-${idx}`;
+    trueInput.value = "true";
+    trueInput.onchange = () => state.answers[`tf-${idx}`] = true;
 
-  const falseBtn = document.createElement("input");
-  falseBtn.type = "radio";
-  falseBtn.name = `tf-${index}`;
-  falseBtn.value = "false";
-  falseBtn.onchange = () => {
-    state.answers[`tf-${index}`] = false;
-  };
+    const falseInput = document.createElement("input");
+    falseInput.type = "radio";
+    falseInput.name = `tf-${idx}`;
+    falseInput.value = "false";
+    falseInput.onchange = () => state.answers[`tf-${idx}`] = false;
 
-  container.appendChild(trueBtn);
-  container.appendChild(document.createTextNode("True "));
-  container.appendChild(falseBtn);
-  container.appendChild(document.createTextNode("False"));
+    div.appendChild(trueInput);
+    div.appendChild(document.createTextNode("True "));
+    div.appendChild(falseInput);
+    div.appendChild(document.createTextNode("False"));
 
-  return container;
+    wrapper.appendChild(div);
+  });
+
+  return wrapper;
 }
 
-
+/* ---------- GRADING ---------- */
 function gradeQuiz() {
-  const matching = state.quiz.sections.find(s => s.type === "matching");
-  const tf = state.quiz.sections.find(s => s.type === "true_false");
-  let matchingCorrect = 0;
-  const totalMatching = matching.prompts.length;
-  const totalTF = tf.questions.length;
-  let tfCorrect = 0;
+  let points = 0, total = 0, matchingCorrect = 0, tfCorrect = 0, totalMatching = 0, totalTF = 0;
 
-  // Matching
-  for (let i=1; i<=totalMatching; i++) {
-    const ans = state.answers.matching[i] || "";
-    if ((matching.answer_key[i]||"").toUpperCase() === (ans||"").toUpperCase()) {
-      matchingCorrect++;
-      const row = qs(`.prompt[data-idx="${i}"]`);
-      if (row) row.classList.add("correct");
-    } else {
-      const row = qs(`.prompt[data-idx="${i}"]`);
-      if (row) row.classList.add("incorrect");
+  state.quiz.sections.forEach(section => {
+    if (section.type === "matching") {
+      section.prompts.forEach((q, idx) => {
+        totalMatching++;
+        total += section.points_per_question;
+        const studentAnswer = state.answers[`matching-${idx}`];
+        if (studentAnswer && studentAnswer.toUpperCase() === q.answer.toUpperCase()) {
+          matchingCorrect++;
+          points += section.points_per_question;
+        }
+      });
+    } else if (section.type === "true_false") {
+      section.questions.forEach((q, idx) => {
+        totalTF++;
+        total += section.points_per_question;
+        const studentAnswer = state.answers[`tf-${idx}`];
+        if (typeof studentAnswer !== "undefined" && studentAnswer === q.answer) {
+          tfCorrect++;
+          points += section.points_per_question;
+        }
+      });
     }
-  }
-
-  // TF
-  for (let i=1; i<=totalTF; i++) {
-    const ans = state.answers.tf[i] || "";
-    if ((tf.answer_key[i]||"").toUpperCase() === (ans||"").toUpperCase()) {
-      tfCorrect++;
-      const row = qsa(".tf-row")[i-1];
-      if (row) row.classList.add("correct");
-    } else {
-      const row = qsa(".tf-row")[i-1];
-      if (row) row.classList.add("incorrect");
-    }
-  }
-
-  const points = matchingCorrect * (matching.points_per_question||1) + tfCorrect * (tf.points_per_question||1);
-  const total = totalMatching * (matching.points_per_question||1) + totalTF * (tf.points_per_question||1);
+  });
 
   return { matchingCorrect, totalMatching, tfCorrect, totalTF, points, total };
-}
-
-function onSubmit() {
-  if (!confirm("Submit your answers? You will immediately see your score.")) return;
-  state.endTime = new Date();
-  const res = gradeQuiz();
-  showSummary(res);
-  downloadCSV(res);
 }
 
 function showSummary(res) {
@@ -348,37 +273,35 @@ function showSummary(res) {
     <div class="kpi"><div>Total Points</div><strong>${res.points}/${res.total}</strong></div>
     <div class="kpi"><div>Percent</div><strong>${Math.round((res.points/res.total)*100)}%</strong></div>
   `;
-  window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"});
+  window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
 }
 
 function onSubmit() {
-    if (!confirm("Submit your answers? You will immediately see your score.")) return;
-    state.endTime = new Date();
-    const res = gradeQuiz();
-    sendEmail(res);
+  if (!confirm("Submit your answers? You will immediately see your score.")) return;
+  state.endTime = new Date();
+  const res = gradeQuiz();
+  sendEmail(res);
 }
 
+/* ---------- EMAIL ---------- */
 function sendEmail(res) {
   const settings = state.settings;
-
   if (settings.emailProvider === "emailjs") {
-    // Calculate duration in minutes
     const durationMs = state.endTime - state.startTime;
     const durationMin = Math.round(durationMs / 60000);
 
-    // Prepare email fields to match the "Grade" template
     const templateParams = {
-      to_email: settings.emailRecipients.join(", "),   // recipient list
-      name: state.user.fullName || state.user.username, // student's name
-      title: settings.title,                   // quiz title
-      time: new Date().toLocaleString(),       // current time in local format
-      message: `The grade was ${Math.round((res.points/res.total) * 100)}%. ` +
+      to_email: settings.emailRecipients.join(", "),
+      name: state.user.fullName || state.user.username,
+      title: settings.title,
+      time: new Date().toLocaleString(),
+      message: `The grade was ${Math.round((res.points / res.total) * 100)}%. ` +
                `The assignment was completed in ${durationMin} minute${durationMin !== 1 ? 's' : ''}.`
     };
 
     emailjs.send(
       settings.emailConfig.serviceID,
-      settings.emailConfig.templateID, // your "Grade" template
+      settings.emailConfig.templateID,
       templateParams
     ).then(() => {
       alert("✅ Results emailed successfully!");
@@ -389,7 +312,5 @@ function sendEmail(res) {
     });
   }
 }
-
-
 
 window.addEventListener("DOMContentLoaded", init);

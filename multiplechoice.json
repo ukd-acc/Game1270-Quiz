@@ -6,82 +6,29 @@
   "prompts": [
     {
       "question": "What are some similarities between the earliest games ever found?",
-      "answers": ["They were all found in Egypt", "They were all racing-based", "They did not lead to other games", "They were invented in Europe"]
+      "answers": ["They were only found in Egypt", "They were all racing-based", "They did not lead to other games", "They were invented in Europe"],
+      "correct_answer": "They were all racing-based"
     },
     {
       "question": "Which of the following was not a cause of the video game crash of 1983?",
-      "answer": ["Low quality games", "Too many consoles", "The Famicom (or NES) was released", "The rise of Personal Computers (PCs)"]
+      "answer": ["Minimal quality control on games", "An abundance of different consoles", "The Famicom (or NES) was released", "The rise of Personal Computers (PCs)"],
+      "correct_answer": "The Famicom (or NES) was released"
+
     },
     {
       "question": "Why do people play games?",
-      "answer": ["To learn something", "To waste time", "To be bored", "To be antisocial"]
+      "answer": ["To learn something", "To waste time", "To be bored", "To be antisocial"],
+      "correct_answer": "To learn something"
     },
     {
       "question": "Which of the following was not in the console wars of the 1990s?",
-      "answer": ["Nintendo", "Sega ", "Xbox", "Playstation"]
+      "answer": ["Nintendo", "Sega ", "Xbox", "Playstation"],
+      "correct_answer": "Xbox"
     },
     {
       "question": "What was the earliest version of a Monopoly-like game and why was it made?",
       "answer": ["The Landlord's Game, to teach people how to enhance their wealth", "Auction Monopoly, as an entertaining simulation of wealthy landowners", 
-      "The Landlord's Game, to teach the consequences of land monopolies and how renting increased the wealth gap", "Auciton Monopoly, to teach people how to enhance their wealth"]
+      "The Landlord's Game, to teach the consequences of land monopolies and how renting increased the wealth gap", "Auciton Monopoly, to teach people how to enhance their wealth"],
+      "correct_answer": "The Landlord's Game, to teach the consequences of land monopolies and how renting increased the wealth gap"
     },
-    {
-      "question": "Which company did Nolan Bushnell and Ted Dabney found?",
-      "answer": "B"
-    },
-    {
-      "question": "The biggest Arcade hit by Namco of 1980?",
-      "answer": "I"
-    },
-    {
-      "question": "What was the VCS later renamed to?",
-      "answer": "L"
-    },
-    {
-      "question": "What was Activision’s first game released in 1982?",
-      "answer": "J"
-    },
-    {
-      "question": "What was Atari’s first big game hit?",
-      "answer": "N"
-    },
-    {
-      "question": "The years of 1972 – 1976 for Electronic Gaming?",
-      "answer": "C"
-    },
-    {
-      "question": "The years of 1983 – 1985 for Electronic Gaming?",
-      "answer": "H"
-    },
-    {
-      "question": "Violence in videogames triggered?",
-      "answer": "A"
-    },
-    {
-      "question": "The first home video game system?",
-      "answer": "G"
-    },
-    {
-      "question": "One of the reasons why we play games?",
-      "answer": "E"
-    }
-  ],
-  "word_bank": [
-    { "letter": "A", "text": "ESRB" },
-    { "letter": "B", "text": "Atari" },
-    { "letter": "C", "text": "The Rise of the Arcades" },
-    { "letter": "D", "text": "Nintendo" },
-    { "letter": "E", "text": "Learn Something" },
-    { "letter": "F", "text": "Go" },
-    { "letter": "G", "text": "Odyssey" },
-    { "letter": "H", "text": "Crash and Recovery" },
-    { "letter": "I", "text": "Pac-Man" },
-    { "letter": "J", "text": "Pitfall" },
-    { "letter": "K", "text": "Milton Bradley" },
-    { "letter": "L", "text": "Atari 2600" },
-    { "letter": "M", "text": "Senet and Ur" },
-    { "letter": "N", "text": "Pong" },
-    { "letter": "O", "text": "Spacewar" },
-    { "letter": "P", "text": "Dungeons and Dragons" }
-  ]
 }
