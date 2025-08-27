@@ -151,43 +151,46 @@ function renderApp() {
     });
 }
 
-function renderMatching(sec, container) {
-    const wrapper = document.createElement("div");
-    wrapper.className = "section-matching";
-    container.appendChild(wrapper);
+function renderMatching(q, index, wordBank) {
+  const container = document.createElement("div");
+  container.className = "matching-question";
 
-    // Build word bank tiles
-    const bankTiles = sec.word_bank.map(w => `
-    <div class="tile" draggable="true" data-letter="${w.letter}">
-      <strong>${w.letter}</strong> — ${w.text}
-    </div>
-  `).join("");
+  const prompt = document.createElement("p");
+  prompt.textContent = `${index + 1}. ${q.question}`;
+  container.appendChild(prompt);
 
-    // Build prompts with drop zones
-    const prompts = sec.prompts.map((p, i) => {
-        const idx = i + 1;
-        const letter = state.answers.matching[idx] || "";
-        const filled = letter ? "filled" : "";
-        return `
-      <div class="prompt" data-idx="${idx}">
-        <div><strong>${String(idx).padStart(2, "0")}</strong></div>
-        <div>${p}</div>
-        <div class="drop ${filled}" data-idx="${idx}">
-          ${letter ? `<div class="tile" data-letter="${letter}"><strong>${letter}</strong></div>` : "Drop letter here"}
-        </div>
-      </div>
-    `;
-    }).join("");
+  // Answer area for drag-drop
+  const answerArea = document.createElement("div");
+  answerArea.className = "answer-area";
+  answerArea.textContent = "Drop here or select...";
+  answerArea.dataset.index = index;
 
-    wrapper.innerHTML = `
-    <h2>${sec.title}</h2>
-    <div class="notice">${sec.instructions}</div>
-    <div class="wordbank" id="wordbank">${bankTiles}</div>
-    <div id="prompts">${prompts}</div>
-  `;
+  // Drag/drop events
+  answerArea.ondrop = (e) => {
+    e.preventDefault();
+    const value = e.dataTransfer.getData("text/plain");
+    answerArea.textContent = value;
+    state.answers[`matching-${index}`] = value;
+  };
+  answerArea.ondragover = (e) => e.preventDefault();
 
-    enableDnD(); // Reuse your existing drag-and-drop handler
+  // Dropdown fallback
+  const select = document.createElement("select");
+  select.innerHTML = `<option value="">-- Select --</option>` +
+    wordBank.map(opt => `<option value="${opt.letter}">${opt.letter}: ${opt.text}</option>`).join("");
+
+  select.onchange = () => {
+    const value = select.value;
+    answerArea.textContent = value ? value : "Drop here or select...";
+    state.answers[`matching-${index}`] = value;
+  };
+
+  container.appendChild(answerArea);
+  container.appendChild(select);
+
+  return container;
 }
+
 
 function enableDnD() {
   qsa(".tile[draggable]").forEach(t => {
@@ -255,54 +258,38 @@ function returnTileToBank(letter){
   }
 }
 
-function renderTF(sec, container) {
-    const wrapper = document.createElement("div");
-    wrapper.className = "section-tf";
-    container.appendChild(wrapper);
+function renderTrueFalse(q, index) {
+  const container = document.createElement("div");
+  container.className = "truefalse-question";
 
-    const rows = sec.questions.map((q, i) => {
-        const idx = i + 1;
-        const val = state.answers.tf[idx] || "";
-        return `
-      <div class="tf-row">
-        <div><strong>${String(idx).padStart(2, "0")}</strong></div>
-        <div>${q}</div>
-        <div class="flex">
-          <label class="flex">
-            <input type="radio" name="tf_${idx}" value="T" ${val === "T" ? "checked" : ""}/> True
-          </label>
-          <label class="flex">
-            <input type="radio" name="tf_${idx}" value="F" ${val === "F" ? "checked" : ""}/> False
-          </label>
-          <button class="secondary" data-clear="${idx}">Clear</button>
-        </div>
-      </div>
-    `;
-    }).join("");
+  const prompt = document.createElement("p");
+  prompt.textContent = `${index + 1}. ${q.question}`;
+  container.appendChild(prompt);
 
-    wrapper.innerHTML = `
-    <h2>${sec.title}</h2>
-    <div class="notice">${sec.instructions}</div>
-    ${rows}
-  `;
+  const trueBtn = document.createElement("input");
+  trueBtn.type = "radio";
+  trueBtn.name = `tf-${index}`;
+  trueBtn.value = "true";
+  trueBtn.onchange = () => {
+    state.answers[`tf-${index}`] = true;
+  };
 
-    // Radio button change handlers
-    qsa('input[type="radio"]').forEach(r => {
-        r.addEventListener("change", () => {
-            const [_, idx] = r.name.split("_");
-            state.answers.tf[idx] = r.value;
-        });
-    });
+  const falseBtn = document.createElement("input");
+  falseBtn.type = "radio";
+  falseBtn.name = `tf-${index}`;
+  falseBtn.value = "false";
+  falseBtn.onchange = () => {
+    state.answers[`tf-${index}`] = false;
+  };
 
-    // Clear buttons
-    qsa('button[data-clear]').forEach(b => {
-        b.addEventListener("click", () => {
-            const idx = b.getAttribute("data-clear");
-            delete state.answers.tf[idx];
-            renderTF(sec, container); // rerender this section
-        });
-    });
+  container.appendChild(trueBtn);
+  container.appendChild(document.createTextNode("True "));
+  container.appendChild(falseBtn);
+  container.appendChild(document.createTextNode("False"));
+
+  return container;
 }
+
 
 function gradeQuiz() {
   const matching = state.quiz.sections.find(s => s.type === "matching");
@@ -381,7 +368,7 @@ function sendEmail(res) {
 
     // Prepare email fields to match the "Grade" template
     const templateParams = {
-      to_email: settings.emailRecipients[0],   // recipient list
+      to_email: settings.emailRecipients.join(", "),   // recipient list
       name: state.user.fullName || state.user.username, // student's name
       title: settings.title,                   // quiz title
       time: new Date().toLocaleString(),       // current time in local format

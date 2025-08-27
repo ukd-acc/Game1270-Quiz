@@ -1,24 +1,24 @@
 {
-  "type": "matching",
-  "title": "Vocabulary and Questions (1 point each / 15 points)",
-  "instructions": "Drag a letter from the word bank to each numbered prompt. Each letter is used exactly once.",
+  "type": "multiple_choice",
+  "title": "Multiple Choice Questions (1 point each)",
+  "instructions": "Select the best answer for each question.",
   "points_per_question": 1,
   "prompts": [
     {
-      "question": "What are the names of the oldest games ever found?",
-      "answer": "M"
+      "question": "What are some similarities between the earliest games ever found?",
+      "answers": ["They were all found in Egypt", "They were all racing-based", "They did not lead to other games", "They were invented in Europe"]
     },
     {
-      "question": "Popular game which origin came from China and then Japan?",
-      "answer": "F"
+      "question": "Which of the following was not a cause of the video game crash of 1983?",
+      "answer": ["Low quality games", "Too many consoles", "The Famicom (or NES) was released", "The rise of Personal Computers (PCs)"]
     },
     {
-      "question": "First successful game company founded in 1860?",
-      "answer": "K"
+      "question": "Why do people play games?",
+      "answer": ["To learn something", "To waste time", "To be bored", "To be antisocial"]
     },
     {
-      "question": "What does D&D stand for?",
-      "answer": "P"
+      "question": "Why did Nintendo win the console wars of 1990?",
+      "answer": ["Strong library of games", "Better graphics", "Who knows?"]
     },
     {
       "question": "The name of the first true game designed to be played on a computer in 1961?",

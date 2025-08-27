@@ -4,17 +4,25 @@
   "instructions": "Select True or False for each statement.",
   "points_per_question": 1,
   "questions": [
-    "CPU stands for Computer Programming Unit.",
-    "Xbox One, PlayStation 4 and Switch are PC platforms.",
-    "The Birth and Success of Electronic Gaming was driven by game players demanding better graphics, better audio and more processing power.",
-    "8-bit refers to the number of data transferred during each read and write of computer memory.",
-    "Emergent gameplay is when players have only one solution to one problem."
-  ],
-  "answer_key": {
-    "1": "F",
-    "2": "F",
-    "3": "T",
-    "4": "T",
-    "5": "F"
-  }
+    {
+      "question": "CPU stands for Computer Programming Unit.",
+      "answer": false
+    },
+    {
+      "question": "Xbox One, PlayStation 4 and Switch are PC platforms.",
+      "answer": false
+    },
+    {
+      "question": "The Birth and Success of Electronic Gaming was driven by game players demanding better graphics, better audio and more processing power.",
+      "answer": true
+    },
+    {
+      "question": "8-bit refers to the number of data transferred during each read and write of computer memory.",
+      "answer": true
+    },
+    {
+      "question": "Emergent gameplay is when players have only one solution to one problem.",
+      "answer": false
+    }
+  ]
 }
