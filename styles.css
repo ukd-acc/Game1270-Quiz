@@ -50,3 +50,39 @@ hr{border:none;height:1px;background:rgba(255,255,255,.08);margin:16px 0}
 .summary{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .kpi{background:#0f1736;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px}
 .kpi strong{font-size:1.4rem}
+
+/* === Matching prompt row layout overrides === */
+.prompt-row {
+  display: grid;
+  grid-template-columns: 70% 30%; /* prompt vs. answer box, adjust as needed */
+  align-items: center;
+  margin: 8px 0;
+  gap: 12px;
+}
+
+.prompt-text {
+  text-align: left;
+}
+
+.drop-select {
+  position: relative;
+  border: 2px dashed #888;
+  padding: 6px;
+  min-width: 140px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.drop-select .placeholder {
+  display: block;
+  pointer-events: none;
+  color: #aaa;
+}
+
+.drop-select select {
+  position: absolute;
+  inset: 0;   /* fills the drop-select box */
+  opacity: 0; /* invisible but still clickable */
+  cursor: pointer;
+}

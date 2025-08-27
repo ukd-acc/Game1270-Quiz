@@ -142,61 +142,83 @@ function renderApp() {
 }
 
 /* ---------- MATCHING ---------- */
-function renderMatchingSection(section) {
+function renderMatchingSection(section, container) {
   const wrapper = document.createElement("div");
   wrapper.className = "section matching";
-  wrapper.innerHTML = `<h2>${section.title}</h2><p>${section.instructions}</p>`;
+
+  const header = document.createElement("h2");
+  header.textContent = section.title;
+  wrapper.appendChild(header);
+
+  const instr = document.createElement("div");
+  instr.className = "notice";
+  instr.textContent = section.instructions;
+  wrapper.appendChild(instr);
 
   // Word bank
   const bank = document.createElement("div");
   bank.id = "wordbank";
-  bank.className = "word-bank";
-  section.word_bank.forEach(item => {
+  bank.className = "wordbank";
+  section.word_bank.forEach(opt => {
     const tile = document.createElement("div");
     tile.className = "tile";
     tile.setAttribute("draggable", "true");
-    tile.dataset.letter = item.letter;
-    tile.innerHTML = `<strong>${item.letter}</strong> — ${item.text}`;
-    tile.addEventListener("dragstart", e => {
-      e.dataTransfer.setData("text/plain", item.letter);
-    });
+    tile.dataset.letter = opt.letter;
+    tile.innerHTML = `<strong>${opt.letter}</strong> — ${opt.text}`;
     bank.appendChild(tile);
   });
   wrapper.appendChild(bank);
 
   // Prompts
   section.prompts.forEach((q, idx) => {
-    const div = document.createElement("div");
-    div.className = "prompt";
-    div.dataset.idx = idx;
+    const row = document.createElement("div");
+    row.className = "prompt-row";
 
-    div.innerHTML = `<p>${idx + 1}. ${q.question}</p>
-      <div class="drop" data-idx="${idx}">Drop letter here</div>
-      <select>
-        <option value="">-- Select --</option>
-        ${section.word_bank.map(opt => `<option value="${opt.letter}">${opt.letter}: ${opt.text}</option>`).join("")}
-      </select>`;
+    const text = document.createElement("div");
+    text.className = "prompt-text";
+    text.textContent = `${idx + 1}. ${q.question}`;
 
-    const drop = div.querySelector(".drop");
-    drop.addEventListener("dragover", e => e.preventDefault());
-    drop.addEventListener("drop", e => {
-      e.preventDefault();
-      const letter = e.dataTransfer.getData("text/plain");
-      state.answers[`matching-${idx}`] = letter;
-      drop.innerHTML = `<div class="tile" data-letter="${letter}"><strong>${letter}</strong></div>`;
-    });
+    const dropSelect = document.createElement("div");
+    dropSelect.className = "drop-select";
+    dropSelect.dataset.idx = idx;
 
-    const select = div.querySelector("select");
+    const placeholder = document.createElement("span");
+    placeholder.className = "placeholder";
+    placeholder.textContent = "Drop letter here";
+
+    const select = document.createElement("select");
+    select.innerHTML = `<option value="">-- Select --</option>` +
+      section.word_bank.map(opt => `<option value="${opt.letter}">${opt.letter}: ${opt.text}</option>`).join("");
+
+    dropSelect.appendChild(placeholder);
+    dropSelect.appendChild(select);
+
+    // Dropdown change → update state + placeholder
     select.addEventListener("change", () => {
       const val = select.value;
       state.answers[`matching-${idx}`] = val;
-      drop.innerHTML = val ? `<div class="tile" data-letter="${val}"><strong>${val}</strong></div>` : "Drop letter here";
+      placeholder.textContent = val ? val : "Drop letter here";
     });
 
-    wrapper.appendChild(div);
+    // Drag/drop
+    dropSelect.addEventListener("dragover", e => e.preventDefault());
+    dropSelect.addEventListener("drop", e => {
+      e.preventDefault();
+      const letter = e.dataTransfer.getData("text/plain");
+      state.answers[`matching-${idx}`] = letter;
+      select.value = letter;
+      placeholder.textContent = letter;
+    });
+
+    row.appendChild(text);
+    row.appendChild(dropSelect);
+    wrapper.appendChild(row);
   });
 
-  return wrapper;
+  container.appendChild(wrapper);
+
+  // Enable drag & drop for word bank
+  enableDnD();
 }
 
 /* ---------- TRUE/FALSE ---------- */
