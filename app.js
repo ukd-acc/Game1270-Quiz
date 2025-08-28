@@ -107,13 +107,13 @@ function renderApp() {
       <div class="card">
         <div class="header">
           <img src="${state.settings.logo}" alt="Logo" style="max-width:100%; height:auto"/>
-          <h1>${state.quiz.title}</h1>
+        </div>
+        <h1>${state.quiz.title}</h1>
           <div class="notice">${state.quiz.course}</div>
           <div class="flex">
             <span class="badge">${state.user.fullName} (${state.user.username})</span>
             <button class="secondary" id="logoutBtn">Sign out</button>
           </div>
-        </div>
         <div id="sections"></div>
         <hr/>
         <div class="flex">
