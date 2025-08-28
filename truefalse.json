@@ -1,6 +1,6 @@
 {
   "type": "true_false",
-  "title": "True or False (1 point each / 5 points total)",
+  "title": "True or False (1 point each)",
   "instructions": "Select True or False for each statement.",
   "points_per_question": 1,
   "questions": [
@@ -17,7 +17,7 @@
       "answer": true
     },
     {
-      "question": "8-bit refers to the number of data transferred during each read and write of computer memory.",
+      "question": "8-bit refers to the amount of data transferred during each read and write of computer memory.",
       "answer": true
     },
     {

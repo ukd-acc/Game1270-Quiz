@@ -1,6 +1,6 @@
 {
   "type": "matching",
-  "title": "Vocabulary and Questions (1 point each / 15 points)",
+  "title": "Vocabulary and Questions (1 point each)",
   "instructions": "Drag a letter from the word bank to each numbered prompt. Each letter is used exactly once.",
   "points_per_question": 1,
   "prompts": [
