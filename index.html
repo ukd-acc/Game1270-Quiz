@@ -2,28 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>GAME1270 Quiz #1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz App</title>
   <link rel="stylesheet" href="styles.css" />
-  <meta name="color-scheme" content="dark light">
 </head>
 <body>
-  <noscript>This quiz requires JavaScript.</noscript>
+  <div id="login-container">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Enter username" />
+    <button onclick="login()">Login</button>
+  </div>
 
-  <!-- Logo -->
-  <header style="text-align:center; margin: 1em 0;">
-    <img src="acc_logo.png" alt="ACC Logo" style="max-width: 100%; height: auto;" />
-    <h1 id="quiz-title">GAME1270 Quiz #1</h1>
-  </header>
+  <div id="quiz-container" class="hidden">
+    <h2 id="quiz-title">Quiz</h2>
+    <form id="quiz-form"></form>
+    <button onclick="submitQuiz()">Submit Quiz</button>
+    <div id="results"></div>
+  </div>
 
-  <!-- Quiz root -->
-  <div id="app"></div>
-
-  <!-- Load EmailJS first -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script>
-    emailjs.init("YoOVqMfQaR_h1LIj6"); // 👈 your public key, plain string
-  </script>
   <script src="app.js"></script>
 </body>
 </html>
