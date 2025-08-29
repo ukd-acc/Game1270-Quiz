@@ -1,0 +1,32 @@
+/* ---------- GRADING ---------- */
+function gradeQuiz() {
+    let points = 0, total = 0;
+  
+    state.quiz.sections.forEach(section => {
+      if (section.type === "matching") {
+        section.prompts.forEach((q, idx) => {
+          total += section.points_per_question;
+          const studentAnswer = state.answers[`matching-${idx}`];
+          if (studentAnswer && studentAnswer.toUpperCase() === q.answer.toUpperCase()) {
+            points += section.points_per_question;
+          }
+        });
+      }
+      if (section.type === "true_false") {
+        section.questions.forEach((q, idx) => {
+          total += section.points_per_question;
+          const studentAnswer = state.answers[`tf-${idx}`];
+          if (typeof studentAnswer !== "undefined" && studentAnswer === q.answer) {
+            points += section.points_per_question;
+          }
+        });
+      }
+    });
+  
+    return { points, total, percent: Math.round((points/total)*100) };
+  }
+  
+  function showSummary(res) {
+    alert(`You scored ${res.points}/${res.total} (${res.percent}%)`);
+  }
+  
