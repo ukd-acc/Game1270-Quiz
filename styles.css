@@ -167,3 +167,40 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   padding:12px;
 }
 .kpi strong { font-size:1.4rem; }
+
+/* Give overall page breathing room */
+.container {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 16px;
+}
+
+/* Add buffer between sections */
+.section, .matching-section, .truefalse {
+  margin: 24px 0;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #101832;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .prompt-row {
+    grid-template-columns: 1fr; /* stack question + answer box */
+  }
+
+  .tf-row {
+    grid-template-columns: 1fr; /* question on top, answers below */
+  }
+
+  .tf-row .answers {
+    justify-content: flex-start;
+    gap: 16px;
+  }
+
+  .wordbank {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

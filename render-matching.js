@@ -53,11 +53,18 @@ function renderMatchingSection(section) {
       dropSelect.addEventListener("dragover", e => e.preventDefault());
       dropSelect.addEventListener("drop", e => {
         e.preventDefault();
-        const letter = e.dataTransfer.getData("text/plain");
+      
+        // Get the dragged letter
+        const letter = e.dataTransfer.getData("text/plain").toUpperCase();
+      
+        // Save into state
         state.answers[`matching-${idx}`] = letter;
+      
+        // Sync dropdown + placeholder text
         select.value = letter;
         placeholder.textContent = letter;
       });
+      
   
       row.appendChild(text);
       row.appendChild(dropSelect);
