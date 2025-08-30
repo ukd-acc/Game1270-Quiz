@@ -14,18 +14,26 @@ async function init() {
 
 function renderQuiz() {
   const app = qs("#app");
-  app.innerHTML = `<h1>${state.quiz.title}</h1>`;
+  app.innerHTML = `
+    <div class="container">
+      <div class="card">
+        <h1>${state.quiz.title}</h1>
+        <div id="sections"></div>
+        <hr/>
+        <button id="submitBtn">Submit Quiz</button>
+      </div>
+    </div>
+  `;
 
+  const sectionsEl = qs("#sections");
   state.quiz.sections.forEach(sec => {
-    if (sec.type === "matching") app.appendChild(renderMatchingSection(sec));
-    if (sec.type === "true_false") app.appendChild(renderTFSection(sec));
+    if (sec.type === "matching") sectionsEl.appendChild(renderMatchingSection(sec));
+    if (sec.type === "true_false") sectionsEl.appendChild(renderTFSection(sec));
   });
 
-  const btn = document.createElement("button");
-  btn.textContent = "Submit Quiz";
-  btn.onclick = onSubmit;
-  app.appendChild(btn);
+  qs("#submitBtn").addEventListener("click", onSubmit);
 }
+
 
 function onSubmit() {
   const res = gradeQuiz();
