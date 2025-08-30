@@ -126,37 +126,43 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 
 .prompt-row {
   display: grid;
-  grid-template-columns: 65% 35%; /* more centered, extra buffer on right */
+  grid-template-columns: 70% 30%; /* question | dropdown */
   align-items: center;
-  gap: 16px;
-  margin: 12px 0;
+  margin: 8px 0;
+  gap: 12px;
 }
 .answer-select {
   text-align: left;
 }
 
-.prompt-text { text-align:left; }
-
+.prompt-text {
+  text-align: left;
+  padding-left: 8px;   /* small buffer from container left */
+}
 .drop-select {
-  position:relative;
-  border:2px dashed #888;
-  padding:6px;
-  min-width:140px;
-  text-align:center;
-  cursor:pointer;
-  border-radius:10px;
+  position: relative;
+  border: 2px dashed #888;
+  padding: 6px;
+  min-width: 160px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-right: 8px;   /* ✅ buffer on the right */
+}
+
+.drop-select select {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
 }
 .drop-select .placeholder {
   display:block;
   pointer-events:none;
   color:#aaa;
 }
-.drop-select select {
-  position:absolute;
-  inset:0;
-  opacity:0;
-  cursor:pointer;
-}
+
+
 
 /* ---------- TRUE/FALSE ---------- */
 .tf-row {
@@ -210,7 +216,7 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
     margin: 16px auto;
     padding: 12px;
   }
-  
+
   .prompt-row {
     grid-template-columns: 1fr; /* stack question + answer box */
   }

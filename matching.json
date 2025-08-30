@@ -1,86 +1,86 @@
 {
   "type": "matching",
   "title": "Vocabulary and Questions (1 point each)",
-  "instructions": "Drag a letter from the word bank to each numbered prompt. Each letter is used exactly once.",
+  "instructions": "Select the correct answer from the dropdown.",
   "points_per_question": 1,
   "prompts": [
     {
       "question": "What are the names of the oldest games ever found?",
-      "answer": "M"
+      "answer": "Senet and Ur"
     },
     {
       "question": "Popular game which origin came from China and then Japan?",
-      "answer": "F"
+      "answer": "Go"
     },
     {
       "question": "First successful game company founded in 1860?",
-      "answer": "K"
+      "answer": "Milton Bradley"
     },
     {
       "question": "What does D&D stand for?",
-      "answer": "P"
+      "answer": "Dungeons and Dragons"
     },
     {
       "question": "The name of the first true game designed to be played on a computer in 1961?",
-      "answer": "O"
+      "answer": "Spacewar"
     },
     {
       "question": "Which company did Nolan Bushnell and Ted Dabney found?",
-      "answer": "B"
+      "answer": "Atari"
     },
     {
       "question": "The biggest Arcade hit by Namco of 1980?",
-      "answer": "I"
+      "answer": "Pac-Man"
     },
     {
       "question": "What was the VCS later renamed to?",
-      "answer": "L"
+      "answer": "Atari 2600"
     },
     {
       "question": "What was Activision’s first game released in 1982?",
-      "answer": "J"
+      "answer": "Pitfall"
     },
     {
       "question": "What was Atari’s first big game hit?",
-      "answer": "N"
+      "answer": "Pong"
     },
     {
       "question": "The years of 1972 – 1976 for Electronic Gaming?",
-      "answer": "C"
+      "answer": "The Rise of the Arcades"
     },
     {
       "question": "The years of 1983 – 1985 for Electronic Gaming?",
-      "answer": "H"
+      "answer": "Crash and Recovery"
     },
     {
       "question": "Violence in videogames triggered?",
-      "answer": "A"
+      "answer": "ESRB"
     },
     {
       "question": "The first home video game system?",
-      "answer": "G"
+      "answer": "Odyssey"
     },
     {
       "question": "One of the reasons why we play games?",
-      "answer": "E"
+      "answer": "Learn Something"
     }
   ],
   "word_bank": [
-    { "letter": "A", "text": "ESRB" },
-    { "letter": "B", "text": "Atari" },
-    { "letter": "C", "text": "The Rise of the Arcades" },
-    { "letter": "D", "text": "Nintendo" },
-    { "letter": "E", "text": "Learn Something" },
-    { "letter": "F", "text": "Go" },
-    { "letter": "G", "text": "Odyssey" },
-    { "letter": "H", "text": "Crash and Recovery" },
-    { "letter": "I", "text": "Pac-Man" },
-    { "letter": "J", "text": "Pitfall" },
-    { "letter": "K", "text": "Milton Bradley" },
-    { "letter": "L", "text": "Atari 2600" },
-    { "letter": "M", "text": "Senet and Ur" },
-    { "letter": "N", "text": "Pong" },
-    { "letter": "O", "text": "Spacewar" },
-    { "letter": "P", "text": "Dungeons and Dragons" }
+    { "text": "ESRB" },
+    { "text": "Atari" },
+    { "text": "The Rise of the Arcades" },
+    { "text": "Nintendo" },
+    { "text": "Learn Something" },
+    { "text": "Go" },
+    { "text": "Odyssey" },
+    { "text": "Crash and Recovery" },
+    { "text": "Pac-Man" },
+    { "text": "Pitfall" },
+    { "text": "Milton Bradley" },
+    { "text": "Atari 2600" },
+    { "text": "Senet and Ur" },
+    { "text": "Pong" },
+    { "text": "Spacewar" },
+    { "text": "Dungeons and Dragons" }
   ]
 }
