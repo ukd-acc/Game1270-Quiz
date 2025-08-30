@@ -21,7 +21,11 @@ html, body {
 
 a { color:var(--accent); }
 
-.container { max-width:1000px; margin:32px auto; padding:16px; }
+.container {
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 24px;
+}
 
 .card {
   background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
@@ -111,12 +115,16 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 .tile.dragging { opacity:.6; transform:scale(.96); }
 
 .prompt-row {
-  display:grid;
-  grid-template-columns: 70% 30%;
-  align-items:center;
-  margin:8px 0;
-  gap:12px;
+  display: grid;
+  grid-template-columns: 65% 35%; /* more centered, extra buffer on right */
+  align-items: center;
+  gap: 16px;
+  margin: 12px 0;
 }
+.answer-select {
+  text-align: left;
+}
+
 .prompt-text { text-align:left; }
 
 .drop-select {

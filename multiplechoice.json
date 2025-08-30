@@ -30,4 +30,15 @@
       "The Landlord's Game, to teach the consequences of land monopolies and how renting increased the wealth gap", "Auciton Monopoly, to teach people how to enhance their wealth"],
       "correct_answer": "The Landlord's Game, to teach the consequences of land monopolies and how renting increased the wealth gap"
     },
+    {
+      "question": "What did Nintendo initially make?",
+      "answer": ["Hanafuda Cards", "Arcade cabinets", "Board games", "Video game consoles"],
+      "correct_answer": "Hanafuda cards"
+    },
+    {
+      "question": "Why was the Entertainment Software Rating Board (ESRB) created?",
+      "answer": ["To help parents make informed choices about video game content", "To censor violent video games", "To promote educational video games", "To rate the quality of video games"],
+      "correct_answer": "To help parents make informed choices about video game content"
+    }
+  ]
 }

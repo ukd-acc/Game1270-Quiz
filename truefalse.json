@@ -9,7 +9,7 @@
       "answer": false
     },
     {
-      "question": "Xbox One, PlayStation 4 and Switch are PC platforms.",
+      "question": "Xbox Series X, PlayStation 5 and Switch are PC platforms.",
       "answer": false
     },
     {
@@ -22,6 +22,10 @@
     },
     {
       "question": "Emergent gameplay is when players have only one solution to one problem.",
+      "answer": false
+    },
+    {
+      "question": "Consoles are always sold for a large profit.",
       "answer": false
     }
   ]
