@@ -5,7 +5,7 @@ function renderMatchingSection(section) {
     wrapper.innerHTML = `<h2>${section.title}</h2><p>${section.instructions}</p>`;
   
     // Word bank of draggable tiles
-    const bank = document.createElement("div");
+    /*const bank = document.createElement("div");
     bank.className = "wordbank";
     section.word_bank.forEach(opt => {
       const tile = document.createElement("div");
@@ -15,7 +15,7 @@ function renderMatchingSection(section) {
       tile.innerHTML = `<strong>${opt.letter}</strong> — ${opt.text}`;
       bank.appendChild(tile);
     });
-    wrapper.appendChild(bank);
+    wrapper.appendChild(bank);*/
   
     // Prompts
     section.prompts.forEach((q, idx) => {
@@ -46,7 +46,7 @@ function renderMatchingSection(section) {
       select.addEventListener("change", () => {
         const val = select.value;
         state.answers[`matching-${idx}`] = val;
-        placeholder.textContent = val || "Drop letter here";
+        placeholder.textContent = val || "Select Option";
       });
   
       // Update when drag/drop is used
