@@ -53,9 +53,61 @@ async function init() {
     });
   }
   
+  function sendEmail(res) {
+
+    const settings = state.settings;
+  
+  
+  
+    if (settings.emailProvider === "emailjs") {
+  
+      // Calculate duration in minutes
+  
+      const durationMs = state.endTime - state.startTime;
+  
+      const durationMin = Math.round(durationMs / 60000);
+  
+  
+  
+      // Prepare email fields to match the "Grade" template
+  
+      const templateParams = {
+        to_email: settings.emailRecipients[0],   // recipient list
+        name: state.user.fullName || state.user.username, // student's name
+        title: settings.title,                   // quiz title
+        time: new Date().toLocaleString(),       // current time in local format
+        message: `The grade was ${Math.round((res.points/res.total) * 100)}%. ` +
+                 `The assignment was completed in ${durationMin} minute${durationMin !== 1 ? 's' : ''}.`
+  
+      };
+  
+  
+  
+      emailjs.send(
+        settings.emailConfig.serviceID,
+        settings.emailConfig.templateID, // your "Grade" template
+        templateParams
+      ).then(() => {
+  
+        alert("✅ Results emailed successfully!");
+        showSummary(res);
+
+      }).catch(err => {
+  
+        console.error("❌ Email failed:", err);
+  
+        alert("Error sending email. Please notify your instructor.");
+  
+      });
+  
+    }
+  
+  }
+
   function onSubmit() {
     const res = gradeQuiz();
     showSummary(res);
+    sendEmail(res);
   }
   
   window.addEventListener("DOMContentLoaded", init);
