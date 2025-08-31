@@ -3,7 +3,7 @@ async function init() {
     state.settings = await loadJSON("settings.json");
   
     // Load users for login
-    state.users = await loadUsers();
+    state.users = await loadJSON("users.json");
   
     // Load quiz sections
     state.quiz = { title: state.settings.title, sections: [] };
