@@ -10,6 +10,8 @@ async function initQuiz() {
   }
 
   renderQuiz();
+    // After quiz loads
+  initEmail();
 }
 
 function renderQuiz() {

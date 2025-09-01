@@ -5,18 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GAME1270 Quiz</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </head>
 <body>
-  <noscript>This quiz requires JavaScript.</noscript>
   <div id="app"></div>
 
-  <!-- Load scripts in dependency order -->
+  <!-- Shared state + helpers -->
   <script src="state.js"></script>
   <script src="utils.js"></script>
-  <script src="auth.js"></script>          
+
+  <!-- Authentication -->
+  <script src="auth.js"></script>
+
+  <!-- Renderers for each question type -->
   <script src="render-matching.js"></script>
   <script src="render-tf.js"></script>
+
+  <!-- Grading + quiz app -->
   <script src="grading.js"></script>
   <script src="app.js"></script>
+
+  <!-- Email sending (relies on state.settings loaded by app.js) -->
+  <script src="email.js"></script>
 </body>
 </html>
