@@ -39,6 +39,8 @@ function initEmail() {
     )
     .then(() => {
       alert("✅ Results emailed successfully!");
+      localStorage.setItem("quizTaken" + state.user, "true");
+      window.close();
     })
     .catch(err => {
       console.error("❌ Email failed:", err);

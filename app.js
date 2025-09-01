@@ -40,7 +40,6 @@ function renderQuiz() {
 
 
 function onSubmit() {
-  localStorage.setItem("quizTaken" + state.user, "true");
   state.endTime = new Date();
   const res = gradeQuiz();
   showSummary(res);
