@@ -8,10 +8,14 @@ async function initAuth() {
     } catch (_) {
       state.users = await loadJSON("users.sample.json");
     }
-  
+    
     // If already logged in, go to quiz directly
     if (localStorage.getItem("quiz_user")) {
       state.user = JSON.parse(localStorage.getItem("quiz_user"));
+      if(localStorage.getItem("quizTaken" + state.user) === "true") {
+        alert("You already took the quiz!");
+        return;
+     }
       initQuiz(); // defined in app.js
     } else {
       renderLogin();
@@ -64,10 +68,11 @@ async function initAuth() {
       alert("Invalid username or password.");
       return;
     }
+    
   
     state.user = { username: account.username, fullName: account.fullName || account.username };
     localStorage.setItem("quiz_user", JSON.stringify(state.user));
-  
+        
     initQuiz(); // defined in app.js
   }
   

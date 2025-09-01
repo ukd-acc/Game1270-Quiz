@@ -27,8 +27,9 @@ function initEmail() {
       name: state.user.fullName || state.user.username,
       title: state.settings.title,
       time: new Date().toLocaleString(),
-      message: `The grade was ${Math.round((result.points / result.total) * 100)}%. ` +
-               `The assignment was completed in ${durationMin} minute${durationMin !== 1 ? 's' : ''}.`
+      message:  `${state.settings.title} results for ${state.user.fullName}:\n` +
+                `The grade was ${Math.round((result.points / result.total) * 100)}%. ` +
+                `The assignment was completed in ${durationMin} minute${durationMin !== 1 ? 's' : ''}.`
     };
   
     emailjs.send(
