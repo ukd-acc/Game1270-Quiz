@@ -1,9 +1,9 @@
-async function init() {
+async function initQuiz() {
   // Load settings.json (tells us which quiz files to load)
   state.settings = await loadJSON("settings.json");
   state.quiz = { title: state.settings.title, sections: [] };
 
-  // Load each section (matching.json, truefalse.json, etc.)
+  // Load each section
   for (const sec of state.settings.sections) {
     const data = await loadJSON(sec.file);
     state.quiz.sections.push(data);
@@ -36,8 +36,14 @@ function renderQuiz() {
 
 
 function onSubmit() {
+  state.endTime = new Date();
   const res = gradeQuiz();
   showSummary(res);
+  sendResultsByEmail(res);
 }
 
-window.addEventListener("DOMContentLoaded", init);
+
+window.addEventListener("DOMContentLoaded", async () => {
+  await init();    // your existing init
+  initEmail();     // set up emailjs using settings.json
+});

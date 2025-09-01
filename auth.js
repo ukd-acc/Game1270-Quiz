@@ -1,114 +1,81 @@
-async function init() {
-    // Load settings.json
-    state.settings = await loadJSON("settings.json");
-  
-    // Load users for login
-    state.users = await loadJSON("users.json");
-  
-    // Load quiz sections
-    state.quiz = { title: state.settings.title, sections: [] };
-    for (const sec of state.settings.sections) {
-      const data = await loadJSON(sec.file);
-      state.quiz.sections.push(data);
+// auth.js
+// Handles login/logout only. Relies on app.js to load/render the quiz.
+// Relies on email.js for email sending after submit.
+
+async function initAuth() {
+    try {
+      state.users = await loadJSON("users.json");
+    } catch (_) {
+      state.users = await loadJSON("users.sample.json");
     }
   
-    // Check login
+    // If already logged in, go to quiz directly
     if (localStorage.getItem("quiz_user")) {
       state.user = JSON.parse(localStorage.getItem("quiz_user"));
-      renderQuiz();
+      initQuiz(); // defined in app.js
     } else {
       renderLogin();
     }
   }
   
-  function renderQuiz() {
-    const app = qs("#app");
-    app.innerHTML = `
-      <div class="container">
+  function renderLogin() {
+    document.body.innerHTML = `
+      <div class="container login">
         <div class="card">
           <div class="header">
-            <h1>${state.quiz.title}</h1>
-            <div class="flex">
-              <span class="badge">${state.user.fullName} (${state.user.username})</span>
-              <button class="secondary" id="logoutBtn">Sign out</button>
+            <div>
+              <div class="logo">GAME1270 Quiz Portal</div>
+              <div class="notice">Sign in with your assigned username and password.</div>
+            </div>
+            <span class="badge">Client-side demo auth</span>
+          </div>
+          <div class="row">
+            <div>
+              <label>Username</label>
+              <input id="username" placeholder="e.g. alice" autocomplete="username"/>
+            </div>
+            <div>
+              <label>Password</label>
+              <input id="password" type="password" placeholder="Your password" autocomplete="current-password"/>
             </div>
           </div>
-          <div id="sections"></div>
-          <hr/>
-          <div class="flex">
-            <button id="submitBtn">Submit Quiz</button>
+          <div class="login-actions">
+            <div class="flex">
+              <button id="loginBtn">Sign In</button>
+              <button class="secondary" id="showHelp">Where do passwords come from?</button>
+            </div>
+            <div class="notice">No account? Ask your instructor.</div>
           </div>
-          <div id="summary" class="summary hidden"></div>
         </div>
       </div>
     `;
-  
-    qs("#logoutBtn").addEventListener("click", logout);
-    qs("#submitBtn").addEventListener("click", onSubmit);
-  
-    const container = qs("#sections");
-    state.quiz.sections.forEach(sec => {
-      if (sec.type === "matching") container.appendChild(renderMatchingSection(sec));
-      if (sec.type === "true_false") container.appendChild(renderTFSection(sec));
+    qs("#loginBtn").addEventListener("click", onLogin);
+    qs("#showHelp").addEventListener("click", () => {
+      alert("Passwords are in users.json (or users.sample.json).");
     });
   }
   
-  function sendEmail(res) {
-
-    const settings = state.settings;
+  function onLogin() {
+    const u = qs("#username").value.trim();
+    const p = qs("#password").value;
+    const account = state.users.find(x => x.username === u && x.password === p);
   
-  
-  
-    if (settings.emailProvider === "emailjs") {
-  
-      // Calculate duration in minutes
-  
-      const durationMs = state.endTime - state.startTime;
-  
-      const durationMin = Math.round(durationMs / 60000);
-  
-  
-  
-      // Prepare email fields to match the "Grade" template
-  
-      const templateParams = {
-        to_email: settings.emailRecipients[0],   // recipient list
-        name: state.user.fullName || state.user.username, // student's name
-        title: settings.title,                   // quiz title
-        time: new Date().toLocaleString(),       // current time in local format
-        message: `The grade was ${Math.round((res.points/res.total) * 100)}%. ` +
-                 `The assignment was completed in ${durationMin} minute${durationMin !== 1 ? 's' : ''}.`
-  
-      };
-  
-  
-  
-      emailjs.send(
-        settings.emailConfig.serviceID,
-        settings.emailConfig.templateID, // your "Grade" template
-        templateParams
-      ).then(() => {
-  
-        alert("✅ Results emailed successfully!");
-        showSummary(res);
-
-      }).catch(err => {
-  
-        console.error("❌ Email failed:", err);
-  
-        alert("Error sending email. Please notify your instructor.");
-  
-      });
-  
+    if (!account) {
+      alert("Invalid username or password.");
+      return;
     }
   
-  }
-
-  function onSubmit() {
-    const res = gradeQuiz();
-    showSummary(res);
-    sendEmail(res);
+    state.user = { username: account.username, fullName: account.fullName || account.username };
+    localStorage.setItem("quiz_user", JSON.stringify(state.user));
+  
+    initQuiz(); // defined in app.js
   }
   
-  window.addEventListener("DOMContentLoaded", init);
+  function logout() {
+    localStorage.removeItem("quiz_user");
+    location.reload();
+  }
+  
+  // Kick off authentication flow
+  window.addEventListener("DOMContentLoaded", initAuth);
   
