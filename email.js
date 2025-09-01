@@ -40,7 +40,7 @@ function initEmail() {
     .then(() => {
       alert("✅ Results emailed successfully!");
       localStorage.setItem("quizTaken" + state.user, "true");
-      window.close();
+      logout(); // defined in auth.js
     })
     .catch(err => {
       console.error("❌ Email failed:", err);
