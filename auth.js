@@ -14,6 +14,7 @@ async function initAuth() {
       state.user = JSON.parse(localStorage.getItem("quiz_user"));
       if(localStorage.getItem("quizTaken" + state.user) === "true") {
         alert("You already took the quiz!");
+        renderLogin();
         return;
      }
       initQuiz(); // defined in app.js
@@ -68,7 +69,11 @@ async function initAuth() {
       alert("Invalid username or password.");
       return;
     }
-    
+    if(localStorage.getItem("quizTaken" + state.user) === "true") {
+        alert("You already took the quiz!");
+        renderLogin();
+        return;
+     }
   
     state.user = { username: account.username, fullName: account.fullName || account.username };
     localStorage.setItem("quiz_user", JSON.stringify(state.user));

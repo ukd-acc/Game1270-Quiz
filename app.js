@@ -43,5 +43,7 @@ function onSubmit() {
   state.endTime = new Date();
   const res = gradeQuiz();
   showSummary(res);
-  sendResultsByEmail(res);
+  //sendResultsByEmail(res);
+  localStorage.setItem("quizTaken" + state.user, "true");
+  logout(); // defined in auth.js
 }
