@@ -70,7 +70,7 @@ async function initAuth() {
       return;
     }
 
-    if(localStorage.getItem("quizTaken" + state.user) === "true") {
+    if(localStorage.setItem(state.settings.quizid + state.user) === "true") {
         alert("You already took the quiz!");
         return;
      }

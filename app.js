@@ -44,6 +44,6 @@ function onSubmit() {
   const res = gradeQuiz();
   showSummary(res);
   //sendResultsByEmail(res);
-  localStorage.setItem(state.settings.quiz.title + state.user, "true");
+  localStorage.setItem(state.settings.quizid + state.user, "true");
   logout(); // defined in auth.js
 }
