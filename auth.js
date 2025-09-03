@@ -9,7 +9,7 @@ async function initAuth() {
       state.users = await loadJSON("users.sample.json");
     }
     
-    // If already logged in, go to quiz directly
+    /*// If already logged in, go to quiz directly
     if (localStorage.getItem("quiz_user")) {
       state.user = JSON.parse(localStorage.getItem("quiz_user"));
       if(localStorage.getItem("quizTaken" + state.user) === "true") {
@@ -18,9 +18,9 @@ async function initAuth() {
         return;
      }
       initQuiz(); // defined in app.js
-    } else {
-      renderLogin();
-    }
+    } else {*/
+    renderLogin();
+    //}
   }
   
   function renderLogin() {
@@ -69,9 +69,9 @@ async function initAuth() {
       alert("Invalid username or password.");
       return;
     }
+
     if(localStorage.getItem("quizTaken" + state.user) === "true") {
         alert("You already took the quiz!");
-        renderLogin();
         return;
      }
   
