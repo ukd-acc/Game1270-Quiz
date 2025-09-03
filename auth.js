@@ -24,7 +24,7 @@ async function initAuth() {
   }
   
   function renderLogin() {
-    document.body.innerHTML = `
+    qs("#app").innerHTML = `
       <div class="container login">
         <div class="card">
           <div class="header">
