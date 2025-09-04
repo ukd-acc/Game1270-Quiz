@@ -8,7 +8,8 @@ async function initAuth() {
     } catch (_) {
       state.users = await loadJSON("users.sample.json");
     }
-    
+    state.settings = await loadJSON("settings.json");
+
     /*// If already logged in, go to quiz directly
     if (localStorage.getItem("quiz_user")) {
       state.user = JSON.parse(localStorage.getItem("quiz_user"));

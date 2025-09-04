@@ -2,7 +2,6 @@ async function initQuiz() {
   
   state.startTime = new Date();
   // Load settings.json (tells us which quiz files to load)
-  state.settings = await loadJSON("settings.json");
   state.quiz = { title: state.settings.title, sections: [] };
 
   // Load each section
