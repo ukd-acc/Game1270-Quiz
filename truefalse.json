@@ -27,6 +27,12 @@
     {
       "question": "Consoles are always sold for a large profit.",
       "answer": false
+    },
+    {
+      "question": "The first console with cartridges was the Atari 2600.",
+      "answer": false
     }
+
+    
   ]
 }

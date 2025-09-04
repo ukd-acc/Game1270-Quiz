@@ -33,8 +33,9 @@ function renderQuiz() {
   state.quiz.sections.forEach(sec => {
     if (sec.type === "matching") sectionsEl.appendChild(renderMatchingSection(sec));
     if (sec.type === "true_false") sectionsEl.appendChild(renderTFSection(sec));
+    if (sec.type === "matching_pictures") sectionsEl.appendChild(renderMatchingPicturesSection(sec));
   });
-
+  
   qs("#submitBtn").addEventListener("click", onSubmit);
 }
 

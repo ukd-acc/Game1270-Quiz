@@ -1,0 +1,54 @@
+{
+    "type": "matching_pictures",
+    "title": "Match the Faces (1 point each)",
+    "instructions": "Select the correct name for each picture.",
+    "points_per_question": 1,
+    "prompts": [
+      {
+        "image": "images/Atari",
+        "question": "What company has this logo?",
+        "answer": "Atari"
+      },
+      {
+        "image": "images/JerryLawson.jpg",
+        "question": "Who is this person?",
+        "answer": "Jerry Lawson, inventor of the cartridge-based console"
+      },
+      {
+        "image": "images/CarolShaw.jpg",
+        "question": "Who is this person?",
+        "answer": "Carol Shaw, inventor of River Raid"
+      },
+      {
+        "image": "images/UtsabDas.jpg",
+        "question": "Who is this person?",
+        "answer": "Utsab Das, some jerk who made this quiz"
+      },
+      {
+        "image": "images/ValveIndex.jpg",
+        "question": "What console is this?",
+        "answer": "The Valve Index"
+      },
+      {
+        "image": "images/VirtualBoy.jpg",
+        "question": "What console is this?",
+        "answer": "The Virtual Boy"
+      }
+    ],
+    "word_bank": [
+      { "text": "Atari" },
+      { "text": "Jerry Lawson, inventor of the cartridge-based console" },
+      { "text": "Carol Shaw, inventor of River Raid" },
+      { "text": "Utsab Das, some jerk who made this quiz" },
+      { "text": "Garry Gaber, department chair of GDAMG"},
+      { "text": "The Valve Index" },
+      { "text": "The Virtual Boy" },
+      { "text": "Nintendo" },
+      { "text": "Sega" },
+      { "text": "Sony" },
+      { "text": "Microsoft" },
+      { "text": "The Oculus Rift" },
+      { "text": "The HTC Vive" }
+    ]
+  }
+  

@@ -7,9 +7,9 @@ function gradeQuiz() {
         section.prompts.forEach((q, idx) => {
           total += section.points_per_question;
           const studentAnswer = state.answers[`matching-${idx}`];
-          if (studentAnswer && studentAnswer.toUpperCase() === q.answer.toUpperCase()) {
+          if (studentAnswer && studentAnswer === q.answer) {
             points += section.points_per_question;
-          }
+          }          
         });
       }
       if (section.type === "true_false") {
@@ -21,6 +21,16 @@ function gradeQuiz() {
           }
         });
       }
+      if (section.type === "matching_pictures") {
+        section.prompts.forEach((q, idx) => {
+          total += section.points_per_question;
+          const studentAnswer = state.answers[`matching_pictures-${idx}`];
+          if (studentAnswer && studentAnswer === q.answer) {
+            points += section.points_per_question;
+          }
+        });
+      }
+      
     });
   
     return { points, total, percent: Math.round((points/total)*100) };
