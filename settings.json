@@ -5,7 +5,8 @@
   "logo": "acc_logo.png",
   "sections": [
     { "file": "matching.json" },
-    { "file": "truefalse.json" }
+    { "file": "truefalse.json" },
+    { "file": "matching_pictures.json" }
   ],
   "emailRecipients": [
     "utsab.das@austincc.edu"
