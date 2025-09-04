@@ -244,8 +244,10 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 }
 
 .prompt-image {
-  max-width: 120px;
-  height: auto;
+  height: 120px;         /* force same height */
+  width: auto;           /* preserve aspect ratio */
+  object-fit: cover;     /* crop if necessary to fill box */
   border-radius: 8px;
   margin-bottom: 8px;
 }
+

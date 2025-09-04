@@ -5,7 +5,7 @@
     "points_per_question": 1,
     "prompts": [
       {
-        "image": "images/Atari",
+        "image": "images/Atari.jpg",
         "question": "What company has this logo?",
         "answer": "Atari"
       },
