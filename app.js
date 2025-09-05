@@ -18,11 +18,15 @@ async function initQuiz() {
 function renderQuiz() {
   const app = qs("#app");
   app.innerHTML = `
+    <!-- floating timer (independent of quiz card) -->
+    <div id="timerContainer">
+      <div id="timer" class="timer">00:00</div>
+      <button id="toggleTimerBtn" class="secondary">Hide Timer</button>
+    </div>
+
     <div class="container">
       <div class="card">
         <h1>${state.quiz.title}</h1>
-        <button id="toggleTimerBtn" class="secondary">Hide Timer</button>
-        <div id="timer" class="timer">00:00</div>
         <div id="sections"></div>
         <hr/>
         <button id="submitBtn">Submit Quiz</button>
@@ -69,7 +73,6 @@ function startTimer() {
   update();
   state.timerInterval = setInterval(update, 1000);
 }
-
 
 function onSubmit() {
   state.endTime = new Date();
