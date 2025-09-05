@@ -15,7 +15,7 @@ async function initApp() {
   // init auth (users)
   await initAuth();
 
- 
+  initEmail();
   renderLogin();
   
 }

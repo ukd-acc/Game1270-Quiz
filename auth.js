@@ -45,7 +45,7 @@ async function initAuth() {
     `;
     qs("#loginBtn").addEventListener("click", onLogin);
     qs("#showHelp").addEventListener("click", () => {
-      alert("Passwords are in users.json (or users.sample.json).");
+      alert("Get your password from your instructor.");
     });
   }
   
@@ -58,20 +58,12 @@ async function initAuth() {
       alert("Invalid username or password.");
       return;
     }
-
-    if(localStorage.getItem(state.settings.quizid + state.user) === "true") {
-        alert("You already took the quiz!");
-        return;
-     }
-  
     state.user = { username: account.username, fullName: account.fullName || account.username };
-    localStorage.setItem("quiz_user", JSON.stringify(state.user));
-        
-    initQuiz(); // defined in app.js
+    initQuiz(); 
   }
   
   function logout() {
-    localStorage.removeItem("quiz_user");
+    state.user = null;
     location.reload();
   }
   
