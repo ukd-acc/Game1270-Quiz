@@ -5,19 +5,11 @@
   "points_per_question": 1,
   "questions": [
     {
-      "question": "CPU stands for Computer Programming Unit.",
-      "answer": false
-    },
-    {
       "question": "Xbox Series X, PlayStation 5 and Switch are PC platforms.",
       "answer": false
     },
     {
       "question": "The Birth and Success of Electronic Gaming was driven by game players demanding better graphics, better audio and more processing power.",
-      "answer": true
-    },
-    {
-      "question": "8-bit refers to the amount of data transferred during each read and write of computer memory.",
       "answer": true
     },
     {
@@ -27,12 +19,6 @@
     {
       "question": "Consoles are always sold for a large profit.",
       "answer": false
-    },
-    {
-      "question": "The first console with cartridges was the Atari 2600.",
-      "answer": false
-    }
-
-    
+    }  
   ]
 }

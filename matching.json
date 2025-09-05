@@ -17,10 +17,6 @@
       "answer": "Milton Bradley"
     },
     {
-      "question": "What does D&D stand for?",
-      "answer": "Dungeons and Dragons"
-    },
-    {
       "question": "The name of the first true game designed to be played on a computer in 1961?",
       "answer": "Spacewar"
     },
@@ -33,14 +29,6 @@
       "answer": "Pac-Man"
     },
     {
-      "question": "What was the VCS later renamed to?",
-      "answer": "Atari 2600"
-    },
-    {
-      "question": "What was Activision’s first game released in 1982?",
-      "answer": "Pitfall"
-    },
-    {
       "question": "What was Atari’s first big game hit?",
       "answer": "Pong"
     },
@@ -49,20 +37,8 @@
       "answer": "The Rise of the Arcades"
     },
     {
-      "question": "The years of 1983 – 1985 for Electronic Gaming?",
-      "answer": "Crash and Recovery"
-    },
-    {
-      "question": "Violence in videogames triggered?",
-      "answer": "ESRB"
-    },
-    {
       "question": "The first home video game system?",
       "answer": "Odyssey"
-    },
-    {
-      "question": "One of the reasons why we play games?",
-      "answer": "Learn Something"
     }
   ],
   "word_bank": [
@@ -77,7 +53,6 @@
     { "text": "Pac-Man" },
     { "text": "Pitfall" },
     { "text": "Milton Bradley" },
-    { "text": "Atari 2600" },
     { "text": "Senet and Ur" },
     { "text": "Pong" },
     { "text": "Spacewar" },
