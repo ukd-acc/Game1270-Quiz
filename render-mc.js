@@ -3,13 +3,13 @@ function renderMCSection(section) {
     const wrapper = document.createElement("div");
     wrapper.className = "section multiple-choice";
     wrapper.innerHTML = `<h2>${section.title}</h2><p>${section.instructions}</p>`;
-    const prompts = shuffleArray(section.prompts);
-    prompts.forEach((q, idx) => {
+  
+    section.prompts.forEach((q, idx) => {
       const div = document.createElement("div");
       div.className = "mc-row";
       div.innerHTML = `<p>${idx + 1}. ${q.question}</p>`;
-      const answers = shuffleArray(q.answers); 
-      answers.forEach(ans => {
+  
+      q.answers.forEach(ans => {
         const label = document.createElement("label");
         label.className = "mc-option";
   

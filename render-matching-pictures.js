@@ -4,8 +4,7 @@ function renderMatchingPicturesSection(section) {
     wrapper.className = "matching-section";
     wrapper.innerHTML = `<h2>${section.title}</h2><p>${section.instructions}</p>`;
   
-    const prompts = shuffleArray(section.prompts);
-    prompts.forEach((q, idx) => {
+    section.prompts.forEach((q, idx) => {
       const row = document.createElement("div");
       row.className = "prompt-row";
   
