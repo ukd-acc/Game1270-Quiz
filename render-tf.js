@@ -1,34 +1,48 @@
 /* ---------- TRUE/FALSE SECTION ---------- */
 function renderTFSection(section) {
-  const wrapper = document.createElement("div");
-  wrapper.className = "section truefalse";
-  wrapper.innerHTML = `<h2>${section.title}</h2><p>${section.instructions}</p>`;
-
-  const questions = shuffleArray(section.questions);
-
-  questions.forEach((q, idx) => {
-    const div = document.createElement("div");
-    div.className = "tf-row";
-    div.innerHTML = `<p>${idx + 1}. ${q.question}</p>`;
-
-    const tfOptions = shuffleArray([
-      { label: "True", value: true },
-      { label: "False", value: false }
-    ]);
-
-    tfOptions.forEach(opt => {
-      const input = document.createElement("input");
-      input.type = "radio";
-      input.name = q.qid;     // radio group name = stable qid
-      input.value = String(opt.value);
-      input.onchange = () => (state.answers[q.qid] = opt.value === true);
-
-      div.appendChild(input);
-      div.appendChild(document.createTextNode(" " + opt.label + " "));
+    const wrapper = document.createElement("div");
+    wrapper.className = "section truefalse";
+    wrapper.innerHTML = `<h2>${section.title}</h2><p>${section.instructions}</p>`;
+  
+    const questions = shuffleArray(section.questions);
+    questions.forEach((q, idx) => {
+      const row = document.createElement("div");
+      row.className = "tf-row";
+      
+      const text = document.createElement("div");
+      text.textContent = `${idx + 1}. ${q.question}`;
+  
+      const answers = document.createElement("div");
+      answers.className = "answers";
+  
+      // "True" radio
+      const trueLabel = document.createElement("label");
+      const trueInput = document.createElement("input");
+      trueInput.type = "radio";
+      trueInput.name = `tf-${idx}`;
+      trueInput.value = "true";
+      trueInput.onchange = () => state.answers[`tf-${idx}`] = true;
+      trueLabel.appendChild(trueInput);
+      trueLabel.appendChild(document.createTextNode(" True"));
+  
+      // "False" radio
+      const falseLabel = document.createElement("label");
+      const falseInput = document.createElement("input");
+      falseInput.type = "radio";
+      falseInput.name = `tf-${idx}`;
+      falseInput.value = "false";
+      falseInput.onchange = () => state.answers[`tf-${idx}`] = false;
+      falseLabel.appendChild(falseInput);
+      falseLabel.appendChild(document.createTextNode(" False"));
+  
+      answers.appendChild(trueLabel);
+      answers.appendChild(falseLabel);
+  
+      row.appendChild(text);
+      row.appendChild(answers);
+      wrapper.appendChild(row);
     });
-
-    wrapper.appendChild(div);
-  });
-
-  return wrapper;
-}
+  
+    return wrapper;
+  }
+  
