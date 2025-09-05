@@ -25,11 +25,6 @@
         "answer": "Utsab Das, some jerk who made this quiz"
       },
       {
-        "image": "images/ValveIndex.jpg",
-        "question": "What console is this?",
-        "answer": "The Valve Index"
-      },
-      {
         "image": "images/VirtualBoy.jpg",
         "question": "What console is this?",
         "answer": "The Virtual Boy"
@@ -41,13 +36,9 @@
       { "text": "Carol Shaw, inventor of River Raid" },
       { "text": "Utsab Das, some jerk who made this quiz" },
       { "text": "Garry Gaber, department chair of GDAMG"},
-      { "text": "The Valve Index" },
+      { "text": "Nolan Bushnell, founder of Atari"},
       { "text": "The Virtual Boy" },
-      { "text": "Nintendo" },
-      { "text": "Sega" },
-      { "text": "Sony" },
-      { "text": "Microsoft" },
-      { "text": "The Oculus Rift" },
+      { "text": "The Eye Bot" },
       { "text": "The HTC Vive" }
     ]
   }
