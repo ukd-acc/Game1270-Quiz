@@ -7,12 +7,29 @@ function shuffleArray(arr) {
   return a;
 }
 
+// app.js
+async function initApp() {
+  // load settings once
+  state.settings = await loadJSON("settings.json");
+
+  // init auth (users)
+  await initAuth();
+
+ 
+  renderLogin();
+  
+}
+
+window.addEventListener("DOMContentLoaded", initApp);
+
+
 async function initQuiz() {
   state.settings = await loadJSON("settings.json");
   state.quiz = { title: state.settings.title, sections: [] };
+  const quizFolder = state.settings.quizFolder;
 
   for (const secMeta of state.settings.sections) {
-    const sec = await loadJSON(secMeta.file);
+    const sec = await loadJSON(`${quizFolder}/${secMeta.file}`);
 
     // shuffle once here
     if (sec.type === "matching") {

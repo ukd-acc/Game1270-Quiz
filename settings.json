@@ -1,17 +1,20 @@
 {
   "quizId": "GAME1270-Quiz1",
-  "title": "GAME 1270: Introduction to Game Design and Development Quiz #1",
+  "title": "GAME 1270: Introduction to Game Design and Development – Quiz #1",
   "course": "Introduction to Game Design and Development",
   "logo": "acc_logo.png",
+
+  "quizFolder": "Game1270-Quiz1",
+  "userFolder": "Game1270-Fall2025-03",
+
   "sections": [
     { "file": "matching.json" },
+    { "file": "multiple_choice.json" },
     { "file": "truefalse.json" },
-    { "file": "matching_pictures.json" },
-    { "file": "multiple_choice.json" }
+    { "file": "multiple_choice_qf.json" }
   ],
-  "emailRecipients": [
-    "utsab.das@austincc.edu"
-  ],
+
+  "emailRecipients": ["utsab.das@austincc.edu"],
   "emailProvider": "emailjs",
   "emailConfig": {
     "serviceID": "service_l412vd9",

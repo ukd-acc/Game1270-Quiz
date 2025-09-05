@@ -3,26 +3,14 @@
 // Relies on email.js for email sending after submit.
 
 async function initAuth() {
-    try {
-      state.users = await loadJSON("users.json");
-    } catch (_) {
-      state.users = await loadJSON("users.sample.json");
-    }
-    state.settings = await loadJSON("settings.json");
-
-    /*// If already logged in, go to quiz directly
-    if (localStorage.getItem("quiz_user")) {
-      state.user = JSON.parse(localStorage.getItem("quiz_user"));
-      if(localStorage.getItem("quizTaken" + state.user) === "true") {
-        alert("You already took the quiz!");
-        renderLogin();
-        return;
-     }
-      initQuiz(); // defined in app.js
-    } else {*/
-    renderLogin();
-    //}
+  const userFolder = state.settings.userFolder;
+  try {
+    state.users = await loadJSON(`${userFolder}/users.json`);
+  } catch {
+    state.users = await loadJSON(`${userFolder}/users.sample.json`);
   }
+}
+
   
   function renderLogin() {
     qs("#app").innerHTML = `
