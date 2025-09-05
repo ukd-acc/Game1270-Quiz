@@ -4,10 +4,11 @@ function renderTFSection(section) {
     wrapper.className = "section truefalse";
     wrapper.innerHTML = `<h2>${section.title}</h2><p>${section.instructions}</p>`;
   
-    section.questions.forEach((q, idx) => {
+    const questions = shuffleArray(section.questions);
+    questions.forEach((q, idx) => {
       const row = document.createElement("div");
       row.className = "tf-row";
-  
+      
       const text = document.createElement("div");
       text.textContent = `${idx + 1}. ${q.question}`;
   

@@ -3,8 +3,9 @@ function renderMatchingSection(section) {
     const wrapper = document.createElement("div");
     wrapper.className = "matching-section";
     wrapper.innerHTML = `<h2>${section.title}</h2><p>${section.instructions}</p>`;
-  
-    section.prompts.forEach((q, idx) => {
+    
+    const prompts = shuffleArray(section.prompts);
+    prompts.forEach((q, idx) => {
       const row = document.createElement("div");
       row.className = "prompt-row";
   
