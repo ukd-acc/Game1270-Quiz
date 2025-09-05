@@ -66,7 +66,3 @@ async function initAuth() {
     state.user = null;
     location.reload();
   }
-  
-  // Kick off authentication flow
-  window.addEventListener("DOMContentLoaded", initAuth);
-  
