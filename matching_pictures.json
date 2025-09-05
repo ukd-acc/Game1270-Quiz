@@ -1,6 +1,6 @@
 {
     "type": "matching_pictures",
-    "title": "Match the Faces (1 point each)",
+    "title": "Match the Pictures (1 point each)",
     "instructions": "Select the correct name for each picture.",
     "points_per_question": 1,
     "prompts": [

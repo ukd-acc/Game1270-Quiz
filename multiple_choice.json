@@ -11,33 +11,33 @@
     },
     {
       "question": "Which of the following was not a cause of the video game crash of 1983?",
-      "answer": ["Minimal quality control on games", "An abundance of different consoles", "The Famicom (or NES) was released", "The rise of Personal Computers (PCs)"],
+      "answers": ["Minimal quality control on games", "An abundance of different consoles", "The Famicom (or NES) was released", "The rise of Personal Computers (PCs)"],
       "correct_answer": "The Famicom (or NES) was released"
     },
     {
       "question": "Why do people play games?",
-      "answer": ["To learn something", "To waste time", "To be bored", "To be antisocial"],
+      "answers": ["To learn something", "To waste time", "To be bored", "To be antisocial"],
       "correct_answer": "To learn something"
     },
     {
       "question": "Which of the following was not in the console wars of the 1990s?",
-      "answer": ["Nintendo", "Sega ", "Xbox", "Playstation"],
+      "answers": ["Nintendo", "Sega ", "Xbox", "Playstation"],
       "correct_answer": "Xbox"
     },
     {
       "question": "What was the earliest version of a Monopoly-like game and why was it made?",
-      "answer": ["The Landlord's Game, to teach people how to enhance their wealth", "Auction Monopoly, as an entertaining simulation of wealthy landowners", 
+      "answers": ["The Landlord's Game, to teach people how to enhance their wealth", "Auction Monopoly, as an entertaining simulation of wealthy landowners", 
       "The Landlord's Game, to teach the consequences of land monopolies and how renting increased the wealth gap", "Auciton Monopoly, to teach people how to enhance their wealth"],
       "correct_answer": "The Landlord's Game, to teach the consequences of land monopolies and how renting increased the wealth gap"
     },
     {
       "question": "What did Nintendo initially make?",
-      "answer": ["Hanafuda Cards", "Arcade cabinets", "Board games", "Video game consoles"],
+      "answers": ["Hanafuda Cards", "Arcade cabinets", "Board games", "Video game consoles"],
       "correct_answer": "Hanafuda cards"
     },
     {
       "question": "Why was the Entertainment Software Rating Board (ESRB) created?",
-      "answer": ["To help parents make informed choices about video game content", "To censor violent video games", "To promote educational video games", "To rate the quality of video games"],
+      "answers": ["To help parents make informed choices about video game content", "To censor violent video games", "To promote educational video games", "To rate the quality of video games"],
       "correct_answer": "To help parents make informed choices about video game content"
     }
   ]
