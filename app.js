@@ -1,3 +1,12 @@
+function shuffleArray(arr) {
+  const a = [...arr]; // copy
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 async function initQuiz() {
   
   state.startTime = new Date();
@@ -36,6 +45,15 @@ function renderQuiz() {
 
   // Sections
   const sectionsEl = qs("#sections");
+  state.quiz.sections.forEach(sec => {
+    sec.prompts = shuffleArray(sec.prompts);
+    if(sec.type === "multiple_choice") {
+      sec.prompts.forEach(p => {
+        p.answers = shuffleArray(p.answers);
+      });
+    }
+  });
+  
   state.quiz.sections.forEach(sec => {
     if (sec.type === "matching") sectionsEl.appendChild(renderMatchingSection(sec));
     if (sec.type === "true_false") sectionsEl.appendChild(renderTFSection(sec));
