@@ -6,7 +6,8 @@
   "sections": [
     { "file": "matching.json" },
     { "file": "truefalse.json" },
-    { "file": "matching_pictures.json" }
+    { "file": "matching_pictures.json" },
+    { "file": "multiple_choice.json" }
   ],
   "emailRecipients": [
     "utsab.das@austincc.edu"
