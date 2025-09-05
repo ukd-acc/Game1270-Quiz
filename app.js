@@ -20,7 +20,6 @@ async function initApp() {
   
 }
 
-window.addEventListener("DOMContentLoaded", initApp);
 
 
 async function initQuiz() {
@@ -126,3 +125,5 @@ function onSubmit() {
   localStorage.setItem(state.settings.quizid + state.user, "true");
   logout(); // defined in auth.js
 }
+
+window.addEventListener("DOMContentLoaded", initApp);
