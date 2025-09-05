@@ -11,7 +11,7 @@
     { "file": "matching.json" },
     { "file": "multiple_choice.json" },
     { "file": "truefalse.json" },
-    { "file": "multiple_choice_qf.json" }
+    { "file": "matching_pictures.json" }
   ],
 
   "emailRecipients": ["utsab.das@austincc.edu"],
