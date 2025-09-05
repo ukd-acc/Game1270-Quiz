@@ -1,5 +1,5 @@
 function shuffleArray(arr) {
-  const a = [...arr]; // copy
+  const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
@@ -7,23 +7,47 @@ function shuffleArray(arr) {
   return a;
 }
 
+function norm(v) {
+  return typeof v === "string" ? v.trim().toLowerCase() : v;
+}
+
 
 async function initQuiz() {
-  
+  state.answers = {};                 // reset any old answers
   state.startTime = new Date();
-  // Load settings.json (tells us which quiz files to load)
+
+  state.settings = await loadJSON("settings.json");
   state.quiz = { title: state.settings.title, sections: [] };
 
-  // Load each section
-  for (const sec of state.settings.sections) {
-    const data = await loadJSON(sec.file);
-    state.quiz.sections.push(data);
+  const sections = [];
+  for (let sIdx = 0; sIdx < state.settings.sections.length; sIdx++) {
+    const secMeta = state.settings.sections[sIdx];
+    const sec = await loadJSON(secMeta.file);
+
+    // Give each question a stable qid we’ll use for state.answers and grading
+    if (sec.type === "matching") {
+      sec.prompts = sec.prompts.map((q, i) => ({ ...q, qid: `m-${sIdx}-${i}` }));
+    } else if (sec.type === "true_false") {
+      sec.questions = sec.questions.map((q, i) => ({ ...q, qid: `tf-${sIdx}-${i}` }));
+    } else if (sec.type === "multiple_choice") {
+      sec.prompts = sec.prompts.map((q, i) => ({
+        ...q,
+        qid: `mc-${sIdx}-${i}`,
+        // accept either `answers` or legacy `answer`
+        answers: q.answers || q.answer
+      }));
+    } else if (sec.type === "matching_pictures") {
+      sec.prompts = sec.prompts.map((q, i) => ({ ...q, qid: `mp-${sIdx}-${i}` }));
+    }
+
+    sections.push(sec);
   }
 
+  state.quiz.sections = sections;
   renderQuiz();
-    // After quiz loads
-  initEmail();
+  initEmail(); // if you’re reading email config from settings.json
 }
+
 
 function renderQuiz() {
   const app = qs("#app");
