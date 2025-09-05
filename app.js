@@ -8,19 +8,37 @@ function shuffleArray(arr) {
 }
 
 async function initQuiz() {
-  
-  state.startTime = new Date();
-  // Load settings.json (tells us which quiz files to load)
+  state.settings = await loadJSON("settings.json");
   state.quiz = { title: state.settings.title, sections: [] };
 
-  // Load each section
-  for (const sec of state.settings.sections) {
-    const data = await loadJSON(sec.file);
-    state.quiz.sections.push(data);
+  for (const secMeta of state.settings.sections) {
+    const sec = await loadJSON(secMeta.file);
+
+    // shuffle once here
+    if (sec.type === "matching") {
+      sec.prompts = shuffleArray(sec.prompts);
+      sec.word_bank = shuffleArray(sec.word_bank);   // shuffle dropdown answers
+    }
+    else if (sec.type === "true_false") {
+      sec.questions = shuffleArray(sec.questions);
+    }
+    else if (sec.type === "multiple_choice") {
+      sec.prompts = shuffleArray(sec.prompts);
+      // also shuffle the answer options for each question
+      sec.prompts.forEach(q => {
+        q.answers = shuffleArray(q.answers || q.answer); 
+      });
+    }
+    else if (sec.type === "matching_pictures") {
+      sec.prompts = shuffleArray(sec.prompts);
+      sec.word_bank = shuffleArray(sec.word_bank);
+    }
+
+    state.quiz.sections.push(sec);
   }
 
   renderQuiz();
-    // After quiz loads
+
   initEmail();
 }
 
@@ -45,15 +63,6 @@ function renderQuiz() {
 
   // Sections
   const sectionsEl = qs("#sections");
-  state.quiz.sections.forEach(sec => {
-    sec.prompts = shuffleArray(sec.prompts);
-    if(sec.type === "multiple_choice") {
-      sec.prompts.forEach(p => {
-        p.answers = shuffleArray(p.answers);
-      });
-    }
-  });
-  
   state.quiz.sections.forEach(sec => {
     if (sec.type === "matching") sectionsEl.appendChild(renderMatchingSection(sec));
     if (sec.type === "true_false") sectionsEl.appendChild(renderTFSection(sec));
