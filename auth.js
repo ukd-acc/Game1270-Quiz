@@ -1,7 +1,3 @@
-// auth.js
-// Handles login/logout only. Relies on app.js to load/render the quiz.
-// Relies on email.js for email sending after submit.
-
 async function initAuth() {
   const userFolder = state.settings.userFolder;
   try {
@@ -10,7 +6,6 @@ async function initAuth() {
     state.users = await loadJSON(`${userFolder}/users.sample.json`);
   }
 }
-
   
   function renderLogin() {
     qs("#app").innerHTML = `
