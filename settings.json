@@ -4,8 +4,8 @@
   "course": "Introduction to Game Design and Development",
   "logo": "acc_logo.png",
 
-  "quizFolder": "Game1270-Quiz1",
-  "userFolder": "Game1270-Fall2025-03",
+  "quizFolder": "Quiz1",
+  "userFolder": "Fall2025-03",
 
   "sections": [
     { "file": "matching.json" },
