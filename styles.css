@@ -264,55 +264,21 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 }
 
 .mc-row {
-  display: block !important;
-  width: 100% !important;
   margin-bottom: 16px;
-  padding: 12px;
+  padding: 10px;
   border-radius: 8px;
   background: #0f1736;
   border: 1px solid rgba(255,255,255,.08);
-  color: var(--text);
-}
-
-.mc-row p {
-  margin: 0 0 12px 0;
-  font-weight: 600;
-  text-align: left !important;
 }
 
 .mc-option {
-  all: unset;                     /* removes global label and inherited styles */
-  display: flex !important;       /* force flex layout */
-  flex-direction: row !important;
-  align-items: flex-start !important;
-  justify-content: flex-start !important;
-  gap: 8px !important;
-  margin: 6px 0 !important;
-  cursor: pointer !important;
-  width: 100% !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;              /* spacing between radio + text */
+  margin: 6px 0;
+  cursor: pointer;
+  font-size: 0.95rem;
 }
-
-.mc-option input[type="radio"] {
-  all: unset;                     /* remove inherited styling */
-  display: inline-block !important;
-  width: auto !important;
-  margin: 0 !important;
-  flex-shrink: 0 !important;
-  margin-top: 2px !important;
-}
-
-.mc-option span {
-  display: inline-block !important;
-  word-wrap: break-word !important;
-  color: var(--text) !important;
-  font-weight: 600 !important;
-}
-
-
-
-
-
-
 
 
 /* Floating timer in top-right */

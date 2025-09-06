@@ -12,22 +12,19 @@ function renderMCSection(section) {
       q.answers.forEach(ans => {
         const label = document.createElement("label");
         label.className = "mc-option";
-      
+  
         const input = document.createElement("input");
         input.type = "radio";
         input.name = `mc-${idx}`;
         input.value = ans;
         input.onchange = () => state.answers[`mc-${idx}`] = ans;
-      
-        const text = document.createElement("span");
-        text.textContent = ans;
-      
+  
+        // put input first, then text
         label.appendChild(input);
-        label.appendChild(text);
-      
+        label.appendChild(document.createTextNode(ans));
+  
         div.appendChild(label);
       });
-      
   
       wrapper.appendChild(div);
     });
@@ -35,3 +32,4 @@ function renderMCSection(section) {
     return wrapper;
   }
   
+    
