@@ -296,7 +296,6 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 
 .mc-option span {
   flex: 1;                     /* take up rest of the line */
-  word-break: break-word;      /* wrap long text */
 }
 
 
