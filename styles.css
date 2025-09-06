@@ -274,33 +274,33 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 }
 
 .mc-row p {
-  margin: 0 0 8px 0;
+  margin: 0 0 12px 0;
   font-weight: 600;
 }
 
 /* Each option sits on its own line */
 .mc-option {
   display: flex;
-  align-items: flex-start; /* align radio with first line of text */
+  align-items: flex-start; /* top-align radio with first line of text */
   gap: 8px;
   margin: 6px 0;
   cursor: pointer;
-  text-align: left;
   width: 100%;
 }
 
 /* Radio circle */
 .mc-option input[type="radio"] {
-  margin: 0;        /* no extra spacing */
-  flex-shrink: 0;   /* don't let radio shrink */
-  margin-top: 2px;  /* aligns with text top */
+  margin: 0;
+  flex-shrink: 0;
+  margin-top: 4px; /* aligns with top of first line */
 }
 
-/* Wrap long text nicely */
+/* Answer text */
 .mc-option span {
   display: inline-block;
   word-wrap: break-word;
 }
+
 
 
 
