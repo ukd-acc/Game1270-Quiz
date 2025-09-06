@@ -264,17 +264,22 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 }
 
 .mc-row {
+  margin-bottom: 16px;
+  padding: 10px;
+  border-radius: 8px;
   background: #0f1736;
   border: 1px solid rgba(255,255,255,.08);
-  border-radius: 12px;
-  padding: 10px;
-  margin-bottom: 8px;
 }
 
 .mc-option {
-  display: block;
-  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;              /* spacing between radio + text */
+  margin: 6px 0;
+  cursor: pointer;
+  font-size: 0.95rem;
 }
+
 
 /* Floating timer in top-right */
 #timerContainer {
