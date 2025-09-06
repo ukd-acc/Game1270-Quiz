@@ -264,22 +264,35 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 }
 
 .mc-option {
-  display: flex;           /* align radio + text horizontally */
-  align-items: center;     /* vertical centering */
-  gap: 8px;                /* spacing between button and text */
+  display: flex;              /* put radio + text in one row */
+  align-items: center;        /* vertically align */
+  justify-content: flex-start;/* keep content flush left */
+  gap: 8px;                   /* spacing between radio and text */
   margin: 6px 0;
   cursor: pointer;
-  text-align: left;        /* keep text aligned left */
-  font-weight: normal;     /* don’t bold all options */
-  color: var(--text);      /* match quiz text color */
+  width: 100%;                /* stretch label across container */
+  text-align: left;           /* text stays left aligned */
+  font-weight: normal;        /* don’t bold all answers */
+  color: var(--text);         /* match normal quiz text color */
 }
+
 .mc-option input[type="radio"] {
-  margin: 0;               /* kill browser’s default spacing */
-  flex-shrink: 0;          /* radio won’t shrink */
+  margin: 0;                  /* remove default spacing */
+  flex-shrink: 0;             /* prevent radio from shrinking */
+}
+
+.mc-row {
+  margin-bottom: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #0f1736;
+  border: 1px solid rgba(255,255,255,.08);
 }
 
 .mc-row p {
-  margin-bottom: 8px;
+  margin: 0 0 8px 0;     /* no top margin, 8px below */
+  font-weight: 600;      /* make the question stand out */
+  color: var(--text);    /* consistent with rest of text */
 }
 
 
