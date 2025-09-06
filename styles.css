@@ -265,7 +265,7 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 
 .mc-option {
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: flex-start;
   gap: 8px;
   margin: 6px 0;
