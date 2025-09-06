@@ -263,30 +263,8 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   z-index: 9999;         
 }
 
-.mc-option {
-  display: inline-flex;        /* shrink-wraps to content instead of filling 100% */
-  align-items: center;         /* keep radio + first line of text aligned */
-  gap: 8px;                    /* spacing between radio and text */
-  margin: 6px 0;
-  cursor: pointer;
-  text-align: left;            /* keep text aligned left */
-  width: auto;                 /* don't stretch across container */
-  max-width: 100%;             /* still respect parent width */
-}
-
-.mc-option input[type="radio"] {
-  margin: 0;
-  flex-shrink: 0;              /* radio won't shrink */
-}
-
-.mc-option span {
-  display: inline-block;
-  word-break: break-word;      /* allows long text to wrap nicely */
-}
-
-
 .mc-row {
-  display: block;        /* don’t let grid/flex split it into columns */
+  display: block;
   margin-bottom: 16px;
   padding: 12px;
   border-radius: 8px;
@@ -294,12 +272,33 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   border: 1px solid rgba(255,255,255,.08);
 }
 
-
 .mc-row p {
-  margin: 0 0 8px 0;     /* no top margin, 8px below */
-  font-weight: 600;      /* make the question stand out */
-  color: var(--text);    /* consistent with rest of text */
+  margin: 0 0 8px 0;
+  font-weight: 600;
+  color: var(--text);
 }
+
+/* Each option sits on its own line */
+.mc-option {
+  display: flex;               /* keep radio + text in a row */
+  align-items: flex-start;     /* align top of radio with top of text */
+  gap: 8px;
+  margin: 6px 0;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;                 /* fill width so wrapping is clean */
+}
+
+.mc-option input[type="radio"] {
+  margin-top: 2px;             /* aligns circle with first text line */
+  flex-shrink: 0;              /* keep radio fixed */
+}
+
+.mc-option span {
+  flex: 1;                     /* take up rest of the line */
+  word-break: break-word;      /* wrap long text */
+}
+
 
 
 
