@@ -278,28 +278,28 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   font-weight: 600;
 }
 
-/* Each option sits on its own line */
 .mc-option {
-  display: flex;
-  align-items: flex-start; /* top-align radio with first line of text */
-  gap: 8px;
-  margin: 6px 0;
-  cursor: pointer;
-  width: 100%;
+  display: flex !important;          /* force flex */
+  flex-direction: row !important;    /* ensure horizontal */
+  align-items: flex-start !important;/* top-align radio with text */
+  justify-content: flex-start !important;
+  gap: 8px !important;
+  margin: 6px 0 !important;
+  cursor: pointer !important;
+  width: 100% !important;
 }
 
-/* Radio circle */
 .mc-option input[type="radio"] {
-  margin: 0;
-  flex-shrink: 0;
-  margin-top: 4px; /* aligns with top of first line */
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+  margin-top: 2px !important;       /* fine-tunes vertical alignment */
 }
 
-/* Answer text */
 .mc-option span {
-  display: inline-block;
-  word-wrap: break-word;
+  display: inline-block !important;
+  word-wrap: break-word !important;
 }
+
 
 
 
