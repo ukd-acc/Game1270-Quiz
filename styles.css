@@ -264,17 +264,45 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 }
 
 .mc-row {
+  display: block;
+  margin-bottom: 16px;
+  padding: 12px;
+  border-radius: 8px;
   background: #0f1736;
   border: 1px solid rgba(255,255,255,.08);
-  border-radius: 12px;
-  padding: 10px;
-  margin-bottom: 8px;
 }
 
-.mc-option {
-  display: block;
-  margin: 4px 0;
+.mc-row p {
+  margin: 0 0 8px 0;
+  font-weight: 600;
+  color: var(--text);
 }
+
+/* Each option sits on its own line */
+.mc-option {
+  display: flex;               /* keep radio + text in a row */
+  align-items: flex-start;     /* align top of radio with top of text */
+  gap: 8px;
+  margin: 6px 0;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;                 /* fill width so wrapping is clean */
+}
+
+.mc-option input[type="radio"] {
+  margin-top: 2px;             /* aligns circle with first text line */
+  flex-shrink: 0;              /* keep radio fixed */
+}
+
+.mc-option span {
+  flex: 1;                     /* take up rest of the line */
+  word-break: break-word;      /* wrap long text */
+}
+
+
+
+
+
 
 /* Floating timer in top-right */
 #timerContainer {

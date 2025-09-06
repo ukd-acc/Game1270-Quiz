@@ -1,7 +1,7 @@
 /* ---------- MULTIPLE CHOICE SECTION ---------- */
 function renderMCSection(section) {
     const wrapper = document.createElement("div");
-    wrapper.className = "section multiple-choice";
+    wrapper.className = "section multiplechoice";
     wrapper.innerHTML = `<h2>${section.title}</h2><p>${section.instructions}</p>`;
   
     section.prompts.forEach((q, idx) => {
@@ -17,11 +17,16 @@ function renderMCSection(section) {
         input.type = "radio";
         input.name = `mc-${idx}`;
         input.value = ans;
-  
         input.onchange = () => state.answers[`mc-${idx}`] = ans;
   
+        // Wrap answer text in span
+        const text = document.createElement("span");
+        text.textContent = ans;
+  
+        // Order: ( ) then text
         label.appendChild(input);
-        label.appendChild(document.createTextNode(ans));
+        label.appendChild(text);
+  
         div.appendChild(label);
       });
   
