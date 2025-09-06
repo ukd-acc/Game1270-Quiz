@@ -264,16 +264,14 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 }
 
 .mc-option {
-  display: flex;              /* put radio + text in one row */
-  align-items: center;        /* vertically align */
-  justify-content: flex-start;/* keep content flush left */
-  gap: 8px;                   /* spacing between radio and text */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
   margin: 6px 0;
   cursor: pointer;
-  width: 100%;                /* stretch label across container */
-  text-align: left;           /* text stays left aligned */
-  font-weight: normal;        /* don’t bold all answers */
-  color: var(--text);         /* match normal quiz text color */
+  width: 100%;
+  text-align: left;
 }
 
 .mc-option input[type="radio"] {
@@ -282,12 +280,14 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 }
 
 .mc-row {
+  display: block;        /* don’t let grid/flex split it into columns */
   margin-bottom: 16px;
   padding: 12px;
   border-radius: 8px;
   background: #0f1736;
   border: 1px solid rgba(255,255,255,.08);
 }
+
 
 .mc-row p {
   margin: 0 0 8px 0;     /* no top margin, 8px below */
