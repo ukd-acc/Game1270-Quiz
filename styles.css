@@ -280,24 +280,26 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 
 /* Each option sits on its own line */
 .mc-option {
-  display: flex;               /* keep radio + text in a row */
-  align-items: center;     /* align top of radio with top of text */
+  display: flex;           /* keep radio + text in a row */
+  align-items: flex-start; /* align radio with top of text */
   gap: 8px;
   margin: 6px 0;
   cursor: pointer;
   text-align: left;
-  width: 100%;                 /* fill width so wrapping is clean */
+  width: 100%;
 }
 
+/* Radio circle */
 .mc-option input[type="radio"] {
-  margin: 0;             /* aligns circle with first text line */
+  margin-top: 4px; /* nudges circle slightly to align with first text line */
+  flex-shrink: 0;  /* prevents shrinking */
 }
 
-.mc-option span {
-  flex: 1;                     /* take up rest of the line */
+/* Optional: wrap text nicely if long */
+.mc-option label {
+  display: flex;
+  align-items: flex-start;
 }
-
-
 
 
 
