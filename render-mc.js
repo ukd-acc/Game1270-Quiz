@@ -19,13 +19,10 @@ function renderMCSection(section) {
         input.value = ans;
         input.onchange = () => state.answers[`mc-${idx}`] = ans;
   
-        // Wrap answer text in span
-        const text = document.createElement("span");
-        text.textContent = ans;
-  
         // Order: ( ) then text
-        label.appendChild(text);
         label.appendChild(input);
+        label.appendChild(document.createTextNode(ans));
+
 
   
         div.appendChild(label);
