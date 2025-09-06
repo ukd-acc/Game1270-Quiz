@@ -5,7 +5,7 @@
   "points_per_question": 1,
   "prompts": [
     {
-      "question": "What are the names of the oldest games ever found?",
+      "question": "What are the names of some of the oldest games ever found?",
       "answer": "Senet and Ur"
     },
     {
@@ -38,18 +38,18 @@
     },
     {
       "question": "The first home video game system?",
-      "answer": "Odyssey"
+      "answer": "Magnavox Odyssey"
     }
   ],
   "word_bank": [
     { "text": "ESRB" },
     { "text": "Atari" },
-    { "text": "The Rise of the Arcades" },
+    { "text": "The Rise of Arcades Machines" },
     { "text": "Nintendo" },
     { "text": "Learn Something" },
     { "text": "Go" },
-    { "text": "Odyssey" },
-    { "text": "Crash and Recovery" },
+    { "text": "Magnavox Odyssey" },
+    { "text": "Crash and Recovery of the Game Industry" },
     { "text": "Pac-Man" },
     { "text": "Pitfall" },
     { "text": "Milton Bradley" },
