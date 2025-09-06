@@ -264,20 +264,26 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 }
 
 .mc-option {
-  display: flex;
-  align-items: left;
-  justify-content: flex-start;
-  gap: 8px;
+  display: inline-flex;        /* shrink-wraps to content instead of filling 100% */
+  align-items: center;         /* keep radio + first line of text aligned */
+  gap: 8px;                    /* spacing between radio and text */
   margin: 6px 0;
   cursor: pointer;
-  width: 100%;
-  text-align: left;
+  text-align: left;            /* keep text aligned left */
+  width: auto;                 /* don't stretch across container */
+  max-width: 100%;             /* still respect parent width */
 }
 
 .mc-option input[type="radio"] {
-  margin: 0;                  /* remove default spacing */
-  flex-shrink: 0;             /* prevent radio from shrinking */
+  margin: 0;
+  flex-shrink: 0;              /* radio won't shrink */
 }
+
+.mc-option span {
+  display: inline-block;
+  word-break: break-word;      /* allows long text to wrap nicely */
+}
+
 
 .mc-row {
   display: block;        /* don’t let grid/flex split it into columns */
