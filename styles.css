@@ -263,19 +263,23 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   z-index: 9999;         
 }
 
-.mc-option {
-  display: flex;           /* align radio + text */
-  align-items: center;
-  gap: 8px;                /* space between radio and text */
-  margin: 6px 0;
-  cursor: pointer;
-  width: 100%;             /* full width of container */
-  text-align: left;        /* keep text aligned left */
+.mc-row {
+  margin-bottom: 16px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #0f1736;
+  border: 1px solid rgba(255,255,255,.08);
 }
 
-.mc-option input[type="radio"] {
-  margin: 0;               /* remove browser default spacing */
+.mc-row p {
+  margin-bottom: 8px;
 }
+
+.mc-option {
+  padding-left: 12px;  /* indent under question */
+}
+
+
 
 
 
