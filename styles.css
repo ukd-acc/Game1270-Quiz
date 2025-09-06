@@ -270,18 +270,18 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   border-radius: 8px;
   background: #0f1736;
   border: 1px solid rgba(255,255,255,.08);
+  color: var(--text);
 }
 
 .mc-row p {
   margin: 0 0 8px 0;
   font-weight: 600;
-  color: var(--text);
 }
 
 /* Each option sits on its own line */
 .mc-option {
-  display: flex;           /* keep radio + text in a row */
-  align-items: flex-start; /* align radio with top of text */
+  display: flex;
+  align-items: flex-start; /* align radio with first line of text */
   gap: 8px;
   margin: 6px 0;
   cursor: pointer;
@@ -291,15 +291,17 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 
 /* Radio circle */
 .mc-option input[type="radio"] {
-  margin-top: 4px; /* nudges circle slightly to align with first text line */
-  flex-shrink: 0;  /* prevents shrinking */
+  margin: 0;        /* no extra spacing */
+  flex-shrink: 0;   /* don't let radio shrink */
+  margin-top: 2px;  /* aligns with text top */
 }
 
-/* Optional: wrap text nicely if long */
-.mc-option label {
-  display: flex;
-  align-items: flex-start;
+/* Wrap long text nicely */
+.mc-option span {
+  display: inline-block;
+  word-wrap: break-word;
 }
+
 
 
 

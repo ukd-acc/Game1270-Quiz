@@ -12,21 +12,22 @@ function renderMCSection(section) {
       q.answers.forEach(ans => {
         const label = document.createElement("label");
         label.className = "mc-option";
-  
+      
         const input = document.createElement("input");
         input.type = "radio";
         input.name = `mc-${idx}`;
         input.value = ans;
         input.onchange = () => state.answers[`mc-${idx}`] = ans;
-  
-        // Order: ( ) then text
+      
+        const text = document.createElement("span");
+        text.textContent = ans;
+      
         label.appendChild(input);
-        label.appendChild(document.createTextNode(ans));
-
-
-  
+        label.appendChild(text);
+      
         div.appendChild(label);
       });
+      
   
       wrapper.appendChild(div);
     });
