@@ -263,20 +263,23 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   z-index: 9999;         
 }
 
-.mc-row {
-  margin-bottom: 16px;
-  padding: 10px;
-  border-radius: 8px;
-  background: #0f1736;
-  border: 1px solid rgba(255,255,255,.08);
+.mc-option {
+  display: flex;           /* align radio + text horizontally */
+  align-items: center;     /* vertical centering */
+  gap: 8px;                /* spacing between button and text */
+  margin: 6px 0;
+  cursor: pointer;
+  text-align: left;        /* keep text aligned left */
+  font-weight: normal;     /* don’t bold all options */
+  color: var(--text);      /* match quiz text color */
+}
+.mc-option input[type="radio"] {
+  margin: 0;               /* kill browser’s default spacing */
+  flex-shrink: 0;          /* radio won’t shrink */
 }
 
 .mc-row p {
   margin-bottom: 8px;
-}
-
-.mc-option {
-  padding-left: 12px;  /* indent under question */
 }
 
 
