@@ -24,8 +24,9 @@ function renderMCSection(section) {
         text.textContent = ans;
   
         // Order: ( ) then text
-        label.appendChild(input);
         label.appendChild(text);
+        label.appendChild(input);
+
   
         div.appendChild(label);
       });
