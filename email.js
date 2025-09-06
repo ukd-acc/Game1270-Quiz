@@ -4,8 +4,6 @@ function initEmail() {
     console.warn("⚠️ Email configuration missing in settings.json");
     return;
   }
-
-  // Initialize EmailJS with the public key from settings.json
   emailjs.init(state.settings.emailConfig.publicKey);
 }
 
@@ -22,9 +20,9 @@ function sendResultsByEmail(result) {
   const durationMs = state.endTime - state.startTime;
   const durationMin = Math.round(durationMs / 60000);
 
-  // 🔹 Build details of wrong answers
+  // 🔹 Build wrong answers section
   let wrongDetails = "All answers correct 🎉";
-  if (result.wrongAnswers && result.wrongAnswers.length > 0) {
+  if (result.wrongAnswers.length > 0) {
     wrongDetails = result.wrongAnswers.map(w =>
       `${w.type}: ${w.question}\n  Student: ${w.student}\n  Correct: ${w.correct}`
     ).join("\n\n");
@@ -37,8 +35,8 @@ function sendResultsByEmail(result) {
     time: new Date().toLocaleString(),
     message:
       `${state.settings.title} results for ${state.user.fullName}:\n\n` +
-      `The grade was ${Math.round((result.points / result.total) * 100)}%.\n` +
-      `The assignment was completed in ${durationMin} minute${durationMin !== 1 ? 's' : ''}.\n\n` +
+      `Score: ${result.points}/${result.total} (${result.percent}%).\n` +
+      `Duration: ${durationMin} minute${durationMin !== 1 ? "s" : ""}.\n\n` +
       `Incorrect answers:\n${wrongDetails}`
   };
 
@@ -47,9 +45,7 @@ function sendResultsByEmail(result) {
     state.settings.emailConfig.templateID,
     templateParams
   )
-  .then(() => {
-    alert("✅ Results emailed successfully!");
-  })
+  .then(() => alert("✅ Results emailed successfully!"))
   .catch(err => {
     console.error("❌ Email failed:", err);
     alert("Error sending email. Please notify your instructor.");
