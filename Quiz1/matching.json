@@ -1,6 +1,6 @@
 {
   "type": "matching",
-  "title": "Vocabulary and Questions (1 point each)",
+  "title": "Matching (1 point each)",
   "instructions": "Select the correct answer from the dropdown.",
   "points_per_question": 1,
   "prompts": [

@@ -66,6 +66,27 @@ function gradeQuiz() {
         }
       });
     }
+
+    else if (section.type === "matching_pictures") {
+      section.prompts.forEach((q, idx) => {
+        totalMatching++;
+        total += section.points_per_question;
+        const studentAnswer = state.answers[`matching_pictures-${idx}`];
+    
+        if (studentAnswer && studentAnswer.toLowerCase() === q.answer.toLowerCase()) {
+          matchingCorrect++;
+          points += section.points_per_question;
+        } else {
+          wrongAnswers.push({
+            type: "Matching (Pictures)",
+            question: q.question,  // you might want to show something like "Identify this person"
+            student: studentAnswer || "(no answer)",
+            correct: q.answer
+          });
+        }
+      });
+    }
+    
   });
 
   const percent = total > 0 ? Math.round((points / total) * 100) : 0;

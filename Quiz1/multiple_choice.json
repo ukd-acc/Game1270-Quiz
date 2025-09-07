@@ -1,6 +1,6 @@
 {
   "type": "multiple_choice",
-  "title": "Multiple Choice Questions (1 point each)",
+  "title": "Multiple Choice (1 point each)",
   "instructions": "Select the best answer for each question.",
   "points_per_question": 1,
   "prompts": [
