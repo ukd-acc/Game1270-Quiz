@@ -54,8 +54,6 @@ async function initQuiz() {
   }
 
   renderQuiz();
-
-  initEmail();
 }
 
 function renderQuiz() {
