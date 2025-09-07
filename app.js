@@ -60,10 +60,10 @@ function renderQuiz() {
   const app = qs("#app");
   app.innerHTML = `
     <!-- floating timer (independent of quiz card) -->
-    <div id="timerContainer">
-      <div id="timer" class="timer">00:00</div>
-      <button id="toggleTimerBtn" class="secondary">Hide Timer</button>
-    </div>
+      <div id="timerContainer">
+        <button id="toggleTimerBtn" class="secondary">Hide Timer</button>
+        <div id="timer" class="timer">00:00</div>
+      </div>
 
     <div class="container">
       <div class="card">
