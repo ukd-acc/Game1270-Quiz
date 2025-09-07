@@ -251,18 +251,6 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   margin-bottom: 8px;
 }
 
-.timer {
-  position: fixed;       
-  top: 10px;
-  right: 10px;
-  background: #1a244a;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-weight: bold;
-  z-index: 9999;         
-}
-
 .mc-row {
   background: #0f1736;
   border: 1px solid rgba(255,255,255,.08);
