@@ -9,11 +9,11 @@
       "answer": "Senet and Ur"
     },
     {
-      "question": "Popular game which origin came from China and then Japan?",
-      "answer": "Go"
+      "question": "What made loading much faster in the 9th generation of consoles?",
+      "answer": "SSDs"
     },
     {
-      "question": "First successful game company founded in 1860?",
+      "question": "First successful game company founded in 1860 that also invented the Microvision handheld console?",
       "answer": "Milton Bradley"
     },
     {
@@ -23,10 +23,6 @@
     {
       "question": "Which company did Nolan Bushnell and Ted Dabney found?",
       "answer": "Atari"
-    },
-    {
-      "question": "The biggest Arcade hit by Namco of 1980?",
-      "answer": "Pac-Man"
     },
     {
       "question": "What was Atari’s first big game hit?",
@@ -42,20 +38,25 @@
     }
   ],
   "word_bank": [
-    { "text": "ESRB" },
+    { "text": "Milton Bradley" },
     { "text": "Atari" },
-    { "text": "The Rise of Arcades Machines" },
     { "text": "Nintendo" },
-    { "text": "Learn Something" },
-    { "text": "Go" },
     { "text": "Magnavox Odyssey" },
-    { "text": "Crash and Recovery of the Game Industry" },
+    { "text": "Atari 2600" },
+    { "text": "Pong" },
     { "text": "Pac-Man" },
     { "text": "Pitfall" },
-    { "text": "Milton Bradley" },
+    { "text": "Go" },
+    { "text": "Pacheesi" },
     { "text": "Senet and Ur" },
-    { "text": "Pong" },
+    { "text": "Tic-Tac-Toe" },
+    { "text": "Tennis for Two" },
     { "text": "Spacewar" },
-    { "text": "Dungeons and Dragons" }
+    { "text": "The Rise of Arcades Machines" },
+    { "text": "Crash and Recovery of the Game Industry" },
+    { "text": "The Console Wars" },
+    { "text": "SSDs" },
+    { "text": "HDDs" },
+    { "text": "CPUs" }
   ]
 }
