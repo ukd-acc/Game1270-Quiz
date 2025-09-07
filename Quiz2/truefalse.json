@@ -1,0 +1,29 @@
+{
+    "type": "true_false",
+    "title": "True or False (1 point each)",
+    "instructions": "Select True or False for each statement.",
+    "points_per_question": 1,
+    "questions": [
+      {
+        "question": "Action games focus primarily on mental acuity, thinking ahead and involve a top-down view.",
+        "answer": false
+      },
+      {
+        "question": "A common element of games is Representation of rules, either explicit or implicit.",
+        "answer": true
+      },
+      {
+        "question": "4X strategy games stands for Explore, Expand, Exploit and Exterminate.",
+        "answer": true
+      },
+      {
+        "question": "RPG stands for Random Programming Games.",
+        "answer": false
+      },
+      {
+        "question": "A sub-genre of Strategy is RTS",
+        "answer": true
+      }  
+    ]
+  }
+  
