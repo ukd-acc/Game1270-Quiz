@@ -29,8 +29,8 @@
       "answer": "Pong"
     },
     {
-      "question": "The years of 1972 – 1976 for Electronic Gaming?",
-      "answer": "The Rise of the Arcades"
+      "question": "What happened in the early 70s for electronic gaming?",
+      "answer": "The start and rise of arcades"
     },
     {
       "question": "The first home video game system?",
@@ -52,9 +52,9 @@
     { "text": "Tic-Tac-Toe" },
     { "text": "Tennis for Two" },
     { "text": "Spacewar" },
-    { "text": "The Rise of Arcades Machines" },
-    { "text": "Crash and Recovery of the Game Industry" },
-    { "text": "The Console Wars" },
+    { "text": "The start and rise of arcades" },
+    { "text": "The Crash and Recovery of the Game Industry" },
+    { "text": "The First Console Wars" },
     { "text": "SSDs" },
     { "text": "HDDs" },
     { "text": "CPUs" }
