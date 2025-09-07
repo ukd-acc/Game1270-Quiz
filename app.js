@@ -120,7 +120,6 @@ function onSubmit() {
   const res = gradeQuiz();
   showSummary(res);
   sendResultsByEmail(res);
-  logout(); // defined in auth.js
 }
 
 window.addEventListener("DOMContentLoaded", initApp);

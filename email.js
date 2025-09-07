@@ -45,7 +45,10 @@ function sendResultsByEmail(result) {
     state.settings.emailConfig.templateID,
     templateParams
   )
-  .then(() => alert("✅ Results emailed successfully!"))
+  .then(() => {
+    alert("✅ Results emailed successfully!")
+    logout();
+  })
   .catch(err => {
     console.error("❌ Email failed:", err);
     alert("Error sending email. Please notify your instructor.");
