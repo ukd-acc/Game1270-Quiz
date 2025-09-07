@@ -283,9 +283,9 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   right: 10px;
   z-index: 9999;
   display: flex;
-  flex-direction: column;  
-  align-items: flex-end;   
-  gap: 6px;                
+  flex-direction: column;   /* stack vertically */
+  align-items: flex-end;    /* align both to the right */
+  gap: 6px;                 /* space between button and timer */
 }
 
 .timer {
@@ -294,15 +294,15 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   padding: 6px 12px;
   border-radius: 8px;
   font-weight: bold;
-  display: inline-block;
+  display: block;           /* ✅ force block (not inline) */
 }
 
 #toggleTimerBtn {
-  margin-top: 6px;
   background: #33406e;
   color: #fff;
   border: none;
   padding: 4px 8px;
   border-radius: 6px;
   cursor: pointer;
+  display: block;           /* ✅ ensure it stacks too */
 }
