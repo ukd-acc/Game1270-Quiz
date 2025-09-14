@@ -265,6 +265,13 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   gap: 8px;                    /* Space between radio and text */
   cursor: pointer;
   width: 100%;                 /* Ensure full width for alignment */
+  padding: 6px 10px;           /* Add padding for better click area */
+  border-radius: 8px;          /* Rounded corners for hover effect */
+  transition: background 0.2s; /* Smooth hover transition */
+}
+
+.mc-option:hover {
+  background: rgba(255, 255, 255, 0.05); /* Highlight on hover */
 }
 
 .mc-option input[type="radio"] {
@@ -276,6 +283,12 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   display: inline-block;       /* Ensure text stays inline */
   text-align: left;            /* Align text to the left */
   flex-grow: 1;                /* Allow text to take up remaining space */
+}
+
+/* Highlight selected option */
+.mc-option input[type="radio"]:checked + span {
+  font-weight: 600;
+  color: var(--accent);
 }
 
 #timerContainer {
