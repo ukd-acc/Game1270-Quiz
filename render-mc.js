@@ -6,14 +6,17 @@ function renderMCSection(section) {
 
   section.prompts.forEach((q, idx) => {
     const div = document.createElement("div");
-    div.className = "mc-row";
-    div.innerHTML = `<p>${idx + 1}. ${q.question}</p>`;
+    div.className = "mc-row"; // Ensure this wraps all options
+
+    const questionEl = document.createElement("p");
+    questionEl.textContent = `${idx + 1}. ${q.question}`;
+    div.appendChild(questionEl);
 
     q.answers.forEach(ans => {
       const label = document.createElement("label");
       label.className = "mc-option";
 
-      // radio button
+      // Radio button
       const input = document.createElement("input");
       input.type = "radio";
       input.name = `mc-${idx}`;
@@ -22,11 +25,11 @@ function renderMCSection(section) {
         state.answers[`mc-${idx}`] = ans;
       };
 
-      // answer text in span (so we can style it with CSS)
+      // Answer text in span
       const textSpan = document.createElement("span");
       textSpan.textContent = ans;
 
-      // build label
+      // Build label
       label.appendChild(input);
       label.appendChild(textSpan);
 
@@ -38,5 +41,4 @@ function renderMCSection(section) {
 
   return wrapper;
 }
-  
-    
+

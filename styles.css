@@ -252,26 +252,19 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 }
 
 .mc-row {
-  background: #0f1736;
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 12px;
-  padding: 10px;
-  margin-bottom: 8px;
+  display: flex;               /* Use flex for alignment */
+  flex-direction: column;      /* Stack options vertically */
+  align-items: flex-start;     /* Align items to the left */
+  gap: 8px;                    /* Space between rows */
+  margin-bottom: 16px;         /* Add spacing between questions */
 }
 
 .mc-option {
   display: flex;               /* Use flex for alignment */
   align-items: center;         /* Vertically center radio and text */
   gap: 8px;                    /* Space between radio and text */
-  margin: 6px 0;
-  padding: 6px 10px;
-  border-radius: 8px;
   cursor: pointer;
-  transition: background 0.2s;
-}
-
-.mc-option:hover {
-  background: rgba(255, 255, 255, 0.05); /* Highlight on hover */
+  width: 100%;                 /* Ensure full width for alignment */
 }
 
 .mc-option input[type="radio"] {
@@ -283,12 +276,6 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   display: inline-block;       /* Ensure text stays inline */
   text-align: left;            /* Align text to the left */
   flex-grow: 1;                /* Allow text to take up remaining space */
-}
-
-/* Highlight selected option */
-.mc-option input[type="radio"]:checked + span {
-  font-weight: 600;
-  color: var(--accent);
 }
 
 #timerContainer {
