@@ -260,31 +260,32 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 }
 
 .mc-option {
-  display: flex;
+  display: inline-flex;          /* keep input + text inline */
   align-items: center;
-  gap: 8px;
+  gap: 8px;                      /* space between radio and text */
   margin: 6px 0;
-  padding: 8px 12px;                /* ✅ clickable area */
+  padding: 6px 10px;
   border-radius: 8px;
+  width: 100%;                   /* ✅ makes full row clickable */
   cursor: pointer;
   transition: background 0.2s;
 }
 
 .mc-option:hover {
-  background: rgba(255, 255, 255, 0.05); /* hover effect */
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .mc-option input[type="radio"] {
   margin: 0;
-  accent-color: var(--accent); /* matches your theme */
+  accent-color: var(--accent);
 }
 
-/* Highlight the whole row when checked */
+/* highlight whole row when selected */
 .mc-option input[type="radio"]:checked + span {
-  background: rgba(109, 167, 255, 0.15);
-  border-radius: 6px;
-  padding: 2px 4px;
+  font-weight: 600;
+  color: var(--accent);
 }
+
 
 
 
