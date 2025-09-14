@@ -259,10 +259,17 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   margin-bottom: 16px;         /* Add spacing between questions */
 }
 
-.mc-option {
+.mc-row {
   display: flex;               /* Use flex for alignment */
+  flex-direction: column;      /* Stack options vertically */
+  gap: 8px;                    /* Space between rows */
+  margin-bottom: 16px;         /* Add spacing between questions */
+}
+
+.mc-option {
+  display: left;               /* Use flex for alignment */
   align-items: center;         /* Vertically center radio and text */
-  gap: 8px;                    /* Space between radio and text */
+  gap: 0px;                    /* Space between radio and text */
   cursor: pointer;
   width: 100%;                 /* Ensure full width for alignment */
   padding: 6px 10px;           /* Add padding for better click area */
@@ -274,21 +281,10 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   background: rgba(255, 255, 255, 0.05); /* Highlight on hover */
 }
 
-.mc-option input[type="radio"] {
-  margin: 0;                   /* Remove default margin */
-  accent-color: var(--accent); /* Use theme accent color */
-}
-
 .mc-option span {
   display: inline-block;       /* Ensure text stays inline */
-  text-align: left;            /* Align text to the left */
+  text-align: right;            /* Align text to the left */
   flex-grow: 1;                /* Allow text to take up remaining space */
-}
-
-/* Highlight selected option */
-.mc-option input[type="radio"]:checked + span {
-  font-weight: 600;
-  color: var(--accent);
 }
 
 #timerContainer {

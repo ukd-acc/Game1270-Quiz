@@ -16,6 +16,7 @@ function renderMCSection(section) {
       const label = document.createElement("label");
       label.className = "mc-option";
 
+      /*
       // Radio button
       const input = document.createElement("input");
       input.type = "radio";
@@ -23,7 +24,7 @@ function renderMCSection(section) {
       input.value = ans;
       input.onchange = () => {
         state.answers[`mc-${idx}`] = ans;
-      };
+      };*/
 
       // Answer text in span
       const textSpan = document.createElement("span");
