@@ -259,33 +259,28 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   margin-bottom: 16px;         /* Add spacing between questions */
 }
 
-.mc-row {
-  display: flex;               /* Use flex for alignment */
-  flex-direction: column;      /* Stack options vertically */
-  gap: 8px;                    /* Space between rows */
-  margin-bottom: 16px;         /* Add spacing between questions */
-}
-
 .mc-option {
-  display: left;               /* Use flex for alignment */
-  align-items: center;         /* Vertically center radio and text */
-  gap: 0px;                    /* Space between radio and text */
+  display: block;
+  margin: 6px 0;
+  padding: 10px 14px;
+  border-radius: 8px;
   cursor: pointer;
-  width: 100%;                 /* Ensure full width for alignment */
-  padding: 6px 10px;           /* Add padding for better click area */
-  border-radius: 8px;          /* Rounded corners for hover effect */
-  transition: background 0.2s; /* Smooth hover transition */
+  background: #0f1736;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s, border 0.2s;
 }
 
 .mc-option:hover {
-  background: rgba(255, 255, 255, 0.05); /* Highlight on hover */
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.mc-option span {
-  display: inline-block;       /* Ensure text stays inline */
-  text-align: right;            /* Align text to the left */
-  flex-grow: 1;                /* Allow text to take up remaining space */
+.mc-option.selected {
+  background: rgba(109, 167, 255, 0.15);
+  border-color: var(--accent);
+  font-weight: 600;
+  color: var(--accent);
 }
+
 
 #timerContainer {
   position: fixed;

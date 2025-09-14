@@ -13,28 +13,24 @@ function renderMCSection(section) {
     div.appendChild(questionEl);
 
     q.answers.forEach(ans => {
-      const label = document.createElement("label");
-      label.className = "mc-option";
+      const option = document.createElement("div");
+      option.className = "mc-option";
+      option.textContent = ans;
 
-      /*
-      // Radio button
-      const input = document.createElement("input");
-      input.type = "radio";
-      input.name = `mc-${idx}`;
-      input.value = ans;
-      input.onchange = () => {
+      option.onclick = () => {
+        // clear previous selection for this question
+        div.querySelectorAll(".mc-option").forEach(opt => 
+          opt.classList.remove("selected")
+        );
+
+        // highlight the clicked one
+        option.classList.add("selected");
+
+        // save answer
         state.answers[`mc-${idx}`] = ans;
-      };*/
+      };
 
-      // Answer text in span
-      const textSpan = document.createElement("span");
-      textSpan.textContent = ans;
-
-      // Build label
-      //label.appendChild(input);
-      label.appendChild(textSpan);
-
-      div.appendChild(label);
+      div.appendChild(option);
     });
 
     wrapper.appendChild(div);
