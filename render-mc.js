@@ -1,35 +1,42 @@
 /* ---------- MULTIPLE CHOICE SECTION ---------- */
 function renderMCSection(section) {
-    const wrapper = document.createElement("div");
-    wrapper.className = "section multiplechoice";
-    wrapper.innerHTML = `<h2>${section.title}</h2><p>${section.instructions}</p>`;
-  
-    section.prompts.forEach((q, idx) => {
-      const div = document.createElement("div");
-      div.className = "mc-row";
-      div.innerHTML = `<p>${idx + 1}. ${q.question}</p>`;
-  
-      q.answers.forEach(ans => {
-        const label = document.createElement("label");
-        label.className = "mc-option";
-  
-        const input = document.createElement("input");
-        input.type = "radio";
-        input.name = `mc-${idx}`;
-        input.value = ans;
-        input.onchange = () => state.answers[`mc-${idx}`] = ans;
-  
-        // put input first, then text
-        label.appendChild(input);
-        label.appendChild(document.createTextNode(ans));
-  
-        div.appendChild(label);
-      });
-  
-      wrapper.appendChild(div);
+  const wrapper = document.createElement("div");
+  wrapper.className = "section multiplechoice";
+  wrapper.innerHTML = `<h2>${section.title}</h2><p>${section.instructions}</p>`;
+
+  section.prompts.forEach((q, idx) => {
+    const div = document.createElement("div");
+    div.className = "mc-row";
+    div.innerHTML = `<p>${idx + 1}. ${q.question}</p>`;
+
+    q.answers.forEach(ans => {
+      const label = document.createElement("label");
+      label.className = "mc-option";
+
+      // radio button
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = `mc-${idx}`;
+      input.value = ans;
+      input.onchange = () => {
+        state.answers[`mc-${idx}`] = ans;
+      };
+
+      // answer text in span (so we can style it with CSS)
+      const textSpan = document.createElement("span");
+      textSpan.textContent = ans;
+
+      // build label
+      label.appendChild(input);
+      label.appendChild(textSpan);
+
+      div.appendChild(label);
     });
-  
-    return wrapper;
-  }
+
+    wrapper.appendChild(div);
+  });
+
+  return wrapper;
+}
   
     

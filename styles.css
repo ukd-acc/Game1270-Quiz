@@ -260,9 +260,33 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 }
 
 .mc-option {
-  display: block;
-  margin: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0;
+  padding: 8px 12px;                /* ✅ clickable area */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
 }
+
+.mc-option:hover {
+  background: rgba(255, 255, 255, 0.05); /* hover effect */
+}
+
+.mc-option input[type="radio"] {
+  margin: 0;
+  accent-color: var(--accent); /* matches your theme */
+}
+
+/* Highlight the whole row when checked */
+.mc-option input[type="radio"]:checked + span {
+  background: rgba(109, 167, 255, 0.15);
+  border-radius: 6px;
+  padding: 2px 4px;
+}
+
+
 
 
 #timerContainer {
