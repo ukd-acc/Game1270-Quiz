@@ -31,7 +31,7 @@ function renderMCSection(section) {
       textSpan.textContent = ans;
 
       // Build label
-      label.appendChild(input);
+      //label.appendChild(input);
       label.appendChild(textSpan);
 
       div.appendChild(label);
