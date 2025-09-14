@@ -260,35 +260,36 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 }
 
 .mc-option {
-  display: inline-flex;          /* keep input + text inline */
-  align-items: center;
-  gap: 8px;                      /* space between radio and text */
+  display: flex;               /* Use flex for alignment */
+  align-items: center;         /* Vertically center radio and text */
+  gap: 8px;                    /* Space between radio and text */
   margin: 6px 0;
   padding: 6px 10px;
   border-radius: 8px;
-  width: 100%;                   /* ✅ makes full row clickable */
   cursor: pointer;
   transition: background 0.2s;
 }
 
 .mc-option:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.05); /* Highlight on hover */
 }
 
 .mc-option input[type="radio"] {
-  margin: 0;
-  accent-color: var(--accent);
+  margin: 0;                   /* Remove default margin */
+  accent-color: var(--accent); /* Use theme accent color */
 }
 
-/* highlight whole row when selected */
+.mc-option span {
+  display: inline-block;       /* Ensure text stays inline */
+  text-align: left;            /* Align text to the left */
+  flex-grow: 1;                /* Allow text to take up remaining space */
+}
+
+/* Highlight selected option */
 .mc-option input[type="radio"]:checked + span {
   font-weight: 600;
   color: var(--accent);
 }
-
-
-
-
 
 #timerContainer {
   position: fixed;
