@@ -1,0 +1,52 @@
+{
+    "type": "matching_pictures",
+    "title": "Match the Pictures (1 point each)",
+    "instructions": "Select the correct name for each picture.",
+    "points_per_question": 1,
+    "prompts": [
+      {
+        "image": "images/witness.jpg",
+        "question": "What immersive puzzle game is this?",
+        "answer": "The Witness"
+      },
+      {
+        "image": "images/silksong.jpg",
+        "question": "What metroidvania is this?",
+        "answer": "Hollow Knight: Silksong"
+      },
+      {
+        "image": "images/superhot.png",
+        "question": "What first person shooter game is this?",
+        "answer": "Superhot"
+      },
+      {
+        "image": "images/bastion.png",
+        "question": "What action-rpg game is this??",
+        "answer": "Bastion"
+      },
+      {
+        "image": "images/civilization.jpg",
+        "question": "What strategy game series is this?",
+        "answer": "Civilization"
+      }
+    ],
+    "word_bank": [
+      { "text": "Bioshock" },
+      { "text": "Superhot" },
+      { "text": "Dark Souls" },
+      { "text": "Bastion" },
+      { "text": "Cuphead" },
+      { "text": "The Last of Us" },
+      { "text": "God of War" },
+      { "text": "Hades" },
+      { "text": "Celeste" },
+      { "text": "Ori and the Blind Forest" },
+      { "text": "E.T." },
+      { "text": "Hollow Knight: Silksong" },
+      { "text": "The Witness" },
+      { "text": "Civilization" },
+      { "text": "Starcraft" },
+      { "text": "XCOM" }
+    ]
+  }
+  

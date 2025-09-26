@@ -5,16 +5,25 @@
   "points_per_question": 1,
   "questions": [
     {
-      "prompt": "The capital of France is ___.",
-      "answers": ["paris"]
+      "prompt": "___ is one of Bartle's Player Types.",
+      "answers": [["killers"], ["achievers"], ["explorers"], ["socializers"]]
     },
     {
-      "prompt": "The programming language created by Guido van Rossum is ___.",
-      "answers": ["python"]
+      "prompt": "Two of Quantic Foundry's Gamer Types are ___ and ___.",
+      "answers": [["acrobat"],["gardener"],["slayer"],["skirmisher"],["gladiator"],["ninja"],["bounty hunter"],["architect"],["bard"]]
     },
     {
-      "prompt": "Fill in the blanks: ___ is the largest planet in the solar system, and ___ is the smallest.",
-      "answers": [["jupiter"], ["mercury"]]
-    }
+      "prompt": "Name three types of fun: ___, ___, and ___.",
+      "answers": [["sensation"], ["fantasy"], ["narrative"], ["challenge"], ["fellowship"], ["discovery"], ["expression"], ["submission"]] 
+    },
+    {
+      "prompt": "According to Chris Crawford, ___ is common element of all games and results of a game should always be less harsh than the situation the game models.",
+      "answer": [["safety"]]
+    },
+    {
+      "prompt": "Games go further in representing reality/fantasy than movies because they are ___?",
+      "answer": [["interactive"]]
+    },
+    
   ]
 }

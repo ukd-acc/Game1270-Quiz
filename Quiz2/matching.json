@@ -1,0 +1,39 @@
+{
+    "type": "matching",
+    "title": "Matching (1 point each)",
+    "instructions": "Select the correct answer from the dropdown.",
+    "points_per_question": 1,
+    "prompts": [
+      {
+        "question": "A common element of all games attempting to recreate/simulate a subset of reality, and allows fantasy of the player to fill in the rest.",
+        "answer": "Representation"
+      },
+      {
+        "question": "A type of fun representing the relationship between player’s ability and difficulty?",
+        "answer": "Challenge"
+      },
+      {
+        "question": "A type of fun representing player’s ability to make choices showcasing their creativity or individuality?",
+        "answer": "Expression"
+      },
+      {
+        "question": "Other players, enemies, game environment, time are what common element and fundamental characteristic of a game.",
+        "answer": "Conflict"
+      },
+      {
+        "question": "Games go further in representing reality/fantasy than movies because they are ___?",
+        "answer": "Interactive"
+      }
+    ],
+    "word_bank": [
+      { "text": "Challenge" },
+      { "text": "Expression" },
+      { "text": "Conflict" },
+      { "text": "Interactive" },
+      { "text": "Transgression" },
+      { "text": "Safety" },
+      { "text": "Representation" },
+      { "text": "Action" }
+    ]
+  }
+  

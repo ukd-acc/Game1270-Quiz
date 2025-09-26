@@ -86,6 +86,11 @@ function gradeQuiz() {
         }
       });
     }
+
+    else if (section.type === "fill_in_the_blank") {
+      points += gradeFillInTheBlank(section);
+      total += section.questions.length;
+    }
     
   });
 

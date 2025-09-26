@@ -9,7 +9,7 @@
         "answer": false
       },
       {
-        "question": "A common element of games is Representation of rules, either explicit or implicit.",
+        "question": "MMO games often have separate Development and Live Service Teams.",
         "answer": true
       },
       {
@@ -17,13 +17,14 @@
         "answer": true
       },
       {
-        "question": "RPG stands for Random Programming Games.",
+        "question": "Ludology emphasizes the importance of narrative and story in games.",
         "answer": false
       },
       {
-        "question": "A sub-genre of Strategy is RTS",
-        "answer": true
+        "question": "Games should only fit into a single genre.",
+        "answer": false
       }  
+
     ]
   }
   

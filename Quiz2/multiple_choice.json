@@ -1,86 +1,33 @@
 {
-    "type": "matching",
-    "title": "Matching (1 point each)",
-    "instructions": "Select the correct answer from the dropdown.",
-    "points_per_question": 1,
-    "prompts": [
-      {
-        "question": "A common element of all games attempting to recreate/simulate a subset of reality, and allows fantasy of the player to fill in the rest.",
-        "answer": "Representation"
-      },
-      {
-        "question": "It is a key element of Game Design in blending technology and psychology, guided by real-world consideration. If done well it is invisible to the player.",
-        "answer": "UI/UX"
-      },
-      {
-        "question": "Players play games to ‘thumb one’s nose’ at society and overcome social restrictions is what reason?",
-        "answer": "Transgression"
-      },
-      {
-        "question": "A Fun component which is the relationship between player’s ability and difficulty?",
-        "answer": "Challenge"
-      },
-      {
-        "question": "A common element of all games (Chris Crawford definition) whereas the results of a game should always be less harsh than the situation the game models.",
-        "answer": "Safety"
-      },
-      {
-        "question": "A Fun component representing player’s ability to make choices showcasing their creativity or individuality?",
-        "answer": "Expression"
-      },
-      {
-        "question": "A way of interaction with digital games using accelerometer, rate gyros – an input modality.",
-        "answer": "Inertial"
-      },
-      {
-        "question": "Mature Video technology can include and be used for?",
-        "answer": "Motion Capture"
-      },
-      {
-        "question": "Other players, enemies, game environment, time are what common element and fundamental characteristic of a game.",
-        "answer": "Conflict"
-      },
-      {
-        "question": "Games go further by representing reality/fantasy in specific fashion compared to movies?",
-        "answer": "Interactive"
-      },
-      {
-        "question": "A main motivation for why people play games.",
-        "answer": "Fantasy fulfillment"
-      },
-      {
-        "question": "Type of Player from Bartle’s Suits.",
-        "answer": "Killers"
-      },
-      {
-        "question": "With every videogame experience players go through a lot of ‘what?’ when playing?",
-        "answer": "Emotions"
-      },
-      {
-        "question": "The term for type and classification for videogames is called?",
-        "answer": "Genre"
-      },
-      {
-        "question": "A major/super genre for a game is?",
-        "answer": "Action"
-      }
-    ],
-    "word_bank": [
-      { "text": "Challenge" },
-      { "text": "Motion Capture" },
-      { "text": "Expression" },
-      { "text": "UI/UX" },
-      { "text": "Conflict" },
-      { "text": "Interactive" },
-      { "text": "Transgression" },
-      { "text": "Killers" },
-      { "text": "Safety" },
-      { "text": "Genre" },
-      { "text": "Representation" },
-      { "text": "Action" },
-      { "text": "Inertial" },
-      { "text": "Emotions" },
-      { "text": "Fantasy fulfillment" }
-    ]
-  }
-  
+  "type": "multiple_choice",
+  "title": "Multiple Choice (1 point each)",
+  "instructions": "Select the best answer for each question.",
+  "points_per_question": 1,
+  "prompts": [
+    {
+      "question": "Which of the following motivations is associated with the Mastery cluster of Quantic Foundry's Gamer Motivation Model? ",
+      "answers": ["Competition", "Power", "Strategy", "Fantasy"],
+      "correct_answer": "Strategy"
+    },
+    {
+      "question": "Which of the following is an arcade sports game?",
+      "answers": ["FIFA", "Madden NFL", "NBA Jam", "PGA Tour"],
+      "correct_answer": "NBA Jam"
+    },
+    {
+      "question": "Which game did we not discuss as defying a genre when it came out?",
+      "answers": ["The Stanley Parable", "Uncharted", "Katamari Damacy", "Portal"],
+      "correct_answer": "Uncharted"
+    },
+    {
+      "question": "Which video game contained a mod that popularized the Multiplayer Online Battle Arena (MOBA) genre?",
+      "answers": ["League of Legends", "Warcraft 3", "Smite", "Defense of the Ancients (DotA)"],
+      "correct_answer": "Warcraft 3"
+    },
+    {
+      "question": "Which element of Chris Crawford's definition of games are people most willing to give up?",
+      "answers": ["Representation", "Conflict", "Safety", "Interaction"],
+      "correct_answer": "Safety"
+    }  
+  ]
+}
