@@ -5,7 +5,7 @@
     "points_per_question": 1,
     "prompts": [
       {
-        "image": "images/witness.jpg",
+        "image": "images/witness.png",
         "question": "What immersive puzzle game is this?",
         "answer": "The Witness"
       },
@@ -25,7 +25,7 @@
         "answer": "Bastion"
       },
       {
-        "image": "images/civilization.jpg",
+        "image": "images/civilization.png",
         "question": "What strategy game series is this?",
         "answer": "Civilization"
       }

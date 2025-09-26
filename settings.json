@@ -1,6 +1,6 @@
 {
-  "quizId": "GAME1270-Quiz1",
-  "title": "GAME 1270: Introduction to Game Design and Development – Quiz #1",
+  "quizId": "GAME1270-Quiz",
+  "title": "GAME 1270: Introduction to Game Design and Development",
   "course": "Introduction to Game Design and Development",
   "logo": "acc_logo.png",
 
@@ -11,7 +11,8 @@
     { "file": "matching.json" },
     { "file": "multiple_choice.json" },
     { "file": "truefalse.json" },
-    { "file": "matching_pictures.json" }
+    { "file": "matching_pictures.json" },
+    { "file": "fill_in_the_blank.json" }
   ],
 
   "emailRecipients": ["utsab.das@austincc.edu"],
