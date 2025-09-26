@@ -25,12 +25,13 @@ async function initApp() {
 async function initQuiz() {
   state.settings = await loadJSON("settings.json");
   state.quiz = { title: state.settings.title, sections: [] };
-  const quizFolder = state.settings.quizFolder;
+
+  const quizFolder = state.selectedQuizFolder; // Use the folder selected during login
 
   for (const secMeta of state.settings.sections) {
     const sec = await loadJSON(`${quizFolder}/${secMeta.file}`);
 
-    // shuffle once here
+    // Shuffle once here
     if (sec.type === "matching") {
       sec.prompts = shuffleArray(sec.prompts);
       sec.word_bank = shuffleArray(sec.word_bank);   // shuffle dropdown answers

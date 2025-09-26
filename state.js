@@ -6,6 +6,6 @@ const state = {
     answers: {},      // dictionary of answers { "matching-1": "A", "tf-2": true }
     startTime: null,  // Date object when quiz started
     endTime: null,    // Date object when quiz ended
-    settings: null    // loaded from settings.json
-  };
-  
+    settings: null,   // loaded from settings.json
+    selectedQuizFolder: null // folder for the selected quiz
+};
