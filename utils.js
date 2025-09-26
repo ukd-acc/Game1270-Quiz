@@ -5,10 +5,14 @@ function qs(sel) { return document.querySelector(sel); }
 function qsa(sel) { return Array.from(document.querySelectorAll(sel)); }
 
 // Load JSON file asynchronously.
-// Equivalent to fopen + parse JSON in C++.
-// fetch() returns a Promise (like a future) → await resolves it.
+// If the file doesn't exist, return null instead of throwing an error.
 async function loadJSON(path) {
-  const res = await fetch(path, { cache: "no-store" });
-  if (!res.ok) throw new Error("Failed to load " + path);
-  return res.json();
+  try {
+    const res = await fetch(path, { cache: "no-store" });
+    if (!res.ok) throw new Error("Failed to load " + path);
+    return await res.json();
+  } catch (error) {
+    console.warn(`Warning: ${error.message}`);
+    return null; // Return null if the file doesn't exist or fails to load
+  }
 }

@@ -30,6 +30,10 @@ async function initQuiz() {
 
   for (const secMeta of state.settings.sections) {
     const sec = await loadJSON(`${quizFolder}/${secMeta.file}`);
+    if (!sec) {
+      console.warn(`Skipping section: ${secMeta.file} not found in ${quizFolder}`);
+      continue; // Skip if the section file doesn't exist
+    }
 
     // Shuffle once here
     if (sec.type === "matching") {
