@@ -100,6 +100,27 @@ function gradeQuiz() {
   };
 }
 
+function gradeFillInTheBlank(section) {
+  let correct = 0;
+
+  section.questions.forEach((q, idx) => {
+    const inputs = qsa(`.fib-input[data-question="${idx}"]`);
+    const usedAnswers = new Set();
+
+    inputs.forEach((input, blankIdx) => {
+      const userAnswer = input.value.trim().toLowerCase(); // Force lowercase
+      const possibleAnswers = Array.isArray(q.answers[blankIdx]) ? q.answers[blankIdx] : q.answers;
+
+      if (possibleAnswers.includes(userAnswer) && !usedAnswers.has(userAnswer)) {
+        correct++;
+        usedAnswers.add(userAnswer); // Prevent duplicate credit for the same answer
+      }
+    });
+  });
+
+  return correct;
+}
+
 /* ---------- SUMMARY ---------- */
 function showSummary(res) {
   const app = qs("#app");

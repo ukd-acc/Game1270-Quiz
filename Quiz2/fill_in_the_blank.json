@@ -1,0 +1,20 @@
+{
+  "type": "fill_in_the_blank",
+  "title": "Fill in the Blank (1 point each)",
+  "instructions": "Type the correct answer(s) in the blank(s).",
+  "points_per_question": 1,
+  "questions": [
+    {
+      "prompt": "The capital of France is ___.",
+      "answers": ["paris"]
+    },
+    {
+      "prompt": "The programming language created by Guido van Rossum is ___.",
+      "answers": ["python"]
+    },
+    {
+      "prompt": "Fill in the blanks: ___ is the largest planet in the solar system, and ___ is the smallest.",
+      "answers": [["jupiter"], ["mercury"]]
+    }
+  ]
+}
