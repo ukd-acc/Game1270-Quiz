@@ -1,0 +1,62 @@
+{
+  "type": "matching",
+  "title": "Matching (1 point each)",
+  "instructions": "Select the correct answer from the dropdown.",
+  "points_per_question": 1,
+  "prompts": [
+    {
+      "question": "What are the names of some of the oldest games ever found?",
+      "answer": "Senet and Ur"
+    },
+    {
+      "question": "What made loading much faster in the 9th generation of consoles?",
+      "answer": "SSDs"
+    },
+    {
+      "question": "First successful game company founded in 1860 that also invented the Microvision handheld console?",
+      "answer": "Milton Bradley"
+    },
+    {
+      "question": "The name of the first true game designed to be played on a general purpose computer in 1961?",
+      "answer": "Spacewar"
+    },
+    {
+      "question": "Which company did Nolan Bushnell and Ted Dabney found?",
+      "answer": "Atari"
+    },
+    {
+      "question": "What was Atari’s first big game hit?",
+      "answer": "Pong"
+    },
+    {
+      "question": "What happened in the early 70s for electronic gaming?",
+      "answer": "The start and rise of arcades"
+    },
+    {
+      "question": "The first home video game system?",
+      "answer": "Magnavox Odyssey"
+    }
+  ],
+  "word_bank": [
+    { "text": "Milton Bradley" },
+    { "text": "Atari" },
+    { "text": "Nintendo" },
+    { "text": "Magnavox Odyssey" },
+    { "text": "Atari 2600" },
+    { "text": "Pong" },
+    { "text": "Pac-Man" },
+    { "text": "Pitfall" },
+    { "text": "Go" },
+    { "text": "Pacheesi" },
+    { "text": "Senet and Ur" },
+    { "text": "Tic-Tac-Toe" },
+    { "text": "Tennis for Two" },
+    { "text": "Spacewar" },
+    { "text": "The start and rise of arcades" },
+    { "text": "The Crash and Recovery of the Game Industry" },
+    { "text": "The First Console Wars" },
+    { "text": "SSDs" },
+    { "text": "HDDs" },
+    { "text": "CPUs" }
+  ]
+}
