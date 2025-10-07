@@ -90,6 +90,8 @@ function renderQuiz() {
     if (sec.type === "true_false") sectionsEl.appendChild(renderTFSection(sec));
     if (sec.type === "matching_pictures") sectionsEl.appendChild(renderMatchingPicturesSection(sec));
     if (sec.type === "multiple_choice") sectionsEl.appendChild(renderMCSection(sec));
+    if (sec.type === "fill_in_the_blank") sectionsEl.appendChild(renderFillInTheBlankSection(sec));
+
   });
 
   qs("#submitBtn").addEventListener("click", onSubmit);
