@@ -21,16 +21,16 @@
       "answer": "Spacewar"
     },
     {
-      "question": "Which company did Nolan Bushnell and Ted Dabney found?",
-      "answer": "Atari"
+      "question": "In 1981 the US saw the arrival of Shigeru Miyamoto’s arcade game named?",
+      "answer": "Donkey Kong"
     },
     {
       "question": "What was Atari’s first big game hit?",
       "answer": "Pong"
     },
     {
-      "question": "What happened in the early 70s for electronic gaming?",
-      "answer": "The start and rise of arcades"
+      "question": "Who invented the predecessor to Monopoly in 1903?",
+      "answer": "Elizabeth Magie"
     },
     {
       "question": "The first home video game system?",
@@ -39,6 +39,7 @@
   ],
   "word_bank": [
     { "text": "Milton Bradley" },
+    { "text": "Elizabeth Magie" },
     { "text": "Atari" },
     { "text": "Nintendo" },
     { "text": "Magnavox Odyssey" },

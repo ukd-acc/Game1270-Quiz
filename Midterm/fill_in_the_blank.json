@@ -13,17 +13,17 @@
       "answers": [["acrobat"],["gardener"],["slayer"],["skirmisher"],["gladiator"],["ninja"],["bounty hunter"],["architect"],["bard"]]
     },
     {
-      "prompt": "Name three types of fun: ___, ___, and ___.",
-      "answers": [["sensation"], ["fantasy"], ["narrative"], ["challenge"], ["fellowship"], ["discovery"], ["expression"], ["submission"]] 
-    },
-    {
       "prompt": "According to Chris Crawford, ___ is common element of all games and results of a game should always be less harsh than the situation the game models.",
       "answer": [["safety"]]
     },
     {
-      "prompt": "Games go further in representing reality/fantasy than movies because they are ___?",
-      "answer": [["interactive"]]
+      "prompt": "List 6 major genres of video games (super-genres, not sub-genres): ___, ___, ___, ___, ___, and ___.",
+      "answers": [["action"], ["adventure"], ["role-playing"], ["simulation"], ["sports"], ["strategy"], ["puzzle"], ["idle"],["racing"], ["simulation"],["fighting"]]
     },
-    
+    {
+      "prompt": "Name the 8 types of fun: ___, ___, ___, ___, ___, ___, ___, and ___.",
+      "answers": [["sensation"], ["fantasy"], ["narrative"], ["challenge"], ["fellowship"], ["discovery"], ["expression"], ["submission"]] 
+    }
+
   ]
 }
