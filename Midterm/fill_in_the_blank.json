@@ -5,7 +5,7 @@
   "points_per_question": 1,
   "questions": [
     {
-      "prompt": "___ is one of Bartle's Player Types.",
+      "prompt": "What are Bartle's Player Types? \n___, \n___, \n___, and \n___.",
       "answers": [["killers"], ["achievers"], ["explorers"], ["socializers"]]
     },
     {
@@ -17,11 +17,11 @@
       "answer": [["safety"]]
     },
     {
-      "prompt": "List 6 major genres of video games (super-genres, not sub-genres): ___, ___, ___, ___, ___, and ___.",
+      "prompt": "List 6 major genres of video games (super-genres, not sub-genres): \n___, \n___, \n___, \n___, \n___, and \n___.",
       "answers": [["action"], ["adventure"], ["role-playing"], ["simulation"], ["sports"], ["strategy"], ["puzzle"], ["idle"],["racing"], ["simulation"],["fighting"]]
     },
     {
-      "prompt": "Name the 8 types of fun: ___, ___, ___, ___, ___, ___, ___, and ___.",
+      "prompt": "Name the 8 types of fun: \n___ \n___ \n___ \n___ \n___ \n___ \n___ \n___.",
       "answers": [["sensation"], ["fantasy"], ["narrative"], ["challenge"], ["fellowship"], ["discovery"], ["expression"], ["submission"]] 
     }
 
