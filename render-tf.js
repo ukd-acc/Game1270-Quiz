@@ -6,6 +6,9 @@ function renderTFSection(section) {
   wrapper.innerHTML = `<h2>${section.title}</h2><p>${section.instructions}</p>`;
 
   section.questions.forEach((q, idx) => {
+    const questionBox = document.createElement("div");
+    questionBox.className = "question-box"; // Add box around each question
+
     const row = document.createElement("div");
     row.className = "tf-row";
 
@@ -46,7 +49,8 @@ function renderTFSection(section) {
 
     row.appendChild(text);
     row.appendChild(answers);
-    wrapper.appendChild(row);
+    questionBox.appendChild(row); // Wrap question in box
+    wrapper.appendChild(questionBox);
   });
 
   return wrapper;

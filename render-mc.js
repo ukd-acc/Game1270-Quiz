@@ -5,6 +5,9 @@ function renderMCSection(section) {
   wrapper.innerHTML = `<h2>${section.title}</h2><p>${section.instructions}</p>`;
 
   section.prompts.forEach((q, idx) => {
+    const questionBox = document.createElement("div");
+    questionBox.className = "question-box"; // Add box around each question
+
     const div = document.createElement("div");
     div.className = "mc-row"; // Ensure this wraps all options
 
@@ -33,7 +36,8 @@ function renderMCSection(section) {
       div.appendChild(option);
     });
 
-    wrapper.appendChild(div);
+    questionBox.appendChild(div); // Wrap question in box
+    wrapper.appendChild(questionBox);
   });
 
   return wrapper;
