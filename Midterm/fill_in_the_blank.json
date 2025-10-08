@@ -5,24 +5,24 @@
   "points_per_question": 1,
   "questions": [
     {
-      "prompt": "What are Bartle's Player Types? \n___ \n___ \n___ \n___",
+      "prompt": "___ is one of Bartle's Player Types.",
       "answers": [["killers"], ["achievers"], ["explorers"], ["socializers"]]
     },
     {
-      "prompt": "List four of Quantic Foundry's Gamer Types: ___ ___ ___ ___",
+      "prompt": "Two of Quantic Foundry's Gamer Types are ___ and ___.",
       "answers": [["acrobat"],["gardener"],["slayer"],["skirmisher"],["gladiator"],["ninja"],["bounty hunter"],["architect"],["bard"]]
+    },
+    {
+      "prompt": "Name three types of fun: ___, ___, and ___.",
+      "answers": [["sensation"], ["fantasy"], ["narrative"], ["challenge"], ["fellowship"], ["discovery"], ["expression"], ["submission"]] 
     },
     {
       "prompt": "According to Chris Crawford, ___ is common element of all games and results of a game should always be less harsh than the situation the game models.",
       "answer": [["safety"]]
     },
     {
-      "prompt": "List 6 major genres of video games (super-genres, not sub-genres): \n___ \n___ \n___ \n___ \n___ \n___",
-      "answers": [["action"], ["adventure"], ["role-playing"], ["simulation"], ["sports"], ["strategy"], ["puzzle"], ["idle"],["racing"], ["simulation"],["fighting"]]
-    },
-    {
-      "prompt": "Name the 8 types of fun: ___ ___ ___ ___ ___ ___ ___ ___.",
-      "answers": [["sensation"], ["fantasy"], ["narrative"], ["challenge"], ["fellowship"], ["discovery"], ["expression"], ["submission"]] 
+      "prompt": "Games go further in representing reality/fantasy than movies because they are ___?",
+      "answer": [["interactive"]]
     }
 
   ]

@@ -32,20 +32,19 @@ async function initQuiz() {
     const sec = await loadJSON(`${quizFolder}/${secMeta.file}`);
     if (!sec) {
       console.warn(`Skipping section: ${secMeta.file} not found in ${quizFolder}`);
-      continue; // Skip if the section file doesn't exist
+      continue; 
     }
 
     // Shuffle once here
     if (sec.type === "matching") {
       sec.prompts = shuffleArray(sec.prompts);
-      sec.word_bank = shuffleArray(sec.word_bank);   // shuffle dropdown answers
+      sec.word_bank = shuffleArray(sec.word_bank);   
     }
     else if (sec.type === "true_false") {
       sec.questions = shuffleArray(sec.questions);
     }
     else if (sec.type === "multiple_choice") {
       sec.prompts = shuffleArray(sec.prompts);
-      // also shuffle the answer options for each question
       sec.prompts.forEach(q => {
         q.answers = shuffleArray(q.answers || q.answer); 
       });
@@ -55,6 +54,9 @@ async function initQuiz() {
       sec.word_bank = shuffleArray(sec.word_bank);
     }
     else if (sec.type === "fill_in_the_blank") {
+      sec.questions = shuffleArray(sec.questions);
+    }
+    else if (sec.type === "fill_in_the_blank_list") {
       sec.questions = shuffleArray(sec.questions);
     }
 
@@ -91,6 +93,7 @@ function renderQuiz() {
     if (sec.type === "matching_pictures") sectionsEl.appendChild(renderMatchingPicturesSection(sec));
     if (sec.type === "multiple_choice") sectionsEl.appendChild(renderMCSection(sec));
     if (sec.type === "fill_in_the_blank") sectionsEl.appendChild(renderFillInTheBlankSection(sec));
+    if (sec.type === "fill_in_the_blank_list") sectionsEl.appendChild(renderFillInTheBlankListSection(sec));
 
   });
 

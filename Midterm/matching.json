@@ -5,20 +5,20 @@
   "points_per_question": 1,
   "prompts": [
     {
-      "question": "What are the names of some of the oldest games ever found?",
-      "answer": "Senet and Ur"
+      "question": "Xbox's Killer App?",
+      "answer": "Halo"
     },
     {
       "question": "What made loading much faster in the 9th generation of consoles?",
       "answer": "SSDs"
     },
     {
-      "question": "First successful game company founded in 1860 that also invented the Microvision handheld console?",
-      "answer": "Milton Bradley"
+      "question": "Technology that superimposes a computer generated image or game on a user's view of the real world?",
+      "answer": "Augmented Reality"
     },
     {
-      "question": "The name of the first true game designed to be played on a general purpose computer in 1961?",
-      "answer": "Spacewar"
+      "question": "What game first popularized the first person shooter genre?",
+      "answer": "Doom"
     },
     {
       "question": "In 1981 the US saw the arrival of Shigeru Miyamoto’s arcade game named?",
@@ -33,31 +33,51 @@
       "answer": "Elizabeth Magie"
     },
     {
-      "question": "The first home video game system?",
+      "question": "What console revitalized the video game industry in 1986?",
+      "answer": "Nintendo Entertainment System"
+    },
+    {
+      "question": "A collection of API's that made it easy to develop, install, and run PC games?",
+      "answer": "DirectX"
+    },
+    {
+      "question": "Sega Genesis' Killer App?",
+      "answer": "Sonic the Hedgehog"
+    },
+    {
+      "question": "What happened in the early 70s for electronic gaming?",
+      "answer": "The start and rise of arcades"
+    },
+    {
+      "question": "The first home video game system invented by Ralph Bear in 1972?",
       "answer": "Magnavox Odyssey"
-    }
+    },
+    
   ],
   "word_bank": [
     { "text": "Milton Bradley" },
+    { "text": "Parker Brothers" },
     { "text": "Elizabeth Magie" },
-    { "text": "Atari" },
-    { "text": "Nintendo" },
+    { "text": "Charles Darrow" },
+    { "text": "Nintendo Entertainment System" },
     { "text": "Magnavox Odyssey" },
-    { "text": "Atari 2600" },
     { "text": "Pong" },
     { "text": "Pac-Man" },
-    { "text": "Pitfall" },
-    { "text": "Go" },
-    { "text": "Pacheesi" },
-    { "text": "Senet and Ur" },
-    { "text": "Tic-Tac-Toe" },
     { "text": "Tennis for Two" },
     { "text": "Spacewar" },
     { "text": "The start and rise of arcades" },
     { "text": "The Crash and Recovery of the Game Industry" },
-    { "text": "The First Console Wars" },
     { "text": "SSDs" },
-    { "text": "HDDs" },
-    { "text": "CPUs" }
+    { "text": "CPUs" },
+    { "text": "Halo" },
+    { "text": "Call of Duty" },
+    { "text": "Doom" },
+    { "text": "Donkey Kong" },
+    { "text": "Augmented Reality" },
+    { "text": "Virtual Reality" },
+    { "text": "Halo" },
+    { "text": "Sonic the Hedgehog" },
+    { "text": "The Legend of Zelda" },
+    { "text": "Super Mario Bros." }
   ]
 }
