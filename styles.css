@@ -347,3 +347,12 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   display: inline-block;
   margin: 0 4px;
 }
+
+.question-box {
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  padding: 16px; /* Space inside the box */
+  margin-bottom: 16px; /* Space between boxes */
+  background: #0f1736; /* Slightly darker background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}

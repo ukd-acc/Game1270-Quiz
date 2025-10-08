@@ -4,6 +4,9 @@ function renderFillInTheBlankSection(section) {
   wrapper.innerHTML = `<h2>${section.title}</h2><p>${section.instructions}</p>`;
 
   section.questions.forEach((q, idx) => {
+    const questionBox = document.createElement("div");
+    questionBox.className = "question-box"; // Add box around each question
+
     const row = document.createElement("div");
     row.className = "fib-row";
 
@@ -11,7 +14,8 @@ function renderFillInTheBlankSection(section) {
     prompt.innerHTML = q.prompt.replace(/___/g, `<input type="text" class="fib-input" data-question="${idx}"/>`);
     row.appendChild(prompt);
 
-    wrapper.appendChild(row);
+    questionBox.appendChild(row); // Wrap question in box
+    wrapper.appendChild(questionBox);
   });
 
   return wrapper;
