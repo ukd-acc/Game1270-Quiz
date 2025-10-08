@@ -11,7 +11,7 @@ function renderFillInTheBlankSection(section) {
     row.className = "fib-row";
 
     const prompt = document.createElement("p");
-    prompt.innerHTML = q.prompt.replace(/___/g, `<input type="text" class="fib-input" data-question="${idx}"/>`);
+    prompt.innerHTML = q.prompt.replace(/___/g, `<div><input type="text" class="fib-input" data-question="${idx}"/></div>`);
     row.appendChild(prompt);
 
     questionBox.appendChild(row); // Wrap question in box
