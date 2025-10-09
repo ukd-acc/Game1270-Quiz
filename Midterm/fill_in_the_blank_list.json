@@ -13,6 +13,14 @@
       "answers": [["acrobat"],["gardener"],["slayer"],["skirmisher"],["gladiator"],["ninja"],["bounty hunter"],["architect"],["bard"]]
     },
     {
+      "prompt": "List six of Quantic Foundry's twelve Gamer motivations: ___ ___ ___ ___ ___ ___",
+      "answers": [["destruction"],["excitement"],["competition"],["community"],["challenge"],["strategy"],["completion"],["power"],["fantasy"],["story"],["design"],["discovery"]]
+    },
+    {
+      "prompt": "List three of Quantic Foundry's six gaming motivation clusters: ___ ___ ___",
+      "answers": [["action"], ["mastery"], ["social"], ["creativity"], ["immersion"], ["achievement"]]
+    },
+    {
       "prompt": "What are the three parts of the MDA framework? \n___ \n___ \n___",
       "answers": [["mechanics"], ["dynamics"], ["aesthetics"]]
     },
@@ -29,7 +37,7 @@
       "answers": [["playStation 5"], ["xbox series x/s"], ["nintendo switch"], ["ps5"], ["xbox"], ["switch"], ["nintendo switch 2"], ["switch 2"], ["switch2"]]
     },
     {
-      "prompt": "Name the four types of interface (input) modalities for games",
+      "prompt": "Name the four types of interface (input) modalities for games ___ ___ ___ ___",
       "answers": [["inertial"], ["touch"],["audio"], ["video"]]
     },
     {

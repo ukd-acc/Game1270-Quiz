@@ -1,10 +1,26 @@
 /* ---------- GRADING ---------- */
+function gradeShortAnswer(section) {
+  const responses = [];
+
+  section.questions.forEach((q, idx) => {
+    const textarea = qs(`.sa-input[data-question="${idx}"]`);
+    const userAnswer = textarea.value.trim();
+    responses.push({
+      question: q.prompt,
+      answer: userAnswer || "(no answer)"
+    });
+  });
+
+  return responses;
+}
+
 function gradeQuiz() {
   let points = 0, total = 0;
   let matchingCorrect = 0, tfCorrect = 0, mcCorrect = 0;
   let totalMatching = 0, totalTF = 0, totalMC = 0;
 
   const wrongAnswers = [];
+  const shortAnswerResponses = [];
 
   state.quiz.sections.forEach(section => {
     if (section.type === "matching") {
@@ -91,6 +107,10 @@ function gradeQuiz() {
       points += gradeFillInTheBlank(section);
       total += section.questions.length;
     }
+
+    else if (section.type === "short_answer") {
+      shortAnswerResponses.push(...gradeShortAnswer(section));
+    }
     
   });
 
@@ -101,7 +121,7 @@ function gradeQuiz() {
     tfCorrect, totalTF, 
     mcCorrect, totalMC, 
     points, total, percent, 
-    wrongAnswers 
+    wrongAnswers, shortAnswerResponses 
   };
 }
 
@@ -134,6 +154,13 @@ function showSummary(res) {
       <div class="card">
         <h2>Quiz Summary</h2>
         <p>You scored <strong>${res.points}/${res.total}</strong> (${res.percent}%).</p>
+        <h3>Short Answer Responses:</h3>
+        <ul class="short-answer-list">
+          ${res.shortAnswerResponses.map(r => 
+            `<li><strong>${r.question}</strong><br/>
+             <span class="student">Your answer: ${r.answer}</span></li>`
+          ).join("")}
+        </ul>
         <h3>Incorrect Answers:</h3>
         ${res.wrongAnswers.length === 0 ? "<p>All answers correct 🎉</p>" :
           `<ul class="wrong-list">
@@ -142,8 +169,7 @@ function showSummary(res) {
                <span class="student">Your answer: ${w.student}</span><br/>
                <span class="correct">Correct answer: ${w.correct}</span></li>`
             ).join("")}
-           </ul>`
-        }
+           </ul>`}
       </div>
     </div>
   `;

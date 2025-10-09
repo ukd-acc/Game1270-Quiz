@@ -94,7 +94,7 @@ function renderQuiz() {
     if (sec.type === "multiple_choice") sectionsEl.appendChild(renderMCSection(sec));
     if (sec.type === "fill_in_the_blank") sectionsEl.appendChild(renderFillInTheBlankSection(sec));
     if (sec.type === "fill_in_the_blank_list") sectionsEl.appendChild(renderFillInTheBlankListSection(sec));
-
+    if (sec.type === "short_answer") sectionsEl.appendChild(renderShortAnswerSection(sec)); // Add short answer section
   });
 
   qs("#submitBtn").addEventListener("click", onSubmit);

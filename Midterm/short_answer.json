@@ -1,0 +1,22 @@
+{
+  "type": "short_answer",
+  "title": "Short Answer Questions",
+  "instructions": "Provide detailed answers to the following questions.",
+  "questions": [
+    {
+      "prompt": "Describe Emergent Gameplay"
+    },
+    {
+      "prompt": "Describe negative and positive feedback loops. Give one an example for each."
+    },
+    {
+      "prompt": "Pick a genre. Discuss design principles in that genre and give an example of a game using those principles."
+    },
+    {
+      "prompt": "List two indicators of poor game design. Explain why they are indicators of poor design and give video game examples that demonstrate these."
+    },
+    {
+      "prompt": "Choose one of the trade offs in game design we discussed. Explain what it means and use a video game example to elaborate on this point."
+    }
+  ]
+}
