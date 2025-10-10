@@ -1,28 +1,32 @@
 {
   "type": "fill_in_the_blank",
   "title": "Fill in the Blank (1 point each)",
-  "instructions": "Type the correct answer(s) in the blank(s).",
+  "instructions": "Type the correct answer(s) in the blank(s). Do NOT use periods to end your answers.",
   "points_per_question": 1,
   "questions": [
     {
-      "prompt": "___ is one of Bartle's Player Types.",
-      "answers": [["killers"], ["achievers"], ["explorers"], ["socializers"]]
+      "prompt": "____ is Atari's first hit game.",
+      "answers": [["pong"]]
     },
     {
-      "prompt": "Two of Quantic Foundry's Gamer Types are ___ and ___.",
-      "answers": [["acrobat"],["gardener"],["slayer"],["skirmisher"],["gladiator"],["ninja"],["bounty hunter"],["architect"],["bard"]]
+      "prompt": "Established in 1860, ___ is the oldest game company in the US.",
+      "answers": [["milton bradley"], ["miltonbradley"]]
     },
     {
-      "prompt": "Name three types of fun: ___, ___, and ___.",
-      "answers": [["sensation"], ["fantasy"], ["narrative"], ["challenge"], ["fellowship"], ["discovery"], ["expression"], ["submission"]] 
+      "prompt": "In 1981 the US saw the arrival of Shigeru Miyamoto’s arcade game named ___.",
+      "answers": [["donkey kong"], ["donkeykong"], ["dk"]]
     },
     {
-      "prompt": "According to Chris Crawford, ___ is common element of all games and results of a game should always be less harsh than the situation the game models.",
-      "answer": [["safety"]]
+      "prompt": "____ was created by Gary Gygax and Dave Arneson created in 1973.",
+      "answers": [["dungeons and dragons"], ["d&d"], ["dnd"], ["dungeons & dragons"], ["d & d"]]
     },
     {
-      "prompt": "Games go further in representing reality/fantasy than movies because they are ___?",
-      "answer": [["interactive"]]
+      "prompt": "UX stands for ___",
+      "answers": [["user experience"], ["userexperience"], ["user exp"], ["userexp"]]
+    },
+    {
+      "question": "The ____ hugely revitalized the video game industry in 1986.",
+      "answers": [["nintendo entertainment system"], ["nintendoentertainmentsystem"],["nes"], ["famicom"]]
     }
 
   ]

@@ -356,3 +356,25 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   background: #0f1736; /* Slightly darker background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
+
+.sa-row {
+  margin-bottom: 16px;
+}
+
+.sa-input {
+  border: 1px solid #888;
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+  height: 100px;
+  resize: vertical; /* Allow resizing vertically */
+}
+
+.short-answer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.short-answer-list li {
+  margin-bottom: 16px;
+}

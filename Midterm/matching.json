@@ -21,12 +21,8 @@
       "answer": "Doom"
     },
     {
-      "question": "In 1981 the US saw the arrival of Shigeru Miyamoto’s arcade game named?",
-      "answer": "Donkey Kong"
-    },
-    {
-      "question": "What was Atari’s first big game hit?",
-      "answer": "Pong"
+      "question": "What 2009 game is widely considered the first Souls game?",
+      "answer": "Demon's Souls"
     },
     {
       "question": "Who invented the predecessor to Monopoly in 1903?",
@@ -51,12 +47,10 @@
     {
       "question": "The first home video game system invented by Ralph Bear in 1972?",
       "answer": "Magnavox Odyssey"
-    },
+    }
     
   ],
   "word_bank": [
-    { "text": "Milton Bradley" },
-    { "text": "Parker Brothers" },
     { "text": "Elizabeth Magie" },
     { "text": "Charles Darrow" },
     { "text": "Nintendo Entertainment System" },
