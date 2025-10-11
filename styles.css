@@ -335,6 +335,60 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   display: block;           /* ✅ ensure it stacks too */
 }
 
+#tocContainer {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: flex-start; /* align both to the left */
+  gap: 6px; /* space between button and TOC */
+}
+
+.toc {
+  background: #1a244a;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 200px;
+}
+
+.toc h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc ul li {
+  margin-bottom: 8px;
+}
+
+.toc ul li a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.toc ul li a:hover {
+  text-decoration: underline;
+}
+
+#toggleTocBtn {
+  background: #33406e;
+  color: #fff;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: block; /* ensure it stacks too */
+}
+
 .fib-row {
   margin-bottom: 16px;
 }

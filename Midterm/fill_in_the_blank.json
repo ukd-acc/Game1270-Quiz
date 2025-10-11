@@ -5,7 +5,7 @@
   "points_per_question": 1,
   "questions": [
     {
-      "prompt": "____ is Atari's first hit game.",
+      "prompt": "___ is Atari's first hit game.",
       "answers": [["pong"]]
     },
     {
@@ -17,7 +17,7 @@
       "answers": [["donkey kong"], ["donkeykong"], ["dk"]]
     },
     {
-      "prompt": "____ was created by Gary Gygax and Dave Arneson created in 1973.",
+      "prompt": "___ was created by Gary Gygax and Dave Arneson created in 1973.",
       "answers": [["dungeons and dragons"], ["d&d"], ["dnd"], ["dungeons & dragons"], ["d & d"]]
     },
     {
@@ -25,11 +25,11 @@
       "answers": [["user experience"], ["userexperience"], ["user exp"], ["userexp"]]
     },
     {
-      "prompt": "The ____ hugely revitalized the video game industry in 1986.",
+      "prompt": "The ___ hugely revitalized the video game industry in 1986.",
       "answers": [["nintendo entertainment system"], ["nintendoentertainmentsystem"],["nes"], ["famicom"]]
     },
     {
-      "prompt": "Gamers who score high on the ____ cluster want to finish everything the game has to offer and stive for power in the context of the game world.",
+      "prompt": "Gamers who score high on the ___ cluster want to finish everything the game has to offer and stive for power in the context of the game world.",
       "answers": [["achievement"]]
     },
     {
@@ -37,11 +37,11 @@
       "answers": [["mechanics"]]
     },
     {
-      "prompt": "The  ____ state, also known as 'The Zone', is characterized by complete absorption in what one does.",
+      "prompt": "The  ___ state, also known as 'The Zone', is characterized by complete absorption in what one does.",
       "answers": [["flow"]]
     },
     {
-      "prompt": "The first console wars in the US were between companies ____ and ____.",
+      "prompt": "The first console wars in the US were between companies ___ and ___.",
       "answers": [["nintendo"], ["sega"]]
     }
 

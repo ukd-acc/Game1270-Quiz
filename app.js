@@ -70,10 +70,19 @@ function renderQuiz() {
   const app = qs("#app");
   app.innerHTML = `
     <!-- floating timer (independent of quiz card) -->
-      <div id="timerContainer">
-        <button id="toggleTimerBtn" class="secondary">Hide Timer</button>
-        <div id="timer" class="timer">00:00</div>
+    <div id="timerContainer">
+      <button id="toggleTimerBtn" class="secondary">Hide Timer</button>
+      <div id="timer" class="timer">00:00</div>
+    </div>
+
+    <!-- floating table of contents -->
+    <div id="tocContainer">
+      <button id="toggleTocBtn" class="secondary">Hide TOC</button>
+      <div id="toc" class="toc">
+        <h3>Table of Contents</h3>
+        <ul id="tocList"></ul>
       </div>
+    </div>
 
     <div class="container">
       <div class="card">
@@ -85,19 +94,29 @@ function renderQuiz() {
     </div>
   `;
 
-  // Sections
+  // Render sections
   const sectionsEl = qs("#sections");
-  state.quiz.sections.forEach(sec => {
-    if (sec.type === "matching") sectionsEl.appendChild(renderMatchingSection(sec));
-    if (sec.type === "true_false") sectionsEl.appendChild(renderTFSection(sec));
-    if (sec.type === "matching_pictures") sectionsEl.appendChild(renderMatchingPicturesSection(sec));
-    if (sec.type === "multiple_choice") sectionsEl.appendChild(renderMCSection(sec));
-    if (sec.type === "fill_in_the_blank") sectionsEl.appendChild(renderFillInTheBlankSection(sec));
-    if (sec.type === "fill_in_the_blank_list") sectionsEl.appendChild(renderFillInTheBlankListSection(sec));
-    if (sec.type === "short_answer") sectionsEl.appendChild(renderShortAnswerSection(sec)); // Add short answer section
-  });
+  const tocListEl = qs("#tocList");
+  state.quiz.sections.forEach((sec, idx) => {
+    const sectionEl = document.createElement("div");
+    sectionEl.id = `section-${idx}`;
+    sectionEl.className = "quiz-section";
+    sectionsEl.appendChild(sectionEl);
 
-  qs("#submitBtn").addEventListener("click", onSubmit);
+    // Render section content
+    if (sec.type === "matching") sectionEl.appendChild(renderMatchingSection(sec));
+    if (sec.type === "true_false") sectionEl.appendChild(renderTFSection(sec));
+    if (sec.type === "matching_pictures") sectionEl.appendChild(renderMatchingPicturesSection(sec));
+    if (sec.type === "multiple_choice") sectionEl.appendChild(renderMCSection(sec));
+    if (sec.type === "fill_in_the_blank") sectionEl.appendChild(renderFillInTheBlankSection(sec));
+    if (sec.type === "fill_in_the_blank_list") sectionEl.appendChild(renderFillInTheBlankListSection(sec));
+    if (sec.type === "short_answer") sectionEl.appendChild(renderShortAnswerSection(sec));
+
+    // Add section to TOC
+    const tocItem = document.createElement("li");
+    tocItem.innerHTML = `<a href="#section-${idx}">${sec.title}</a>`;
+    tocListEl.appendChild(tocItem);
+  });
 
   // Timer logic
   state.startTime = new Date();
@@ -113,6 +132,20 @@ function renderQuiz() {
       qs("#toggleTimerBtn").textContent = "Show Timer";
     }
   });
+
+  // TOC toggle logic
+  qs("#toggleTocBtn").addEventListener("click", () => {
+    const tocEl = qs("#toc");
+    if (tocEl.style.display === "none") {
+      tocEl.style.display = "block";
+      qs("#toggleTocBtn").textContent = "Hide TOC";
+    } else {
+      tocEl.style.display = "none";
+      qs("#toggleTocBtn").textContent = "Show TOC";
+    }
+  });
+
+  qs("#submitBtn").addEventListener("click", onSubmit);
 }
 
 function startTimer() {

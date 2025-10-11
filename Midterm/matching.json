@@ -29,10 +29,6 @@
       "answer": "Elizabeth Magie"
     },
     {
-      "question": "What console revitalized the video game industry in 1986?",
-      "answer": "Nintendo Entertainment System"
-    },
-    {
       "question": "A collection of API's that made it easy to develop, install, and run PC games?",
       "answer": "DirectX"
     },
@@ -66,10 +62,11 @@
     { "text": "Halo" },
     { "text": "Call of Duty" },
     { "text": "Doom" },
+    { "text": "DirectX"},
+    { "text": "Visual Studio"},
     { "text": "Donkey Kong" },
     { "text": "Augmented Reality" },
     { "text": "Virtual Reality" },
-    { "text": "Halo" },
     { "text": "Sonic the Hedgehog" },
     { "text": "The Legend of Zelda" },
     { "text": "Super Mario Bros." }
