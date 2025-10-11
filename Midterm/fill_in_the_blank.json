@@ -25,8 +25,24 @@
       "answers": [["user experience"], ["userexperience"], ["user exp"], ["userexp"]]
     },
     {
-      "question": "The ____ hugely revitalized the video game industry in 1986.",
+      "prompt": "The ____ hugely revitalized the video game industry in 1986.",
       "answers": [["nintendo entertainment system"], ["nintendoentertainmentsystem"],["nes"], ["famicom"]]
+    },
+    {
+      "prompt": "Gamers who score high on the ____ cluster want to finish everything the game has to offer and stive for power in the context of the game world.",
+      "answers": [["achievement"]]
+    },
+    {
+      "prompt": "In MDA, ___ refers to the moment to moment elements of player interaction.",
+      "answers": [["mechanics"]]
+    },
+    {
+      "prompt": "The  ____ state, also known as 'The Zone', is characterized by complete absorption in what one does.",
+      "answers": [["flow"]]
+    },
+    {
+      "prompt": "The first console wars in the US were between companies ____ and ____.",
+      "answers": [["nintendo"], ["sega"]]
     }
 
   ]

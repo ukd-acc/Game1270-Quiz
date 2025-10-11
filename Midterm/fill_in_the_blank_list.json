@@ -1,8 +1,8 @@
 {
   "type": "fill_in_the_blank_list",
-  "title": "Fill in the Blank (1 point each)",
+  "title": "Fill in the Blank (.5 points each)",
   "instructions": "Type the correct answer(s) in the blank(s).",
-  "points_per_question": 1,
+  "points_per_question": 0.5,
   "questions": [
     {
       "prompt": "What are Bartle's Player Types? \n___ \n___ \n___ \n___",
@@ -29,7 +29,7 @@
       "answers": [["action"], ["adventure"], ["role-playing"], ["simulation"], ["sports"], ["strategy"], ["puzzle"], ["idle"],["racing"], ["simulation"],["fighting"]]
     },
     {
-      "prompt": "Name the 8 types of fun: ___ ___ ___ ___ ___ ___ ___ ___",
+      "prompt": "Name four of the eight types of fun: ___ ___ ___ ___",
       "answers": [["sensation"], ["fantasy"], ["narrative"], ["challenge"], ["fellowship"], ["discovery"], ["expression"], ["submission"]] 
     },
     {
@@ -41,12 +41,8 @@
       "answers": [["inertial"], ["touch"],["audio"], ["video"]]
     },
     {
-      "prompt": "What are the fundamental characteristics of games according to Chris Crawford? \n___ \n___ \n___ \n___",
+      "prompt": "What are the fundamental attributes of games according to Chris Crawford? \n___ \n___ \n___ \n___",
       "answers": [["representation"], ["interaction"], ["conflict"], ["safety"]]
-    },
-    {
-      "prompt": "List 5 reasons people play games: \n___ \n___ \n___ \n___ \n___",
-      "answers": [["to have fun"], ["to be challenged"], ["to socialize"], ["to compete"], ["to explore"], ["to escape"], ["to learn"], ["to express themselves"], ["to achieve goals"], ["to experience stories"]]
     }
 
   ]
