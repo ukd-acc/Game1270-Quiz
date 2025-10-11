@@ -49,8 +49,8 @@ function renderTFSection(section) {
 
     row.appendChild(text);
     row.appendChild(answers);
-    questionBox.appendChild(row); // Wrap question in box
-    wrapper.appendChild(questionBox);
+    //questionBox.appendChild(row); // Wrap question in box
+    wrapper.appendChild(row);
   });
 
   return wrapper;
