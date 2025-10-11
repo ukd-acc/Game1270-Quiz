@@ -1,7 +1,7 @@
 {
   "type": "short_answer",
   "title": "Short Answer Questions",
-  "instructions": "Provide detailed answers to the following questions.",
+  "instructions": "Provide detailed answers to the following questions. Readjust the text box size as needed",
   "questions": [
     {
       "prompt": "Describe Emergent Gameplay. Provide an example."
