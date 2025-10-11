@@ -14,6 +14,64 @@ function gradeShortAnswer(section) {
   return responses;
 }
 
+function gradeFillInTheBlank(section) {
+  let correct = 0;
+  const wrongAnswers = [];
+
+  section.questions.forEach((q, idx) => {
+    const inputs = qsa(`.fib-input[data-question="${idx}"]`);
+    const usedAnswers = new Set();
+
+    inputs.forEach((input, blankIdx) => {
+      const userAnswer = input.value.trim().toLowerCase(); // Normalize input
+      const possibleAnswers = Array.isArray(q.answers[blankIdx]) ? q.answers[blankIdx] : q.answers;
+
+      if (possibleAnswers.includes(userAnswer) && !usedAnswers.has(userAnswer)) {
+        correct++;
+        usedAnswers.add(userAnswer); // Prevent duplicate credit for the same answer
+      } else {
+        wrongAnswers.push({
+          type: "Fill in the Blank",
+          question: q.prompt,
+          student: userAnswer || "(no answer)",
+          correct: possibleAnswers.join(", ")
+        });
+      }
+    });
+  });
+
+  return { correct, wrongAnswers };
+}
+
+function gradeFillInTheBlankList(section) {
+  let correct = 0;
+  const wrongAnswers = [];
+
+  section.questions.forEach((q, idx) => {
+    const inputs = qsa(`.fib-input[data-question="${idx}"]`);
+    const usedAnswers = new Set();
+
+    inputs.forEach((input) => {
+      const userAnswer = input.value.trim().toLowerCase(); // Normalize input
+      const possibleAnswers = q.answers.flat(); // Flatten the array of possible answers
+
+      if (possibleAnswers.includes(userAnswer) && !usedAnswers.has(userAnswer)) {
+        correct++;
+        usedAnswers.add(userAnswer); // Prevent duplicate credit for the same answer
+      } else {
+        wrongAnswers.push({
+          type: "Fill in the Blank List",
+          question: `Blank ${idx + 1}`,
+          student: userAnswer || "(no answer)",
+          correct: possibleAnswers.join(", ")
+        });
+      }
+    });
+  });
+
+  return { correct, wrongAnswers };
+}
+
 function gradeQuiz() {
   let points = 0, total = 0;
   let matchingCorrect = 0, tfCorrect = 0, mcCorrect = 0;
@@ -95,7 +153,7 @@ function gradeQuiz() {
         } else {
           wrongAnswers.push({
             type: "Matching (Pictures)",
-            question: q.question,  // you might want to show something like "Identify this person"
+            question: q.question,
             student: studentAnswer || "(no answer)",
             correct: q.answer
           });
@@ -104,14 +162,22 @@ function gradeQuiz() {
     }
 
     else if (section.type === "fill_in_the_blank") {
-      points += gradeFillInTheBlank(section);
+      const result = gradeFillInTheBlank(section);
+      points += result.correct;
       total += section.questions.length;
+      wrongAnswers.push(...result.wrongAnswers);
+    }
+
+    else if (section.type === "fill_in_the_blank_list") {
+      const result = gradeFillInTheBlankList(section);
+      points += result.correct;
+      total += section.questions.length;
+      wrongAnswers.push(...result.wrongAnswers);
     }
 
     else if (section.type === "short_answer") {
       shortAnswerResponses.push(...gradeShortAnswer(section));
     }
-    
   });
 
   const percent = total > 0 ? Math.round((points / total) * 100) : 0;
@@ -123,27 +189,6 @@ function gradeQuiz() {
     points, total, percent, 
     wrongAnswers, shortAnswerResponses 
   };
-}
-
-function gradeFillInTheBlank(section) {
-  let correct = 0;
-
-  section.questions.forEach((q, idx) => {
-    const inputs = qsa(`.fib-input[data-question="${idx}"]`);
-    const usedAnswers = new Set();
-
-    inputs.forEach((input, blankIdx) => {
-      const userAnswer = input.value.trim().toLowerCase(); // Force lowercase
-      const possibleAnswers = Array.isArray(q.answers[blankIdx]) ? q.answers[blankIdx] : q.answers;
-
-      if (possibleAnswers.includes(userAnswer) && !usedAnswers.has(userAnswer)) {
-        correct++;
-        usedAnswers.add(userAnswer); // Prevent duplicate credit for the same answer
-      }
-    });
-  });
-
-  return correct;
 }
 
 /* ---------- SUMMARY ---------- */
@@ -170,7 +215,10 @@ function showSummary(res) {
                <span class="correct">Correct answer: ${w.correct}</span></li>`
             ).join("")}
            </ul>`}
+        <button id="logoutBtn" class="secondary">Log Out</button>
       </div>
     </div>
   `;
+
+  qs("#logoutBtn").addEventListener("click", logout);
 }
