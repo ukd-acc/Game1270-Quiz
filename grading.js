@@ -17,7 +17,7 @@ function gradeShortAnswer(section) {
 function gradeFillInTheBlank(section) {
   let correct = 0;
   const wrongAnswers = [];
-
+  console.log(section);
   section.questions.forEach((q, idx) => {
     const inputs = qsa(`.fib-input[data-question="${idx}"]`);
     const usedAnswers = new Set();
