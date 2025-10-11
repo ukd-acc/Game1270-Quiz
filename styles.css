@@ -416,12 +416,16 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
 }
 
 .sa-input {
-  border: 1px solid #888;
-  border-radius: 4px;
-  padding: 8px;
-  width: 100%;
-  height: 100px;
+  background-color: #1a244a; /* Dark blue background */
+  color: #ffffff; /* White text */
+  border: 1px solid #33406e; /* Slightly lighter blue border */
+  border-radius: 4px; /* Rounded corners */
+  padding: 8px; /* Space inside the text box */
+  width: 100%; /* Full width */
+  height: 100px; /* Default height */
   resize: vertical; /* Allow resizing vertically */
+  font-size: 1rem; /* Adjust font size */
+  line-height: 1.5; /* Improve readability */
 }
 
 .short-answer-list {
