@@ -10,11 +10,11 @@
     },
     {
       "prompt": "Established in 1860, ___ is the oldest game company in the US.",
-      "answers": [["milton bradley"], ["miltonbradley"]]
+      "answers": [["milton bradley","miltonbradley"]]
     },
     {
       "prompt": "In 1981 the US saw the arrival of Shigeru Miyamoto’s arcade game named ___.",
-      "answers": [["donkey kong"], ["donkeykong"], ["dk"]]
+      "answers": [["donkey kong","donkeykong","dk"]]
     },
     {
       "prompt": "___ was created by Gary Gygax and Dave Arneson created in 1973.",
@@ -22,11 +22,11 @@
     },
     {
       "prompt": "UX stands for ___",
-      "answers": [["user experience"], ["userexperience"], ["user exp"], ["userexp"]]
+      "answers": [["user experience","userexperience","user exp","userexp"]]
     },
     {
       "prompt": "The ___ hugely revitalized the video game industry in 1986.",
-      "answers": [["nintendo entertainment system"], ["nintendoentertainmentsystem"],["nes"], ["famicom"]]
+      "answers": [["nintendo entertainment system","nintendoentertainmentsystem","nes","famicom"]]
     },
     {
       "prompt": "Gamers who score high on the ___ cluster want to finish everything the game has to offer and stive for power in the context of the game world.",
@@ -42,7 +42,7 @@
     },
     {
       "prompt": "The first console wars in the US were between companies ___ and ___.",
-      "answers": [["nintendo"], ["sega"]]
+      "answers": [["nintendo","sega"], ["nintendo","sega"]]
     }
 
   ]

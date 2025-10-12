@@ -6,43 +6,43 @@
   "questions": [
     {
       "prompt": "What are Bartle's Player Types? \n___ \n___ \n___ \n___",
-      "answers": [["killers"], ["achievers"], ["explorers"], ["socializers"]]
+      "answers": [["killers","achievers","explorers","socializers"]]
     },
     {
       "prompt": "List four of Quantic Foundry's Gamer Types: ___ ___ ___ ___",
-      "answers": [["acrobat"],["gardener"],["slayer"],["skirmisher"],["gladiator"],["ninja"],["bounty hunter"],["architect"],["bard"]]
+      "answers": [["acrobat","gardener","slayer","skirmisher","gladiator","ninja","bounty hunter","architect","bard"]]
     },
     {
       "prompt": "List six of Quantic Foundry's twelve Gamer motivations: ___ ___ ___ ___ ___ ___",
-      "answers": [["destruction"],["excitement"],["competition"],["community"],["challenge"],["strategy"],["completion"],["power"],["fantasy"],["story"],["design"],["discovery"]]
+      "answers": [["destruction","excitement","competition","community","challenge","strategy","completion","power","fantasy","story","design","discovery"]]
     },
     {
       "prompt": "List three of Quantic Foundry's six gaming motivation clusters: ___ ___ ___",
-      "answers": [["action"], ["mastery"], ["social"], ["creativity"], ["immersion"], ["achievement"]]
+      "answers": [["action","mastery","social","creativity","immersion","achievement"]]
     },
     {
       "prompt": "What are the three parts of the MDA framework? \n___ \n___ \n___",
-      "answers": [["mechanics"], ["dynamics"], ["aesthetics"]]
+      "answers": [["mechanics","dynamics","aesthetics"]]
     },
     {
       "prompt": "List 5 major genres of video games (super-genres, not sub-genres): \n___ \n___ \n___ \n___ \n___",
-      "answers": [["action"], ["adventure"], ["role-playing"], ["simulation"], ["sports"], ["strategy"], ["puzzle"], ["idle"],["racing"], ["simulation"],["fighting"]]
+      "answers": [["action","adventure","role-playing","simulation","sports","strategy","puzzle","idle","racing","simulation","fighting"]]
     },
     {
       "prompt": "Name four of the eight types of fun: ___ ___ ___ ___",
-      "answers": [["sensation"], ["fantasy"], ["narrative"], ["challenge"], ["fellowship"], ["discovery"], ["expression"], ["submission"]] 
+      "answers": [["sensation","fantasy","narrative","challenge","fellowship","discovery","expression","submission"]] 
     },
     {
       "prompt": "Name the major 9th generation consoles: ___ ___ ___",
-      "answers": [["playStation 5"], ["xbox series x/s"], ["nintendo switch"], ["ps5"], ["xbox"], ["switch"], ["nintendo switch 2"], ["switch 2"], ["switch2"]]
+      "answers": [["playStation 5","xbox series x/s","nintendo switch","ps5","xbox","switch","nintendo switch 2","switch 2","switch2"]]
     },
     {
       "prompt": "Name the four types of interface (input) modalities for games ___ ___ ___ ___",
-      "answers": [["inertial"], ["touch"],["audio"], ["video"]]
+      "answers": [["inertial","touch","audio","video"]]
     },
     {
       "prompt": "What are the fundamental attributes of games according to Chris Crawford? \n___ \n___ \n___ \n___",
-      "answers": [["representation"], ["interaction"], ["conflict"], ["safety"]]
+      "answers": [["representation","interaction","conflict","safety"]]
     }
 
   ]
