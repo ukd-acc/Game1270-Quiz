@@ -18,7 +18,7 @@
     },
     {
       "prompt": "___ was created by Gary Gygax and Dave Arneson created in 1973.",
-      "answers": [[["dungeons and dragons", "d&d","dnd","dungeons & dragons","d & d"]]]
+      "answers": [["dungeons and dragons", "d&d","dnd","dungeons & dragons","d & d"]]
     },
     {
       "prompt": "UX stands for ___",
