@@ -12,7 +12,7 @@
     { "file": "multiple_choice.json" },
     { "file": "truefalse.json" },
     { "file": "matching_pictures.json" },
-    { "file": "fill_in_the_blank.json" }//,
+    { "file": "fill_in_the_blank.json" },
     { "file": "fill_in_the_blank_list.json" },
     { "file": "short_answer.json" }
 
