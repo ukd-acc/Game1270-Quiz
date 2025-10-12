@@ -1,6 +1,6 @@
 {
   "type": "fill_in_the_blank_list",
-  "title": "Fill in the Blank (.5 points each)",
+  "title": "Fill in the List (.5 points each)",
   "instructions": "Type the correct answer(s) in the blank(s).",
   "points_per_question": 0.5,
   "questions": [
