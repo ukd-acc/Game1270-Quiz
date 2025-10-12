@@ -10,11 +10,11 @@
     },
     {
       "question": "8-bit refers to the framerate of a computer.",
-      "answer": true
+      "answer": false
     },
     {
-      "question": "The years of 1983 – 1985 was considered the Crash and Collapse of the games industry.",
-      "answer": false
+      "question": "The years of 1983 – 1985 was considered the crash of the games industry.",
+      "answer": true
     },
     {
       "question": "Emergent gameplay is when players have only one solution to one problem.",
@@ -29,7 +29,7 @@
       "answer": false
     },
     {
-      "question": "The ESRB was created by North American governments to regulate video games.",
+      "question": "The ESRB was created by North American governments to regulate video game releases.",
       "answer": false
     },
     {

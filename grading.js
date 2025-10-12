@@ -17,14 +17,14 @@ function gradeShortAnswer(section) {
 function gradeFillInTheBlank(section) {
   let correct = 0;
   const wrongAnswers = [];
-  console.log(section);
+
   section.questions.forEach((q, idx) => {
-    const inputs = qsa(`.fib-input[data-question="${idx}"]`);
+    const inputs = qsa(`.fib-input[data-question="${idx}"]`); // Select inputs for the current question
     const usedAnswers = new Set();
 
-    inputs.forEach((input, blankIdx) => {
+    inputs.forEach((input) => {
       const userAnswer = input.value.trim().toLowerCase(); // Normalize input
-      const possibleAnswers = Array.isArray(q.answers[blankIdx]) ? q.answers[blankIdx] : q.answers;
+      const possibleAnswers = Array.isArray(q.answers) ? q.answers.flat() : q.answers; // Flatten possible answers
 
       if (possibleAnswers.includes(userAnswer) && !usedAnswers.has(userAnswer)) {
         correct++;
@@ -48,12 +48,12 @@ function gradeFillInTheBlankList(section) {
   const wrongAnswers = [];
 
   section.questions.forEach((q, idx) => {
-    const inputs = qsa(`.fib-input[data-question="${idx}"]`);
+    const inputs = qsa(`.fib-input[data-question="${idx}"]`); // Select inputs for the current question
     const usedAnswers = new Set();
 
     inputs.forEach((input) => {
       const userAnswer = input.value.trim().toLowerCase(); // Normalize input
-      const possibleAnswers = q.answers.flat(); // Flatten the array of possible answers
+      const possibleAnswers = q.answers.flat(); // Flatten possible answers
 
       if (possibleAnswers.includes(userAnswer) && !usedAnswers.has(userAnswer)) {
         correct++;
@@ -74,21 +74,16 @@ function gradeFillInTheBlankList(section) {
 
 function gradeQuiz() {
   let points = 0, total = 0;
-  let matchingCorrect = 0, tfCorrect = 0, mcCorrect = 0;
-  let totalMatching = 0, totalTF = 0, totalMC = 0;
-
   const wrongAnswers = [];
   const shortAnswerResponses = [];
 
   state.quiz.sections.forEach(section => {
     if (section.type === "matching") {
       section.prompts.forEach((q, idx) => {
-        totalMatching++;
         total += section.points_per_question;
         const studentAnswer = state.answers[`matching-${idx}`];
 
         if (studentAnswer && studentAnswer.toLowerCase() === q.answer.toLowerCase()) {
-          matchingCorrect++;
           points += section.points_per_question;
         } else {
           wrongAnswers.push({
@@ -103,12 +98,10 @@ function gradeQuiz() {
 
     else if (section.type === "true_false") {
       section.questions.forEach((q, idx) => {
-        totalTF++;
         total += section.points_per_question;
         const studentAnswer = state.answers[`tf-${idx}`];
 
         if (typeof studentAnswer !== "undefined" && studentAnswer === q.answer) {
-          tfCorrect++;
           points += section.points_per_question;
         } else {
           wrongAnswers.push({
@@ -123,12 +116,10 @@ function gradeQuiz() {
 
     else if (section.type === "multiple_choice") {
       section.prompts.forEach((q, idx) => {
-        totalMC++;
         total += section.points_per_question;
         const studentAnswer = state.answers[`mc-${idx}`];
 
         if (studentAnswer && studentAnswer === q.correct_answer) {
-          mcCorrect++;
           points += section.points_per_question;
         } else {
           wrongAnswers.push({
@@ -141,37 +132,17 @@ function gradeQuiz() {
       });
     }
 
-    else if (section.type === "matching_pictures") {
-      section.prompts.forEach((q, idx) => {
-        totalMatching++;
-        total += section.points_per_question;
-        const studentAnswer = state.answers[`matching_pictures-${idx}`];
-    
-        if (studentAnswer && studentAnswer.toLowerCase() === q.answer.toLowerCase()) {
-          matchingCorrect++;
-          points += section.points_per_question;
-        } else {
-          wrongAnswers.push({
-            type: "Matching (Pictures)",
-            question: q.question,
-            student: studentAnswer || "(no answer)",
-            correct: q.answer
-          });
-        }
-      });
-    }
-
     else if (section.type === "fill_in_the_blank") {
       const result = gradeFillInTheBlank(section);
       points += result.correct;
-      total += section.questions.length;
+      total += section.questions.length; // Count total blanks
       wrongAnswers.push(...result.wrongAnswers);
     }
 
     else if (section.type === "fill_in_the_blank_list") {
       const result = gradeFillInTheBlankList(section);
       points += result.correct;
-      total += section.questions.length;
+      total += section.questions.length; // Count total blanks
       wrongAnswers.push(...result.wrongAnswers);
     }
 
@@ -182,13 +153,7 @@ function gradeQuiz() {
 
   const percent = total > 0 ? Math.round((points / total) * 100) : 0;
 
-  return { 
-    matchingCorrect, totalMatching, 
-    tfCorrect, totalTF, 
-    mcCorrect, totalMC, 
-    points, total, percent, 
-    wrongAnswers, shortAnswerResponses 
-  };
+  return { points, total, percent, wrongAnswers, shortAnswerResponses };
 }
 
 /* ---------- SUMMARY ---------- */

@@ -25,7 +25,7 @@
       "answer": "Demon's Souls"
     },
     {
-      "question": "Who invented the predecessor to Monopoly in 1903?",
+      "question": "Who invented the predecessor to Monopoly in 1903, The Landlord's Game?",
       "answer": "Elizabeth Magie"
     },
     {
@@ -41,7 +41,7 @@
       "answer": "The start and rise of arcades"
     },
     {
-      "question": "The first home video game system invented by Ralph Bear in 1972?",
+      "question": "The first home video game system, which was invented by Ralph Bear in 1972?",
       "answer": "Magnavox Odyssey"
     }
     
@@ -69,6 +69,9 @@
     { "text": "Virtual Reality" },
     { "text": "Sonic the Hedgehog" },
     { "text": "The Legend of Zelda" },
-    { "text": "Super Mario Bros." }
+    { "text": "Super Mario Bros." },
+    { "text": "Demon's Souls"},
+    { "text": "Dark Souls" }
+    
   ]
 }

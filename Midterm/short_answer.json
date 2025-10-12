@@ -4,6 +4,9 @@
   "instructions": "Provide detailed answers to the following questions. Readjust the text box size as needed",
   "questions": [
     {
+      "prompt": "What factors led to the crash of the video game industry beginning in 1983?"
+    },
+    {
       "prompt": "Describe Emergent Gameplay. Provide an example."
     },
     {
