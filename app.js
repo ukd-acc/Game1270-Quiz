@@ -53,12 +53,12 @@ async function initQuiz() {
       sec.prompts = shuffleArray(sec.prompts);
       sec.word_bank = shuffleArray(sec.word_bank);
     }
-    else if (sec.type === "fill_in_the_blank") {
+    /*else if (sec.type === "fill_in_the_blank") {
       sec.questions = shuffleArray(sec.questions);
     }
     else if (sec.type === "fill_in_the_blank_list") {
       sec.questions = shuffleArray(sec.questions);
-    }
+    }*/
 
     state.quiz.sections.push(sec);
   }
