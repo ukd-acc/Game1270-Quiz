@@ -21,23 +21,32 @@ function gradeFillInTheBlank(section) {
   section.questions.forEach((q, idx) => {
     const inputs = qsa(`.fib-input[data-question="${idx}"]`); // Select inputs for the current question
     const usedAnswers = new Set();
+    let questionCorrect = true; // Track if the entire question is correct
+    const studentAnswers = []; // Collect all user answers for the question
 
-    inputs.forEach((input) => {
+    inputs.forEach((input, blankIdx) => {
       const userAnswer = input.value.trim().toLowerCase(); // Normalize input
-      const possibleAnswers = Array.isArray(q.answers) ? q.answers.flat() : q.answers; // Flatten possible answers
+      const possibleAnswers = Array.isArray(q.answers[blankIdx]) ? q.answers[blankIdx] : q.answers;
+
+      studentAnswers.push(userAnswer || "(no answer)");
 
       if (possibleAnswers.includes(userAnswer) && !usedAnswers.has(userAnswer)) {
         correct++;
         usedAnswers.add(userAnswer); // Prevent duplicate credit for the same answer
       } else {
-        wrongAnswers.push({
-          type: "Fill in the Blank",
-          question: q.prompt,
-          student: userAnswer || "(no answer)",
-          correct: possibleAnswers.join(", ")
-        });
+        questionCorrect = false; // Mark the question as incorrect
       }
     });
+
+    // Add to wrongAnswers only once per question
+    if (!questionCorrect) {
+      wrongAnswers.push({
+        type: "Fill in the Blank",
+        question: q.prompt,
+        student: studentAnswers.join(", "),
+        correct: q.answers.map(a => a.join(", ")).join(" | ") // Combine all possible answers
+      });
+    }
   });
 
   return { correct, wrongAnswers };
