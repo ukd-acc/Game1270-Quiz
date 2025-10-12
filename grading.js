@@ -144,7 +144,13 @@ function gradeQuiz() {
     else if (section.type === "fill_in_the_blank") {
       const result = gradeFillInTheBlank(section);
       points += result.correct;
-      total += section.questions.length; // Count total blanks
+
+      // Count total blanks by counting the number of "___" in each prompt
+      total += section.questions.reduce((sum, q) => {
+        const blankCount = (q.prompt.match(/___/g) || []).length; // Count "___" in the prompt
+        return sum + blankCount;
+      }, 0);
+
       wrongAnswers.push(...result.wrongAnswers);
     }
 

@@ -5,7 +5,7 @@
   "points_per_question": 1,
   "questions": [
     {
-      "prompt": "___ is Atari's first hit game.",
+      "prompt": "___ was Atari's first hit game.",
       "answers": [["pong"]]
     },
     {
