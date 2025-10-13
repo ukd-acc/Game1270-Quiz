@@ -157,7 +157,10 @@ function gradeQuiz() {
     else if (section.type === "fill_in_the_blank_list") {
       const result = gradeFillInTheBlankList(section);
       points += result.correct;
-      total += section.questions.length; // Count total blanks
+      total += section.questions.reduce((sum, q) => {
+        const blankCount = (q.prompt.match(/___/g) || []).length; // Count "___" in the prompt
+        return sum + blankCount;
+      }, 0);
       wrongAnswers.push(...result.wrongAnswers);
     }
 
