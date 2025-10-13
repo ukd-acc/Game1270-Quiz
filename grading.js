@@ -19,7 +19,7 @@ function gradeFillInTheBlank(section) {
   const wrongAnswers = [];
 
   section.questions.forEach((q, idx) => {
-    const inputs = qsa(`.fib-input[data-question="${idx}"]`); // Select inputs for the current question
+    const inputs = qsa(`.fibl-input[data-question="${idx}"]`); // Select inputs for the current question
     const usedAnswers = new Set();
     let questionCorrect = true; // Track if the entire question is correct
     const studentAnswers = []; // Collect all user answers for the question
