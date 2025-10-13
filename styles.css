@@ -402,6 +402,19 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   margin: 0 4px;
 }
 
+.fibl-row {
+  margin-bottom: 16px;
+}
+
+.fibl-input {
+  border: 1px solid #888;
+  border-radius: 4px;
+  padding: 4px 8px;
+  width: 150px;
+  display: inline-block;
+  margin: 0 4px;
+}
+
 .question-box {
   border: 1px solid rgba(255, 255, 255, 0.15); /* Light border */
   border-radius: 8px; /* Rounded corners */
