@@ -59,23 +59,31 @@ function gradeFillInTheBlankList(section) {
   section.questions.forEach((q, idx) => {
     const inputs = qsa(`.fibl-input[data-question="${idx}"]`); // Select inputs for the current question
     const usedAnswers = new Set();
+    let questionCorrectCount = 0; // Track correct answers for this question
+    const studentAnswers = []; // Collect all user answers for the question
 
     inputs.forEach((input) => {
       const userAnswer = input.value.trim().toLowerCase(); // Normalize input
       const possibleAnswers = q.answers.flat(); // Flatten possible answers
 
+      studentAnswers.push(userAnswer || "(no answer)");
+
       if (possibleAnswers.includes(userAnswer) && !usedAnswers.has(userAnswer)) {
+        questionCorrectCount++;
         correct++;
         usedAnswers.add(userAnswer); // Prevent duplicate credit for the same answer
-      } else {
-        wrongAnswers.push({
-          type: "Fill in the Blank List",
-          question: `Blank ${idx + 1}`,
-          student: userAnswer || "(no answer)",
-          correct: possibleAnswers.join(", ")
-        });
       }
     });
+
+    // Add a single entry to wrongAnswers for the entire question
+    if (questionCorrectCount < inputs.length) {
+      wrongAnswers.push({
+        type: "Fill in the Blank List",
+        question: q.prompt,
+        student: `${questionCorrectCount}/${inputs.length} correct: ${studentAnswers.join(", ")}`,
+        correct: possibleAnswers.join(", ")
+      });
+    }
   });
 
   return { correct, wrongAnswers };
