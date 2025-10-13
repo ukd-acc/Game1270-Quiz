@@ -8,7 +8,9 @@ function renderMatchingSection(section) {
   const sortedWordBank = section.word_bank.sort((a, b) => a.text.localeCompare(b.text));
 
   section.prompts.forEach((q, idx) => {
-    const row = document.createElement("div");
+    const questionBox = document.createElement("div");
+    questionBox.className = "question-box"; // Add box around each question    const row = document.createElement("div");
+    
     row.className = "prompt-row";
 
     const text = document.createElement("div");
@@ -29,7 +31,8 @@ function renderMatchingSection(section) {
     selectWrapper.appendChild(select);
     row.appendChild(text);
     row.appendChild(selectWrapper);
-    wrapper.appendChild(row);
+    questionBox.appendChild(row); // Wrap question in box
+    wrapper.appendChild(questionBox);
   });
 
   return wrapper;
