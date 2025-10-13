@@ -11,6 +11,7 @@ function renderMatchingSection(section) {
     const questionBox = document.createElement("div");
     questionBox.className = "question-box"; // Add box around each question    const row = document.createElement("div");
     
+    const row = document.createElement("div");
     row.className = "prompt-row";
 
     const text = document.createElement("div");
