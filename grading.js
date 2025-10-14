@@ -62,9 +62,11 @@ function gradeFillInTheBlankList(section) {
     let questionCorrectCount = 0; // Track correct answers for this question
     const studentAnswers = []; // Collect all user answers for the question
 
+    // Flatten possible answers once for the entire question
+    const possibleAnswers = q.answers.flat();
+
     inputs.forEach((input) => {
       const userAnswer = input.value.trim().toLowerCase(); // Normalize input
-      const possibleAnswers = q.answers.flat(); // Flatten possible answers
 
       studentAnswers.push(userAnswer || "(no answer)");
 
