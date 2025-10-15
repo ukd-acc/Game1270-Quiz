@@ -5,6 +5,14 @@
   "points_per_question": 1,
   "questions": [
     {
+      "prompt": "Name the four types of interface (input) modalities for games ___ ___ ___ ___",
+      "answers": [["inertial","touch","audio","video"]]
+    },
+    {
+      "prompt": "What are the fundamental attributes of games according to Chris Crawford? \n___ \n___ \n___ \n___",
+      "answers": [["representation","interaction","conflict","safety"]]
+    },
+    {
       "prompt": "What are Bartle's Player Types? \n___ \n___ \n___ \n___",
       "answers": [["killers","achievers","explorers","socializers","killer","achiever","explorer","socializer"]]
     },
@@ -25,24 +33,16 @@
       "answers": [["mechanics","dynamics","aesthetics", "mechanic","dynamic","aesthetic"]]
     },
     {
-      "prompt": "List 5 major genres of video games (super-genres, not sub-genres): \n___ \n___ \n___ \n___ \n___",
+      "prompt": "List four major genres of video games (super-genres, not sub-genres): ___ ___ ___ ___",
       "answers": [["action","adventure","role-playing","simulation","sports","strategy","puzzle","idle","racing","simulation","fighting"]]
     },
     {
       "prompt": "Name four of the eight types of fun: ___ ___ ___ ___",
-      "answers": [["sensation","fantasy","narrative","challenge","fellowship","discovery","expression","submission"]] 
+      "answers": [["sensation","fantasy","narrative","challenge","fellowship","discovery","expression","submission", "competition"]] 
     },
     {
       "prompt": "Name the major 9th generation consoles: ___ ___ ___",
-      "answers": [["playstation 5","xbox series x","xbox series", "xbox series s", "xbox series x/s", "xbox series s/x", "nintendo switch","ps5","xbox","switch","nintendo switch 2","switch 2","switch2"]]
-    },
-    {
-      "prompt": "Name the four types of interface (input) modalities for games ___ ___ ___ ___",
-      "answers": [["inertial","touch","audio","video"]]
-    },
-    {
-      "prompt": "What are the fundamental attributes of games according to Chris Crawford? \n___ \n___ \n___ \n___",
-      "answers": [["representation","interaction","conflict","safety"]]
+      "answers": [["playstation 5","xbox series x","xbox series", "xbox series s", "xbox series x/s", "xbox series s/x", "nintendo switch","ps5","xbox","switch","nintendo switch 2","switch 2","switch2", "steamdeck", "steam deck"]]
     }
 
   ]
