@@ -37,7 +37,9 @@ function sendResultsByEmail(result) {
       `${state.settings.title} results for ${state.user.fullName}:\n\n` +
       `Score: ${result.points}/${result.total} (${result.percent}%).\n` +
       `Duration: ${durationMin} minute${durationMin !== 1 ? "s" : ""}.\n\n` +
-      `Incorrect answers:\n${wrongDetails}`
+      `Incorrect answers:\n${wrongDetails}` + 
+      `Short answers: \n${result.shortAnswerResponses}`
+
   };
   
   emailjs.send(
