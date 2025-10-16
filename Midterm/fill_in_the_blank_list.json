@@ -25,24 +25,23 @@
       "answers": [["killers","achievers","explorers","socializers","killer","achiever","explorer","socializer"]]
     },
     {
-      "prompt": "List six of Quantic Foundry's Gamer Types: ___ ___ ___ ___ ___ ___",
+      "prompt": "List Quantic Foundry's Gamer Types: ___ ___ ___ ___ ___ ___ ___ ___ ___",
       "answers": [["acrobat","gardener","slayer","skirmisher","gladiator","ninja","bounty hunter","architect","bard"]]
     },
     {
-      "prompt": "List eight of Quantic Foundry's twelve Gamer motivations: ___ ___ ___ ___ ___ ___ ___ ___",
-      "answers": [["destruction","excitement","competition","community","challenge","strategy","completion","power","fantasy","story","design","discovery"]]
-    },
-    {
-      "prompt": "List four of Quantic Foundry's six gaming motivation clusters: ___ ___ ___ ___",
+      "prompt": "List Quantic Foundry's motivation clusters: ___ ___ ___ ___ ___ ___",
       "answers": [["action","mastery","social","creativity","immersion","achievement"]]
+    },{
+      "prompt": "List Quantic Foundry's Gamer motivations: ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___",
+      "answers": [["destruction","excitement","competition","community","challenge","strategy","completion","power","fantasy","story","design","discovery"]]
     },
     {
       "prompt": "What are the three parts of the MDA framework? \n___ \n___ \n___",
       "answers": [["mechanics","dynamics","aesthetics", "mechanic","dynamic","aesthetic"]]
     },
     {
-      "prompt": "List five major genres of video games (super-genres, not sub-genres): ___ ___ ___ ___ ___",
-      "answers": [["action","adventure","role-playing","simulation","sports","strategy","puzzle","idle","racing","simulation","fighting"]]
+      "prompt": "List six major genres of video games (super-genres, not sub-genres): ___ ___ ___ ___ ___ ___",
+      "answers": [["action","adventure","role-playing","simulation","sports","strategy","puzzle","idle","racing","simulation","fighting", "horror", "educational", "social deduction", "visual novel"]]
     },
     {
       "prompt": "Name four of the eight types of fun: ___ ___ ___ ___",
