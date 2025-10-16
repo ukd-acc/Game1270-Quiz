@@ -47,7 +47,7 @@ function sendResultsByEmail(result) {
   )
   .then(() => {
     alert("✅ Results emailed successfully!")
-    logout();
+//    logout();
   })
   .catch(err => {
     console.error("❌ Email failed:", err);
