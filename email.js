@@ -27,7 +27,12 @@ function sendResultsByEmail(result) {
       `${w.type}: ${w.question}\n  Student: ${w.student}\n  Correct: ${w.correct}`
     ).join("\n\n");
   }
-
+  let shortAnswerDetails = "No short answers";
+  if(result.shortAnswerResponses.length > 0) {
+    shortAnswerDetails = result.shortAnswerResponses.map(r => 
+      `${r.question}: ${r.answer}`
+    ).join("\n\n");
+  }
   const templateParams = {
     to_email: state.settings.emailRecipients.join(", "),
     name: state.user.fullName || state.user.username,
@@ -37,8 +42,8 @@ function sendResultsByEmail(result) {
       `${state.settings.title} results for ${state.user.fullName}:\n\n` +
       `Score: ${result.points}/${result.total} (${result.percent}%).\n` +
       `Duration: ${durationMin} minute${durationMin !== 1 ? "s" : ""}.\n\n` +
-      `Incorrect answers:\n${wrongDetails}` + 
-      `Short answers: \n${result.shortAnswerResponses}`
+      `Incorrect answers:\n${wrongDetails}\n` + 
+      `Short answers: \n${shortAnswerDetails}`
 
   };
   
