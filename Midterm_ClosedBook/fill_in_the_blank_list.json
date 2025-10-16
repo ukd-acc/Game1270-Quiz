@@ -1,17 +1,9 @@
 {
   "type": "fill_in_the_blank_list",
-  "title": "Fill in the List (1 points each)",
+  "title": "Fill in the List (1 points each blank, 59 total)",
   "instructions": "Type the correct answer(s) in the blank(s).",
   "points_per_question": 1,
   "questions": [
-    {
-      "prompt": "List two of the oldest games ever found: ___ ___",
-      "answers": [["senet", "ur", "mancala", "go"]]
-    },
-    {
-      "prompt": "Who were the two founders of the first video game company? ___ ___",
-      "answers": [["nolan bushnell","ted dabney"]]
-    },
     {
       "prompt": "Name the four types of interface (input) modalities for games ___ ___ ___ ___",
       "answers": [["inertial","touch","audio","video"]]
@@ -29,10 +21,11 @@
       "answers": [["acrobat","gardener","slayer","skirmisher","gladiator","ninja","bounty hunter","architect","bard"]]
     },
     {
-      "prompt": "List Quantic Foundry's motivation clusters: ___ ___ ___ ___ ___ ___",
+      "prompt": "List Quantic Foundry's Motivation Clusters: ___ ___ ___ ___ ___ ___",
       "answers": [["action","mastery","social","creativity","immersion","achievement"]]
-    },{
-      "prompt": "List Quantic Foundry's Gamer motivations: ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___",
+    },
+    {
+      "prompt": "List Quantic Foundry's Gamer Motivations: ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___ ___",
       "answers": [["destruction","excitement","competition","community","challenge","strategy","completion","power","fantasy","story","design","discovery"]]
     },
     {
@@ -41,7 +34,7 @@
     },
     {
       "prompt": "List six major genres of video games (super-genres, not sub-genres): ___ ___ ___ ___ ___ ___",
-      "answers": [["action","adventure","role-playing","simulation","sports","strategy","puzzle","idle","racing","simulation","fighting", "horror", "educational", "social deduction", "visual novel"]]
+      "answers": [["action","adventure","role-playing", "rpg", "simulation","sim","sports","sport","strategy","puzzle","idle","racing","race", "fighting", "horror", "educational", "social deduction", "visual novel"]]
     },
     {
       "prompt": "Name four of the eight types of fun: ___ ___ ___ ___",
@@ -51,6 +44,5 @@
       "prompt": "Name the major 9th generation consoles: ___ ___ ___",
       "answers": [["playstation 5","xbox series x","xbox series", "xbox series s", "xbox series x/s", "xbox series s/x", "nintendo switch","ps5","xbox","switch","nintendo switch 2","switch 2","switch2", "steamdeck", "steam deck"]]
     }
-
   ]
 }

@@ -1,7 +1,7 @@
 {
   "type": "matching",
-  "title": "Matching (1 point each)",
-  "instructions": "Select the correct answer from the dropdown.",
+  "title": "Matching (1 point each, 15 total)",
+  "instructions": "Select the correct answer from the dropdown (be sure to scroll all the way down and read CAREFULLY).",
   "points_per_question": 1,
   "prompts": [
     {
@@ -54,7 +54,7 @@
     },
     {
       "question": "Games prior to the 19th century were primarily ________ games",
-      "answer": "multiplayer"
+      "answer": "Multi-Player"
     },
     {
       "question": "Who pioneered the ability to play multiple games on a single console?",

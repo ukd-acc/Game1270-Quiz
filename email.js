@@ -39,7 +39,7 @@ function sendResultsByEmail(result) {
       `Duration: ${durationMin} minute${durationMin !== 1 ? "s" : ""}.\n\n` +
       `Incorrect answers:\n${wrongDetails}`
   };
-  /*
+  
   emailjs.send(
     state.settings.emailConfig.serviceID,
     state.settings.emailConfig.templateID,
@@ -52,5 +52,5 @@ function sendResultsByEmail(result) {
   .catch(err => {
     console.error("❌ Email failed:", err);
     alert("Error sending email. Please notify your instructor.");
-  });*/
+  });
 }

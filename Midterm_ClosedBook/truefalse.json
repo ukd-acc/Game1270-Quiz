@@ -1,7 +1,7 @@
 {
   "type": "true_false",
   "title": "True or False (1 point each, 15 total)",
-  "instructions": "Select True or False for each statement.",
+  "instructions": "Select True or False for each statement (read CAREFULLY).",
   "points_per_question": 1,
   "questions": [
     {
