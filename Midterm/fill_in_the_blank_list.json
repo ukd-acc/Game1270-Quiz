@@ -5,6 +5,14 @@
   "points_per_question": 1,
   "questions": [
     {
+      "prompt": "List two of the oldest games ever found: ___ ___",
+      "answers": [["senet", "ur", "mancala", "go"]]
+    },
+    {
+      "prompt": "Who were the two founders of the first video game company? ___ ___",
+      "answers": [["nolan bushnell","ted dabney"]]
+    },
+    {
       "prompt": "Name the four types of interface (input) modalities for games ___ ___ ___ ___",
       "answers": [["inertial","touch","audio","video"]]
     },
@@ -17,15 +25,15 @@
       "answers": [["killers","achievers","explorers","socializers","killer","achiever","explorer","socializer"]]
     },
     {
-      "prompt": "List four of Quantic Foundry's Gamer Types: ___ ___ ___ ___",
+      "prompt": "List six of Quantic Foundry's Gamer Types: ___ ___ ___ ___ ___ ___",
       "answers": [["acrobat","gardener","slayer","skirmisher","gladiator","ninja","bounty hunter","architect","bard"]]
     },
     {
-      "prompt": "List six of Quantic Foundry's twelve Gamer motivations: ___ ___ ___ ___ ___ ___",
+      "prompt": "List eight of Quantic Foundry's twelve Gamer motivations: ___ ___ ___ ___ ___ ___ ___ ___",
       "answers": [["destruction","excitement","competition","community","challenge","strategy","completion","power","fantasy","story","design","discovery"]]
     },
     {
-      "prompt": "List three of Quantic Foundry's six gaming motivation clusters: ___ ___ ___",
+      "prompt": "List four of Quantic Foundry's six gaming motivation clusters: ___ ___ ___ ___",
       "answers": [["action","mastery","social","creativity","immersion","achievement"]]
     },
     {
@@ -33,7 +41,7 @@
       "answers": [["mechanics","dynamics","aesthetics", "mechanic","dynamic","aesthetic"]]
     },
     {
-      "prompt": "List four major genres of video games (super-genres, not sub-genres): ___ ___ ___ ___",
+      "prompt": "List five major genres of video games (super-genres, not sub-genres): ___ ___ ___ ___ ___",
       "answers": [["action","adventure","role-playing","simulation","sports","strategy","puzzle","idle","racing","simulation","fighting"]]
     },
     {
