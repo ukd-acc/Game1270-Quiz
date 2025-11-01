@@ -1,7 +1,7 @@
 {
   "type": "matching",
-  "title": "Matching (1 point each)",
-  "instructions": "Select the correct answer from the dropdown.",
+  "title": "Matching (1 point each, 15 total)",
+  "instructions": "Select the correct answer from the dropdown (be sure to scroll all the way down and read CAREFULLY).",
   "points_per_question": 1,
   "prompts": [
     {
@@ -38,24 +38,47 @@
     },
     {
       "question": "What happened in the early 70s for electronic gaming?",
-      "answer": "The start and rise of arcades"
+      "answer": "The Rise of Arcades"
     },
     {
       "question": "The first home video game system, which was invented by Ralph Bear in 1972?",
       "answer": "Magnavox Odyssey"
+    },
+    {
+      "question": "Which video game contained a mod that popularized the Multiplayer Online Battle Arena (MOBA) genre?",
+      "answer": "Warcraft 3"
+    },
+    {
+      "question": "What action-adventure survival did very poorly on initial release but slowly built up a base?",
+      "answer": "No Man's Sky"
+    },
+    {
+      "question": "Games prior to the 19th century were primarily ________ games",
+      "answer": "Multi-Player"
+    },
+    {
+      "question": "Who pioneered the ability to play multiple games on a single console?",
+      "answer": "Jerry Lawson"
+    },
+    {
+      "question": "What sub-genre of game often required backtracking with new abilities to access new parts of previous areas",
+      "answer": "Metroidvania"
     }
+    
     
   ],
   "word_bank": [
     { "text": "Elizabeth Magie" },
     { "text": "Charles Darrow" },
+    { "text": "Ralph Baer"},
+    { "text": "Jerry Lawson"},
     { "text": "Nintendo Entertainment System" },
     { "text": "Magnavox Odyssey" },
     { "text": "Pong" },
     { "text": "Pac-Man" },
     { "text": "Tennis for Two" },
     { "text": "Spacewar" },
-    { "text": "The start and rise of arcades" },
+    { "text": "The Rise of Arcades" },
     { "text": "The Crash and Recovery of the Game Industry" },
     { "text": "SSDs" },
     { "text": "CPUs" },
@@ -71,7 +94,15 @@
     { "text": "The Legend of Zelda" },
     { "text": "Super Mario Bros." },
     { "text": "Demon's Souls"},
-    { "text": "Dark Souls" }
+    { "text": "Dark Souls" },
+    { "text": "Defense of the Ancients (DOTA)"},
+    { "text": "Warcraft 3"},
+    { "text": "No Man's Sky"},
+    { "text": "The Outer Worlds"},
+    { "text": "Multi-Player"},
+    { "text": "Single-Player"},
+    { "text": "Metroidvania"},
+    { "text": "Roguelike"}
     
   ]
 }

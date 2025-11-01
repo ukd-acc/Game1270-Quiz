@@ -1,11 +1,11 @@
 {
   "type": "true_false",
-  "title": "True or False (1 point each)",
-  "instructions": "Select True or False for each statement.",
+  "title": "True or False (1 point each, 15 total)",
+  "instructions": "Select True or False for each statement (read CAREFULLY).",
   "points_per_question": 1,
   "questions": [
     {
-      "question": "Games prior to the 19th century were primarily single-player games.",
+      "question": "The first electronic games were made for arcades.",
       "answer": false
     },
     {

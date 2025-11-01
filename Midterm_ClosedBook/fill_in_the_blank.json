@@ -1,6 +1,6 @@
 {
   "type": "fill_in_the_blank",
-  "title": "Fill in the Blank (1 point each)",
+  "title": "Fill in the Blank (1 point per blank, 15 total)",
   "instructions": "Type the correct answer(s) in the blank(s). Do NOT use periods to end your answers.",
   "points_per_question": 1,
   "questions": [
@@ -39,6 +39,14 @@
     {
       "prompt": "The  ___ state, also known as 'The Zone', is characterized by complete absorption in what one does.",
       "answers": [["flow"]]
+    },
+    {
+      "prompt": "List two of the oldest games ever found: ___ and ___.",
+      "answers": [["senet", "ur", "mancala", "go"]]
+    },
+    {
+      "prompt": "Who were the two founders of the first video game company? ___ and ___.",
+      "answers": [["nolan bushnell","ted dabney"]]
     },
     {
       "prompt": "The first console wars in the US were between companies ___ and ___.",

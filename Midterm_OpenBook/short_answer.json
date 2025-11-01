@@ -1,0 +1,29 @@
+{
+  "type": "short_answer",
+  "title": "Short Answer Questions",
+  "instructions": "Provide detailed answers to the following questions. Readjust the text box size as needed",
+  "questions": [
+    {
+      "prompt": "What factors led to the crash of the video game industry beginning in 1983? (5 pts)"
+    },
+    {
+      "prompt": "Describe Emergent Gameplay. Provide an example. (10 pts)"
+    },
+    {
+      "prompt": "Describe negative and positive feedback loops. Give one an example for each. (15 pts)"
+    },
+    {
+      "prompt": "Pick a genre. Discuss design principles in that genre and give an example of a game using those principles. (15 pts)"
+    },
+    {
+      "prompt": "Choose one of the trade offs in game design we discussed. Explain what it means and use a video game example to elaborate on this point. (15 pts)"
+    },
+    {
+      "prompt": "List two indicators of poor game design. Explain why they are indicators of poor design and give video game examples that demonstrate these. (15 pts)"
+    },
+    {
+      "prompt": "Write your gamer type(s). Discuss a game that you have played and how it appealed to your listed gamer type(s) and motivations. Also, discuss a game you have played that did not appeal to you and how that lines up with your gamer type(s) and motivations. (25 pts)"
+    }
+    
+  ]
+}

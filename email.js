@@ -27,7 +27,12 @@ function sendResultsByEmail(result) {
       `${w.type}: ${w.question}\n  Student: ${w.student}\n  Correct: ${w.correct}`
     ).join("\n\n");
   }
-
+  let shortAnswerDetails = "No short answers";
+  if(result.shortAnswerResponses.length > 0) {
+    shortAnswerDetails = result.shortAnswerResponses.map(r => 
+      `${r.question}: ${r.answer}`
+    ).join("\n\n");
+  }
   const templateParams = {
     to_email: state.settings.emailRecipients.join(", "),
     name: state.user.fullName || state.user.username,
@@ -37,9 +42,11 @@ function sendResultsByEmail(result) {
       `${state.settings.title} results for ${state.user.fullName}:\n\n` +
       `Score: ${result.points}/${result.total} (${result.percent}%).\n` +
       `Duration: ${durationMin} minute${durationMin !== 1 ? "s" : ""}.\n\n` +
-      `Incorrect answers:\n${wrongDetails}`
+      `Incorrect answers:\n${wrongDetails}\n` + 
+      `Short answers: \n${shortAnswerDetails}`
+
   };
-  /*
+  
   emailjs.send(
     state.settings.emailConfig.serviceID,
     state.settings.emailConfig.templateID,
@@ -47,10 +54,10 @@ function sendResultsByEmail(result) {
   )
   .then(() => {
     alert("✅ Results emailed successfully!")
-    logout();
+//    logout();
   })
   .catch(err => {
     console.error("❌ Email failed:", err);
     alert("Error sending email. Please notify your instructor.");
-  });*/
+  });
 }
