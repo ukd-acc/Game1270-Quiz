@@ -26,7 +26,7 @@
     },
     {
       "prompt": "List 5 major genres of video games (super-genres, not sub-genres): \n___ \n___ \n___ \n___ \n___",
-      "answers": [["action","adventure","role-playing","simulation","sports","strategy","puzzle","idle","racing","simulation","fighting"]]
+      "answers": [["action","adventure","role-playing","rpg","simulation","sim","sports","strategy","puzzle","idle","racing","simulation","fighting"]]
     },
     {
       "prompt": "Name four of the eight types of fun: ___ ___ ___ ___",
