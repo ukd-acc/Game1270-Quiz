@@ -1,0 +1,54 @@
+{
+    "type": "matching",
+    "title": "Matching (1 point each)",
+    "instructions": "Select the correct answer from the dropdown.",
+    "points_per_question": 1,
+    "prompts": [
+      {
+        "question": "A roadmap describing how the game will be built, including tasks and dependencies.",
+        "answer": "Project Plan"
+      },
+      {
+        "question": "The phase of development where the team primarily focuses on building the game.",
+        "answer": "Production"
+      },
+      {
+        "question": "A document that is created in pre-production that details how the game and its elements will be implemented.",
+        "answer": "TDD"
+      },
+      {
+        "question": "Responsible for working out schedules and budgets to ensure that the game ships on time.",
+        "answer": "Producer"
+      },
+      {
+        "question": "A Game Design Document should be a _____ document that evolves throughout the development process.",
+        "answer": "Living Document"
+      }
+    ],
+    "word_bank": [
+      { "text": "Pre-Production" },
+      { "text": "Production" },
+      { "text": "Post-Production" },
+      { "text": "GDD" },
+      { "text": "TDD" },
+      { "text": "LDD" },
+      { "text": "Art Bible" },
+      { "text": "Story Bible" },
+      { "text": "Project Plan"},
+      { "text": "Production Path"},
+      { "text": "Designer" },
+      { "text": "Producer"},
+      { "text": "Artist" },
+      { "text": "Quality Assurance" },
+      { "text": "Programmer" },
+      { "text": "Marketing" },
+      { "text": "Fossilized" },
+      { "text": "Living" },
+      { "text": "Unstructured" },
+      { "text": "Rigid" },
+      { "text": "Thin"},
+      { "text": "Flexible" }
+      
+    ]
+  }
+  

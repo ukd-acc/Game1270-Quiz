@@ -1,0 +1,33 @@
+{
+  "type": "multiple_choice",
+  "title": "Multiple Choice (1 point each)",
+  "instructions": "Select the best answer for each question.",
+  "points_per_question": 1,
+  "prompts": [
+    {
+      "question": "Which of the following is NOT a part of functional management?",
+      "answers": ["Executive Director", "Art Director", "Creative Director", "Technical Director"],
+      "correct_answer": "Executive Director"
+    },
+    {
+      "question": "What is the role of Operation Management?",
+      "answers": ["Defines the vision of the company", "Turn the vision into reality", "Day-to-day specifics of getting the job done"],
+      "correct_answer": "Day-to-day specifics of getting the job done"
+    },
+    {
+      "question": "Which game did we not discuss as defying a genre when it came out?",
+      "answers": ["The Stanley Parable", "Uncharted", "Katamari Damacy", "Portal"],
+      "correct_answer": "Uncharted"
+    },
+    {
+      "question": "Which video game contained a mod that popularized the Multiplayer Online Battle Arena (MOBA) genre?",
+      "answers": ["League of Legends", "Warcraft 3", "Smite", "Defense of the Ancients (DotA)"],
+      "correct_answer": "Warcraft 3"
+    },
+    {
+      "question": "Which element of Chris Crawford's definition of games is the one people are most willing to sacrifice?",
+      "answers": ["Representation", "Conflict", "Safety", "Interaction"],
+      "correct_answer": "Safety"
+    }  
+  ]
+}

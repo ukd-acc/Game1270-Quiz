@@ -1,0 +1,30 @@
+{
+    "type": "true_false",
+    "title": "True or False (1 point each)",
+    "instructions": "Select True or False for each statement.",
+    "points_per_question": 1,
+    "questions": [
+      {
+        "question": "After a beta milestone, you should keep adding content and assets to the game until release.",
+        "answer": false
+      },
+      {
+        "question": "Job descriptions in the game industry are not standardized. A system designer at one company could be something completely different at another.",
+        "answer": true
+      },
+      {
+        "question": "Features are assets in the game. Things like levels, characters, weapon models, music, and VO lines.",
+        "answer": false
+      },
+      {
+        "question": "Prototypes should always be built in the same engine as the final game.",
+        "answer": false
+      },
+      {
+        "question": "Game Design Documents are standardized across the industry so that everyone knows what to expect.",
+        "answer": false
+      }
+
+    ]
+  }
+  
