@@ -15,19 +15,19 @@
       "correct_answer": "Day-to-day specifics of getting the job done"
     },
     {
-      "question": "Which game did we not discuss as defying a genre when it came out?",
-      "answers": ["The Stanley Parable", "Uncharted", "Katamari Damacy", "Portal"],
-      "correct_answer": "Uncharted"
+      "question": "What type of artist is responsible for creating the art related to the levels the player will inhabit?",
+      "answers": ["Character Artist", "Environment Artist", "Concept Artist", "Technical Artist"],
+      "correct_answer": "Environment Artist"
     },
     {
-      "question": "Which video game contained a mod that popularized the Multiplayer Online Battle Arena (MOBA) genre?",
-      "answers": ["League of Legends", "Warcraft 3", "Smite", "Defense of the Ancients (DotA)"],
-      "correct_answer": "Warcraft 3"
+      "question": "Which of the following steps in the Game Development Cycle are in the proper chronological order?",
+      "answers": ["Test Room, First-Playable, Pre-Production, DLC", "Vertical Slice, Code Lock, Beta, Gold Master", "Prototype, Content Lock, Cert, DLC", "Early Concept, Brainstorming, Production, Greenlight"],
+      "correct_answer": "Prototype, Content Lock, Cert, Roll-off" 
     },
     {
-      "question": "Which element of Chris Crawford's definition of games is the one people are most willing to sacrifice?",
-      "answers": ["Representation", "Conflict", "Safety", "Interaction"],
-      "correct_answer": "Safety"
+      "question": "Which of the following likely would NOT be found in a Game Design Document (GDD)?",
+      "answers": ["Game Mechanics", "Story and Narrative", "Development Schedule", "Interactable Items"],
+      "correct_answer": "Development Schedule"
     }  
   ]
 }
