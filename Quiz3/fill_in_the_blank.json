@@ -18,7 +18,7 @@
     },
     {
       "prompt": "___ is a sub-team in development that finds and reports bugs.",
-      "answers": [["quality assurance", "QA", "testing"]]
+      "answers": [["quality assurance", "QA", "testing", "qa", "Quality Assurance"]]
     },
     {
       "prompt": "Scope, cost, and time make up the ___ triangle of quality.",

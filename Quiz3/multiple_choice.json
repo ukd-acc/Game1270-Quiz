@@ -21,7 +21,7 @@
     },
     {
       "question": "Which of the following steps in the Game Development Cycle are in the proper chronological order?",
-      "answers": ["Test Room, First-Playable, Pre-Production, DLC", "Vertical Slice, Code Lock, Beta, Gold Master", "Prototype, Content Lock, Cert, DLC", "Early Concept, Brainstorming, Production, Greenlight"],
+      "answers": ["Test Room, First-Playable, Pre-Production, DLC", "Vertical Slice, Code Lock, Beta, Gold Master", "Prototype, Content Lock, Cert, Roll-off", "Early Concept, Brainstorming, Production, Greenlight"],
       "correct_answer": "Prototype, Content Lock, Cert, Roll-off" 
     },
     {
