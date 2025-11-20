@@ -1,0 +1,28 @@
+{
+  "type": "fill_in_the_blank",
+  "title": "Fill in the Blank (1 point per blank, 15 total)",
+  "instructions": "Type the correct answer(s) in the blank(s). Do NOT use periods to end your answers.",
+  "points_per_question": 1,
+  "questions": [
+    {
+      "prompt": "A ___ is a snapshot of your repository at a specific point in time that represents a set of changes. It is initially an addition to your local repository",
+      "answers": [["commit", "submit", "cl", "changelist"]]
+    },
+    {
+      "prompt": "What is a common scripting language used for game development? ___.",
+      "answers": [["lua","python","javascript","js", "c#","csharp","blueprint", "godotscript", "gdscript", "godotscript"]]
+    },
+    {
+      "prompt": "The owner of an intellectual property is entitled to ___ revenue generated from that IP. A publisher pays an advance against this revenue to the developer.",
+      "answers": [["royalty", "royalties"]]
+    },
+    {
+      "prompt": "If a game plans to use a real-world image or likeness (like a building), it must obtain a ___ from its owner to legally use it in the game.",
+      "answers": [["license", "licensing"]]
+    },
+    {
+      "prompt": "___ are independent companies that develop games but do not publish them, often meaning they get less of the profits.",
+      "answers": [["third-party", "3rd-party", "thirdparty", "third party", "3rd party"]]
+    }
+  ]
+}

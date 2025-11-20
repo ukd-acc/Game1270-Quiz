@@ -1,0 +1,33 @@
+{
+  "type": "multiple_choice",
+  "title": "Multiple Choice (1 point each)",
+  "instructions": "Select the best answer for each question.",
+  "points_per_question": 1,
+  "prompts": [
+    {
+      "question": "Which of the following is NOT a reason we use source control?",
+      "answers": ["Share code with others", "Back up your work", "Track changes over time", "Improve game performance"],
+      "correct_answer": "Improve game performance"
+    },
+    {
+      "question": "What type of source control are we using in class?",
+      "answers": ["git", "github", "perforce", "p4v"],
+      "correct_answer": "git"
+    },
+    {
+      "question": "Which of the following is NOT a part of the core game loop?",
+      "answers": ["Process Input", "Create Characters","Update Game", "Render"],
+      "correct_answer": "Create Characters"
+    },
+    {
+      "question": "Every version of a game at retail is considered a(n) what?",
+      "answers": ["USP", "EULA", "SKU", "NDA"],
+      "correct_answer": "SKU"
+    },
+    {
+      "question": "What is the PRIMARY reason developers release console exclusives?",
+      "answers": ["Ensure more sales of a specific console", "Reduce development costs by targeting a single platform", "Avoid multiple certification processes", "Incentives from the console manufacturer"],
+      "correct_answer": "Incentives from the console manufacturer"
+    }
+  ]
+}

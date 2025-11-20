@@ -1,0 +1,50 @@
+{
+    "type": "matching",
+    "title": "Matching (1 point each)",
+    "instructions": "Select the correct answer from the dropdown.",
+    "points_per_question": 1,
+    "prompts": [
+      {
+        "question": "Creates a local copy of a remote repository on your machine. This is typically done only once per repository.",
+        "answer": "Clone"
+      },
+      {
+        "question": "What is the most common game engine currently used in AAA game development?",
+        "answer": "Unreal Engine"
+      },
+      {
+        "question": "Actual cost of physical materials needed to make up the full retail box and contents.",
+        "answer": "COGs"
+      },
+      {
+        "question": "Sells the products based off MSRP and handles returns.",
+        "answer": "Retailer"
+      },
+      {
+        "question": "Celbrity VO, Streamers/YouTubers, and Events are all examples of this.",
+        "answer": "Marketing"
+      }
+    ],
+    "word_bank": [
+      { "text": "Pull" },
+      { "text": "Fetch" },
+      { "text": "Clone" },
+      { "text": "Unreal Engine" },
+      { "text": "Unity" },
+      { "text": "Godot" },
+      { "text": "Stencyl" },
+      { "text": "GameMaker" },
+      { "text": "COGs" },
+      { "text": "EULA" },
+      { "text": "SKU"},
+      { "text": "Retailer"},
+      { "text": "Distributor" },
+      { "text": "Publisher"},
+      { "text": "Marketing" },
+      { "text": "Developing" },
+      { "text": "Publishing" }
+
+      
+    ]
+  }
+  

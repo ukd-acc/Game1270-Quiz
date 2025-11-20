@@ -1,0 +1,30 @@
+{
+    "type": "true_false",
+    "title": "True or False (1 point each)",
+    "instructions": "Select True or False for each statement.",
+    "points_per_question": 1,
+    "questions": [
+      {
+        "question": "You can run git locally without connecting to a server. You only need to connect to a server when you want to push your changes.",
+        "answer": true
+      },
+      {
+        "question": "A transform tells you the color, position, and scale of an object.",
+        "answer": false
+      },
+      {
+        "question": "Ports are profitable because of their lower development costs.",
+        "answer": true
+      },
+      {
+        "question": "Developers always retain the rights to their created intellectual property.",
+        "answer": false
+      },
+      {
+        "question": "Digital games are generally more profitable than physical games.",
+        "answer": true
+      }
+
+    ]
+  }
+  
