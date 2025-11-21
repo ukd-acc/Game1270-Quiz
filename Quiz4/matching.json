@@ -9,8 +9,8 @@
         "answer": "Clone"
       },
       {
-        "question": "What is the most common game engine currently used in AAA game development?",
-        "answer": "Unreal Engine"
+        "question": "A ___ is an independent company that develops games but does not publish them, often meaning they get less of the profits.",
+        "answer": "Third-party developer"
       },
       {
         "question": "Actual cost of physical materials needed to make up the full retail box and contents.",
@@ -29,11 +29,8 @@
       { "text": "Pull" },
       { "text": "Fetch" },
       { "text": "Clone" },
-      { "text": "Unreal Engine" },
-      { "text": "Unity" },
-      { "text": "Godot" },
-      { "text": "Stencyl" },
-      { "text": "GameMaker" },
+      { "text": "Third-party developer" },
+      { "text": "First-party developer" },
       { "text": "COGs" },
       { "text": "EULA" },
       { "text": "SKU"},

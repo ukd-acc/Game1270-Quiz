@@ -10,7 +10,7 @@
       "correct_answer": "Improve game performance"
     },
     {
-      "question": "What type of source control are we using in class?",
+      "question": "What source control solution are we using in class?",
       "answers": ["git", "github", "perforce", "p4v"],
       "correct_answer": "git"
     },
@@ -20,7 +20,7 @@
       "correct_answer": "Create Characters"
     },
     {
-      "question": "Every version of a game at retail is considered a(n) what?",
+      "question": "Every version of a game at a retail store has a separate what?",
       "answers": ["USP", "EULA", "SKU", "NDA"],
       "correct_answer": "SKU"
     },

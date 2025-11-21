@@ -1,6 +1,6 @@
 {
   "type": "fill_in_the_blank",
-  "title": "Fill in the Blank (1 point per blank, 15 total)",
+  "title": "Fill in the Blank (1 point per blank)",
   "instructions": "Type the correct answer(s) in the blank(s). Do NOT use periods to end your answers.",
   "points_per_question": 1,
   "questions": [
@@ -21,8 +21,8 @@
       "answers": [["license", "licensing"]]
     },
     {
-      "prompt": "___ are independent companies that develop games but do not publish them, often meaning they get less of the profits.",
-      "answers": [["third-party", "3rd-party", "thirdparty", "third party", "3rd party"]]
+      "prompt": "___ is the most commonly used game engine in AA and AAA game development industry today.",
+      "answers": [["Unreal Engine", "Unreal", "UE", "UE4", "UE5"]]
     }
   ]
 }
