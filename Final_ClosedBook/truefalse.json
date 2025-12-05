@@ -25,10 +25,6 @@
       "answer": false
     },
     {
-      "question": "The Marufuku Company founded in 1889 changed its name in 1951 to the Nintendo Video Game Company.",
-      "answer": false
-    },
-    {
       "question": "The ESRB was created by North American governments to regulate video game releases.",
       "answer": false
     },
@@ -45,8 +41,8 @@
       "answer": false
     },
     {
-      "question": "Narratology emphasizes a focus on story and views games as a medium for storytelling.",
-      "answer": true
+      "question": "Ludology emphasizes a focus on story and views games as a medium for storytelling.",
+      "answer": false
     },
     {
       "question": "One of the principles in game design is to establish good player pacing.",
