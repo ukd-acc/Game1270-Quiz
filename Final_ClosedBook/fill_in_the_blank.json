@@ -1,0 +1,41 @@
+{
+  "type": "fill_in_the_blank",
+  "title": "Fill in the Blank (1 point per blank, 15 total)",
+  "instructions": "Type the correct answer(s) in the blank(s). Do NOT use periods to end your answers.",
+  "points_per_question": 1,
+  "questions": [
+    {
+      "prompt": "___ was Atari's first hit game.",
+      "answers": [["pong"]]
+    },
+    {
+      "prompt": "In 1981 the US saw the arrival of Shigeru Miyamoto’s arcade game named ___.",
+      "answers": [["donkey kong","donkeykong","dk"]]
+    },
+    {
+      "prompt": "UX stands for ___",
+      "answers": [["user experience","userexperience","user exp","userexp"]]
+    },
+    {
+      "prompt": "The ___ hugely revitalized the video game industry in 1986.",
+      "answers": [["nintendo entertainment system","nintendoentertainmentsystem","nes","famicom"]]
+    },
+    {
+      "prompt": "In MDA, ___ refers to the moment to moment elements of player interaction.",
+      "answers": [["mechanics"]]
+    },
+    {
+      "prompt": "List two of the oldest games ever found: ___ and ___.",
+      "answers": [["senet", "ur", "mancala", "go"]]
+    },
+    {
+      "prompt": "The first console wars in the US were between companies ___ and ___.",
+      "answers": [["nintendo","sega"], ["nintendo","sega"]]
+    },
+    {
+      "prompt": "Name three ethical issues or dilemmas in video games: ___ ___ ___",
+      "answers": [["violence","addiction","gambling","virtual property","intellectual property","bullying", "false advertising"]]
+    }
+
+  ]
+}

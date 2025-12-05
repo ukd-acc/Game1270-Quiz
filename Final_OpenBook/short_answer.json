@@ -1,0 +1,28 @@
+{
+  "type": "short_answer",
+  "title": "Short Answer Questions",
+  "instructions": "Provide detailed answers to the following questions. Readjust the text box size as needed",
+  "questions": [
+    {
+      "prompt": "What is source control and why is it important? What source control solution did we use? List at least 3 reasons we use source control. (10 pts)"
+    },
+    {
+      "prompt": "Name five major disciplines in game development. Describe their role and what they are responsible for. (10 pts)"
+    },
+    {
+      "prompt": "Pick a genre. Discuss the design principles and common mechanics in the genre of that game. (You do not have to use design principles discussed in class, but I encourage you to. If you choose to use other design principles, provide citations from reputable game developer sources. (15 pts)"
+    },
+    {
+      "prompt": "Pick a game from the genre of the previous question. Discuss how it fits those design principles, uses the common mechanics as well as how it was unique and potentially innovated on these mechanics. (15 pts)"
+    },
+    {
+      "prompt": "Using the same game from the previous question, discuss what the player motivations it appeals to and what player types would play this game. (15 pts)"
+    },
+    {
+      "prompt": "Describe each stage of the game development cycle. Discuss what is created during each stage. (20 pts)"
+    },
+    {
+      "prompt": "Name a specific game that went through crunch during it's development (cite a source). What were the circumstances that led to crunch? How could it have been prevented? (15 pts)"
+    }
+  ]
+}

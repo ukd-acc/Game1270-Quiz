@@ -1,0 +1,81 @@
+{
+  "type": "matching",
+  "title": "Matching (1 point each, 15 total)",
+  "instructions": "Select the correct answer from the dropdown (be sure to scroll all the way down and read CAREFULLY).",
+  "points_per_question": 1,
+  "prompts": [
+    {
+      "question": "In the 90s (5th Gen), what was a non-shooter killer app on the PC?",
+      "answer": "Myst"
+    },
+   {
+      "question": "What game first popularized the first person shooter genre?",
+      "answer": "Doom"
+    },
+    {
+      "question": "Who invented the predecessor to Monopoly in 1903, The Landlord's Game?",
+      "answer": "Elizabeth Magie"
+    },
+    {
+      "question": "What happened in the early 70s for electronic gaming?",
+      "answer": "The Rise of Arcades"
+    },
+    {
+      "question": "What action-adventure survival did very poorly on initial release but slowly built up a base?",
+      "answer": "No Man's Sky"
+    },
+    {
+      "question": "Games prior to the 19th century were primarily ________ games",
+      "answer": "Multi-Player"
+    },
+    {
+      "question": "Who pioneered the ability to play multiple games on a single console?",
+      "answer": "Jerry Lawson"
+    },
+    {
+      "question": "What do you develop during pre-production to prove your concept works?",
+      "answer": "Prototypes"
+    },
+    {
+      "question": "What was created in response to violence and graphic imagery in video games?",
+      "answer": "ESRB"
+    },
+    {
+      "question": "Independent companies that create games but do not publish them are called.",
+      "answer": "Third-Party Developers"
+    }
+    
+    
+  ],
+  "word_bank": [
+    { "text": "Elizabeth Magie" },
+    { "text": "Charles Darrow" },
+    { "text": "Ralph Baer"},
+    { "text": "Jerry Lawson"},
+    { "text": "Pong" },
+    { "text": "Pac-Man" },
+    { "text": "The Rise of Arcades" },
+    { "text": "The Crash and Recovery of the Game Industry" },
+    { "text": "The Console Wars"},
+    { "text": "Quake" },
+    { "text": "Myst" },
+    { "text": "Doom" },
+    { "text": "Sonic the Hedgehog" },
+    { "text": "The Legend of Zelda" },
+    { "text": "Super Mario Bros." },
+    { "text": "No Man's Sky"},
+    { "text": "The Outer Worlds"},
+    { "text": "Multi-Player"},
+    { "text": "Single-Player"},
+    { "text": "Prototypes"},
+    { "text": "GDD"},
+    { "text": "Project Plan"},
+    { "text": "ESRB" },
+    { "text": "IGDA" },
+    { "text": "First-Party Developers"},
+    { "text": "Third-Party Developers"},
+    { "text": "Publishers" }
+
+    
+  ]
+}

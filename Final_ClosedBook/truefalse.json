@@ -1,0 +1,76 @@
+{
+  "type": "true_false",
+  "title": "True or False (1 point each, 15 total)",
+  "instructions": "Select True or False for each statement (read CAREFULLY).",
+  "points_per_question": 1,
+  "questions": [
+    {
+      "question": "The first electronic games were made for arcades.",
+      "answer": false
+    },
+    {
+      "question": "8-bit refers to the framerate of a computer.",
+      "answer": false
+    },
+    {
+      "question": "The years of 1983 – 1985 was considered the crash of the games industry.",
+      "answer": true
+    },
+    {
+      "question": "Emergent gameplay is when players have only one solution to one problem.",
+      "answer": false
+    },
+    {
+      "question": "Consoles are always sold for a large profit.",
+      "answer": false
+    },
+    {
+      "question": "The Marufuku Company founded in 1889 changed its name in 1951 to the Nintendo Video Game Company.",
+      "answer": false
+    },
+    {
+      "question": "The ESRB was created by North American governments to regulate video game releases.",
+      "answer": false
+    },
+    {
+      "question": "The most technically powerful console usually sells the most units.",
+      "answer": false
+    },
+    {
+      "question": "Player empathy is the concept of a player feeling what their character is feeling.",
+      "answer": false
+    },
+    {
+      "question": "Making a game more realistic will make it more fun.",
+      "answer": false
+    },
+    {
+      "question": "Narratology emphasizes a focus on story and views games as a medium for storytelling.",
+      "answer": true
+    },
+    {
+      "question": "One of the principles in game design is to establish good player pacing.",
+      "answer": true
+    },
+    {
+      "question": "Many of the earliest board games were representations of racing and war games.",
+      "answer": true
+    },
+    {
+      "question": "Like with genres for other media like sci-fi novels and fantasy movies, video game genres usually describe the story content of the game.",
+      "answer": false
+    },
+    {
+      "question": "If a novel game feature is still not perfect, there can still be value in releasing it in the game unpolished.",
+      "answer": true
+    },
+    {
+      "question": "Inventory management plays a significant role in RPG games.",
+      "answer": true
+    },
+    {
+      "question": "Feature creep is when adding new features of the game during the design phase.",
+      "answer": false
+    }
+  ]
+}
