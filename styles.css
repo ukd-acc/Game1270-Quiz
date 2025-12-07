@@ -435,7 +435,7 @@ hr { border:none; height:1px; background:rgba(255,255,255,.08); margin:16px 0; }
   border-radius: 4px; /* Rounded corners */
   padding: 8px; /* Space inside the text box */
   width: 100%; /* Full width */
-  height: 200px; /* Default height */
+  height: 250px; /* Default height */
   resize: vertical; /* Allow resizing vertically */
   font-size: 1rem; /* Adjust font size */
   line-height: 1.5; /* Improve readability */
