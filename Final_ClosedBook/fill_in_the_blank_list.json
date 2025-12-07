@@ -1,6 +1,6 @@
 {
   "type": "fill_in_the_blank_list",
-  "title": "Fill in the List (1 points each blank)",
+  "title": "Fill in the List (1 points per blank, 75 total)",
   "instructions": "Type the correct answer(s) in the blank(s).",
   "points_per_question": 1,
   "questions": [
@@ -58,7 +58,7 @@
     },
     {
       "prompt": "List 3 software tools game designers use most frequently during development according to our lectures: ___ ___ ___",
-      "answers": [["map editor", "level editor","scripting language", "scripting", "databases", "spreadsheets", "prototyping tools", "flowchart software"]]
+      "answers": [["map editor", "level editor","scripting language", "scripting", "databases", "database", "spreadsheet", "spreadsheets", "prototyping tools", "flowchart software", "word processor", "word"]]
     },
     {
       "prompt": "List 4 game engine components ___ ___ ___ ___",
