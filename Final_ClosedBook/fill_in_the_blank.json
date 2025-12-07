@@ -1,7 +1,7 @@
 {
   "type": "fill_in_the_blank",
-  "title": "Fill in the Blank (1 point per blank, 15 total)",
-  "instructions": "Type the correct answer(s) in the blank(s). Do NOT use periods to end your answers.",
+  "title": "Fill in the Blank (1 point per blank)",
+  "instructions": "Type the correct answer(s) in the blank(s). Do NOT use periods to end your answers. Answers are only things we've discussed in class.",
   "points_per_question": 1,
   "questions": [
     {
@@ -35,7 +35,30 @@
     {
       "prompt": "Name three ethical issues or dilemmas in video games: ___ ___ ___",
       "answers": [["violence","addiction","gambling","virtual property","intellectual property","bullying", "false advertising"]]
+    },
+    {
+      "prompt" : "USPs, as requested by Marketing/PR, stand for ___",
+      "answers": [["unique selling points","unique selling point"]]
+    },
+    {
+      "prompt": "GDD stands for ___",
+      "answers": [["game design document","gamedesigndocument"]]
+    },
+    {
+      "prompt": "TDD stands for ___", 
+      "answers": [["technical design document","technicaldesigndocument"]]
+    },
+    {
+      "prompt": "The Core Game Loop is ___, ___, and ___.",
+      "answers": [["input","update","render", "process input", "update game", "render output"]] 
+    },
+    {
+      "prompt": "To ___ is to get changes from the central repository to your local repository.",
+      "answers": [["pull","fetch","get"]]
+    },
+    {
+      "prompt": "Scope, cost, and time make up the ___ triangle of quality.",
+      "answers": [["iron", "Fe"]]
     }
-
   ]
 }

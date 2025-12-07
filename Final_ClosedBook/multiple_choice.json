@@ -1,0 +1,83 @@
+{
+  "type": "multiple_choice",
+  "title": "Multiple Choice (1 point each)",
+  "instructions": "Select the best answer for each question.",
+  "points_per_question": 1,
+  "prompts": [
+    {
+      "question": "What are some similarities between the earliest games ever found?",
+      "answers": ["They were only found in Egypt", "They were all racing-based", "They did not lead to other games", "They were invented in Europe"],
+      "correct_answer": "They were all racing-based"
+    },
+    {
+      "question": "Which of the following was not a cause of the video game crash of 1983?",
+      "answers": ["Minimal quality control on games", "An abundance of different consoles", "The Famicom (or NES) was released", "The rise of Personal Computers (PCs)"],
+      "correct_answer": "The Famicom (or NES) was released"
+    },
+    {
+      "question": "Which of the following was not in the console wars of the 2000s?",
+      "answers": ["Nintendo", "Sega ", "Xbox", "Playstation"],
+      "correct_answer": "Sega"
+    },
+    {
+      "question": "What did Nintendo initially make?",
+      "answers": ["Hanafuda Cards", "Arcade cabinets", "Board games", "Video game consoles"],
+      "correct_answer": "Hanafuda Cards"
+    },
+    {
+      "question": "Which other motivation cluster is most associated with the Mastery cluster of Quantic Foundry's Gamer Motivation Model? ",
+      "answers": ["Social", "Action", "Creativity", "Achievement"],
+      "correct_answer": "Achievement"
+    },
+    {
+      "question": "Which of the following is not an indicator of poor game design?",
+      "answers": ["Optimal Strategy", "Degenerate Strategy", "Breaks Genre Tropes", "Control Reconfiguration"],
+      "correct_answer": "Breaks Genre Tropes"
+    },
+    {
+      "question": "Which game did we not discuss as defying a genre when it came out?",
+      "answers": ["The Stanley Parable", "Uncharted", "Katamari Damacy", "Portal"],
+      "correct_answer": "Uncharted"
+    },
+    {
+      "question": "Which video game contained a mod that popularized the Multiplayer Online Battle Arena (MOBA) genre?",
+      "answers": ["League of Legends", "Warcraft 3", "Smite", "Defense of the Ancients (DotA)"],
+      "correct_answer": "Warcraft 3"
+    },
+    {
+      "question": "Which of the following is a part of functional management?",
+      "answers": ["Executive Producer", "Chief Production Officer", "Chief Executive Officer", "Executive Director"],
+      "correct_answer": "Executive Producer"
+    },
+    {
+      "question": "What is the role of Executive Management?",
+      "answers": ["Defines the vision of the company", "Turn the vision into reality", "Day-to-day specifics of getting the job done"],
+      "correct_answer": "Defines the vision of the company"
+    },
+    {
+      "question": "What type of artist's responsibilities include creating shaders and doing rigging work for animators?",
+      "answers": ["Character Artist", "Environment Artist", "Concept Artist", "Technical Artist"],
+      "correct_answer": "Technical Artist"
+    },
+    {
+      "question": "Which of the following likely would NOT be found in a Game Design Document (GDD)?",
+      "answers": ["Game Mechanics", "Story and Narrative", "Development Schedule", "Interactable Items"],
+      "correct_answer": "Development Schedule"
+    },
+    {
+      "question": "Which of the following is a primary reason game developers use source control?",
+      "answers": ["Pre-release your game", "Improve game performance", "Track changes over time", "Save code on your local machine"],
+      "correct_answer": "Track changes over time"
+    },
+    {
+      "question": "What source control solution is most used in the game industry?",
+      "answers": ["git", "github", "perforce", "p4v"],
+      "correct_answer": "perforce"
+    },
+    {
+      "question": "What is used to ensure people do not disclose company proprietary information?",
+      "answers": ["USP", "EULA", "SKU", "NDA"],
+      "correct_answer": "NDA"
+    }
+  ]
+}

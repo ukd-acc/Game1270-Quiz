@@ -8,7 +8,7 @@ async function initAuth() {
 }
   
 async function renderLogin() {
-  const quizFolders = ["Quiz1", "Quiz2","Midterm_ClosedBook","Midterm_OpenBook", "Quiz3", "Quiz4"]; // Add available quiz folders here
+  const quizFolders = ["Quiz1", "Quiz2","Midterm_ClosedBook","Midterm_OpenBook", "Quiz3", "Quiz4", "Final_ClosedBook","Final_OpenBook"]; // Add available quiz folders here
 
   qs("#app").innerHTML = `
     <div class="container login">

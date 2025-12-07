@@ -1,6 +1,6 @@
 {
   "type": "fill_in_the_blank_list",
-  "title": "Fill in the List (1 points each blank, 66 total)",
+  "title": "Fill in the List (1 points each blank)",
   "instructions": "Type the correct answer(s) in the blank(s).",
   "points_per_question": 1,
   "questions": [
@@ -37,36 +37,32 @@
       "answers": [["action","adventure","role-playing", "rpg", "simulation","sim","sports","sport","strategy","puzzle","idle","racing","race", "fighting", "horror", "educational", "social deduction", "visual novel"]]
     },
     {
-      "prompt": "Name four of the eight types of fun: ___ ___ ___ ___",
+      "prompt": "Name 5 of the eight types of fun: ___ ___ ___ ___ ___",
       "answers": [["sensation","fantasy","narrative","challenge","fellowship","discovery","expression","submission", "competition"]] 
     },
     {
-      "prompt": "What are the three phases of the game development lifecycle? ___ ___ ___",
+      "prompt": "What are the 3 phases of the game development lifecycle? ___ ___ ___",
       "answers": [["pre-production","production","post-production"]]
     },
     {
-      "prompt": "What are the constraints in the Iron Triangle of Game Development? ___ ___ ___",
-      "answers": [["scope","time","money", "cost", "budget", "hours"]]
+      "prompt": "What are the constraints in the Iron Triangle of Quality? ___ ___ ___",
+      "answers": [["scope","content","time","money", "cost", "budget", "hours"]]
     },
     {
-      "prompt": "Name 4 major milestones of game development cycle: ___ ___ ___ ___",
-      "answers": [["vertical slice", "greenlight", "first playable", "alpha","beta","gold", "gold master", "code lock", "content lock","release", "dlc" ]]
+      "prompt": "Name 5 major milestones of game development cycle: ___ ___ ___ ___ ___",
+      "answers": [["early concept", "vertical slice", "greenlight", "first playable", "alpha","beta","gold", "gold master", "code lock", "content lock"]]
     },
     {
       "prompt": "Name the 4 managers/supervisors of the Functional Management in large companies responsible for turning the corporate vision into reality. ___ ___ ___ ___",
       "answers": [["executive producer","creative director","technical director","art director"]]
     },
     {
-      "prompt": "Name 4 game engine components: ___ ___ ___ ___",
-      "answers": [["rendering", "animation", "physics", "input","ui", "scripting", "scene graph", "ai", "audio", "network", "core loop"]]
+      "prompt": "List 3 software tools game designers use most frequently during development according to our lectures: ___ ___ ___",
+      "answers": [["map editor", "level editor","scripting language", "scripting", "databases", "spreadsheets", "prototyping tools", "flowchart software"]]
     },
     {
-      "prompt": "Name 4 examples of game/gameplay systems (just use one word, do not add the word system) ___ ___ ___ ___",
-      "answers": [["combat", "inventory", "input", "controls", "matchmaking", "character creation", "character customization", "camera", "save/load", "load/save", "abilities", "powers", "menu", "cinematics", "dialogue"]]
-    },
-    {
-      "prompt": "Name 5 game designer tools: ___ ___ ___ ___ ___",
-      "answers": [["level editor", "map editor", "scripting language", "database", "spreadsheet", "excel", "word processors", "flowchart software", "flowcharts", "wikis"]]
-    }
+      "prompt": "List 4 game engine components ___ ___ ___ ___",
+      "answers": [["graphics","rendering", "physics","audio","scripting","animation","networking","input","ai", "ui", "scene graph", "scripting", "scripting language"]]
+    }   
   ]
 }
