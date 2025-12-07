@@ -1,6 +1,6 @@
 {
   "type": "true_false",
-  "title": "True or False (1 point each, 15 total)",
+  "title": "True or False (1 point each, 25 total)",
   "instructions": "Select True or False for each statement (read CAREFULLY).",
   "points_per_question": 1,
   "questions": [
@@ -25,6 +25,10 @@
       "answer": false
     },
     {
+      "question": "The Marufuku Company founded in 1889 changed its name in 1951 to the Nintendo Video Game Company.",
+      "answer": false
+    },
+    {
       "question": "The ESRB was created by North American governments to regulate video game releases.",
       "answer": false
     },
@@ -41,8 +45,8 @@
       "answer": false
     },
     {
-      "question": "Ludology emphasizes a focus on story and views games as a medium for storytelling.",
-      "answer": false
+      "question": "Narratology emphasizes a focus on story and views games as a medium for storytelling.",
+      "answer": true
     },
     {
       "question": "One of the principles in game design is to establish good player pacing.",
@@ -65,8 +69,43 @@
       "answer": true
     },
     {
-      "question": "Feature creep is when adding new features of the game during the design phase.",
+      "question": "Feature creep is adding new features to the game during the design phase, early in the development process.",
+      "answer": false
+    },
+    {
+      "question": "The Technical Director’s responsibility is to help the program leads design the architecture of the code for their games, develop the coding standards, and set up the programming schedules.",
+      "answer": true
+    },
+    {
+      "question": "Important aspect to consider when making a game is: make it challenging, balanced, and easy to get into.",
+      "answer": true
+    },
+    {
+      "question": "Pre-Production is when the team focuses on creating the specification documentation and prototypes for the game.",
+      "answer": true
+    },
+    {
+      "question": "Content are game systems. Things like player abilities, dialogue trees, inventory menus, save/load, etc are features.",
+      "answer": false
+    },
+    {
+      "question": "The Board of Directors at a company advises the Creative Director",
+      "answer": false
+    },
+    {
+      "question": "The three types of management at large game corporations are Executive, Functional, and Operational Management.",
+      "answer": true
+    },
+    {
+      "prompt": "A commit is a snapshot of your repository at a specific point in time that represents a set of changes. It is initially an addition to your local repository",
+      "answer": true
+    },
+    {
+      "prompt": "It is never good to defy the established mechanics and tropes of a genre when designing a game.",
       "answer": false
     }
+
+
+
   ]
 }

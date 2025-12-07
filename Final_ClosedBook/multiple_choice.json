@@ -1,22 +1,22 @@
 {
   "type": "multiple_choice",
-  "title": "Multiple Choice (1 point each)",
+  "title": "Multiple Choice (1 point each, 15 total)",
   "instructions": "Select the best answer for each question.",
   "points_per_question": 1,
   "prompts": [
     {
       "question": "What are some similarities between the earliest games ever found?",
-      "answers": ["They were only found in Egypt", "They were all racing-based", "They did not lead to other games", "They were invented in Europe"],
-      "correct_answer": "They were all racing-based"
+      "answers": ["They were only found in Egypt", "They were often racing-based", "They did NOT lead to the creation of other games", "They were invented in Europe"],
+      "correct_answer": "They were often racing-based"
     },
     {
-      "question": "Which of the following was not a cause of the video game crash of 1983?",
+      "question": "Which of the following was NOT a cause of the video game crash of 1983?",
       "answers": ["Minimal quality control on games", "An abundance of different consoles", "The Famicom (or NES) was released", "The rise of Personal Computers (PCs)"],
       "correct_answer": "The Famicom (or NES) was released"
     },
     {
-      "question": "Which of the following was not in the console wars of the 2000s?",
-      "answers": ["Nintendo", "Sega ", "Xbox", "Playstation"],
+      "question": "Which of the following was NOT a strong competitor in the console wars of the 2000s?",
+      "answers": ["Nintendo", "Sega", "Xbox", "Playstation"],
       "correct_answer": "Sega"
     },
     {
@@ -30,14 +30,14 @@
       "correct_answer": "Achievement"
     },
     {
-      "question": "Which of the following is not an indicator of poor game design?",
+      "question": "Which of the following is NOT an indicator of poor game design?",
       "answers": ["Optimal Strategy", "Degenerate Strategy", "Breaks Genre Tropes", "Control Reconfiguration"],
       "correct_answer": "Breaks Genre Tropes"
     },
     {
-      "question": "Which game did we not discuss as defying a genre when it came out?",
-      "answers": ["The Stanley Parable", "Uncharted", "Katamari Damacy", "Portal"],
-      "correct_answer": "Uncharted"
+      "question": "Which game did we NOT discuss as defying a genre when it came out?",
+      "answers": ["Doki Doki Literature Club", "Dragon Quest XI", "Death Stranding", "Inscryption"],
+      "correct_answer": "Dragon Quest XI"
     },
     {
       "question": "Which video game contained a mod that popularized the Multiplayer Online Battle Arena (MOBA) genre?",
@@ -46,7 +46,7 @@
     },
     {
       "question": "Which of the following is a part of functional management?",
-      "answers": ["Executive Producer", "Chief Production Officer", "Chief Executive Officer", "Executive Director"],
+      "answers": ["Executive Producer", "Chief Executive Officer", "Executive Director"],
       "correct_answer": "Executive Producer"
     },
     {
@@ -75,7 +75,7 @@
       "correct_answer": "perforce"
     },
     {
-      "question": "What is used to ensure people do not disclose company proprietary information?",
+      "question": "What is used to ensure people do NOT disclose company proprietary information?",
       "answers": ["USP", "EULA", "SKU", "NDA"],
       "correct_answer": "NDA"
     }

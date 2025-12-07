@@ -1,6 +1,6 @@
 {
   "type": "fill_in_the_blank",
-  "title": "Fill in the Blank (1 point per blank)",
+  "title": "Fill in the Blank (1 point per blank, 20 total)",
   "instructions": "Type the correct answer(s) in the blank(s). Do NOT use periods to end your answers. Answers are only things we've discussed in class.",
   "points_per_question": 1,
   "questions": [
@@ -26,7 +26,7 @@
     },
     {
       "prompt": "List two of the oldest games ever found: ___ and ___.",
-      "answers": [["senet", "ur", "mancala", "go"]]
+      "answers": [["senet", "ur", "mancala", "go"], ["senet", "ur", "mancala", "go"]]
     },
     {
       "prompt": "The first console wars in the US were between companies ___ and ___.",
@@ -34,7 +34,9 @@
     },
     {
       "prompt": "Name three ethical issues or dilemmas in video games: ___ ___ ___",
-      "answers": [["violence","addiction","gambling","virtual property","intellectual property","bullying", "false advertising"]]
+      "answers": [["violence","addiction","gambling","virtual property","intellectual property","bullying", "false advertising", "diversity", "representation"],
+                  ["violence","addiction","gambling","virtual property","intellectual property","bullying", "false advertising", "diversity", "representation"],
+                  ["violence","addiction","gambling","virtual property","intellectual property","bullying", "false advertising", "diversity", "representation"]]
     },
     {
       "prompt" : "USPs, as requested by Marketing/PR, stand for ___",
@@ -50,7 +52,9 @@
     },
     {
       "prompt": "The Core Game Loop is ___, ___, and ___.",
-      "answers": [["input","update","render", "process input", "update game", "render output"]] 
+      "answers": [["input","update","render", "process input", "update game", "render output"],
+                  ["input","update","render", "process input", "update game", "render output"],
+                  ["input","update","render", "process input", "update game", "render output"]]
     },
     {
       "prompt": "To ___ is to get changes from the central repository to your local repository.",
