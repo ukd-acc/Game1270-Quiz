@@ -75,7 +75,7 @@
       "correct_answer": "perforce"
     },
     {
-      "question": "What is used to ensure people do NOT disclose company proprietary information?",
+      "question": "What is used to ensure people don't disclose company proprietary information?",
       "answers": ["USP", "EULA", "SKU", "NDA"],
       "correct_answer": "NDA"
     }

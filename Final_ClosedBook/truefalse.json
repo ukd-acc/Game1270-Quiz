@@ -61,7 +61,7 @@
       "answer": false
     },
     {
-      "question": "If a novel game feature is still not perfect, there can still be value in releasing it in the game unpolished.",
+      "question": "Though polish is important, if a novel game feature is still not completely perfect, there can still be value in releasing it.",
       "answer": true
     },
     {
@@ -97,11 +97,11 @@
       "answer": true
     },
     {
-      "prompt": "A commit is a snapshot of your repository at a specific point in time that represents a set of changes. It is initially an addition to your local repository",
+      "question": "A commit is a snapshot of your repository at a specific point in time that represents a set of changes. It is initially an addition to your local repository",
       "answer": true
     },
     {
-      "prompt": "It is never good to defy the established mechanics and tropes of a genre when designing a game.",
+      "question": "It is never good to defy the established mechanics and tropes of a genre when designing a game.",
       "answer": false
     }
 
