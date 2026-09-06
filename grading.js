@@ -63,26 +63,52 @@ function gradeFillInTheBlankList(section) {
   let correct = 0;
   const wrongAnswers = [];
 
+  const normalizeAnswer = answer => answer.trim().toLowerCase();
+
+  const countMatchedAnswers = (studentAnswers, answerLists) => {
+    const matchedAnswerSlots = new Array(studentAnswers.length).fill(-1);
+
+    const findMatch = (answerList, answerSlotIdx, visitedStudents) => {
+      for (let studentIdx = 0; studentIdx < studentAnswers.length; studentIdx++) {
+        if (visitedStudents.has(studentIdx)) continue;
+
+        const studentAnswer = studentAnswers[studentIdx];
+        if (studentAnswer && answerList.includes(studentAnswer)) {
+          visitedStudents.add(studentIdx);
+          const previousAnswerSlot = matchedAnswerSlots[studentIdx];
+          if (previousAnswerSlot === -1 || findMatch(answerLists[previousAnswerSlot], answerSlotIdx, visitedStudents)) {
+            matchedAnswerSlots[studentIdx] = answerSlotIdx;
+            return true;
+          }
+        }
+      }
+      return false;
+    };
+
+    answerLists.forEach((answerList, answerSlotIdx) => {
+      findMatch(answerList, answerSlotIdx, new Set());
+    });
+
+    return matchedAnswerSlots.filter(answerSlotIdx => answerSlotIdx !== -1).length;
+  };
+
   section.questions.forEach((q, idx) => {
     const inputs = qsa(`.fibl-input[data-section="${section._sectionIndex}"][data-question="${idx}"]`); // Select inputs for the current question
-    const usedAnswers = new Set();
-    let questionCorrectCount = 0; // Track correct answers for this question
     const studentAnswers = []; // Collect all user answers for the question
 
-    // Flatten possible answers once for the entire question
-    const possibleAnswers = q.answers.flat().map(a => a.toLowerCase()); // Normalize all answers to lowercase
-
     inputs.forEach((input) => {
-      const userAnswer = input.value.trim().toLowerCase(); // Normalize input
+      const userAnswer = normalizeAnswer(input.value);
 
       studentAnswers.push(userAnswer || "(no answer)");
-
-      if (possibleAnswers.includes(userAnswer) && !usedAnswers.has(userAnswer)) {
-        questionCorrectCount++;
-        correct++;
-        usedAnswers.add(userAnswer); // Prevent duplicate credit for the same answer
-      }
     });
+
+    // With one list, every blank draws from the same unordered answer pool.
+    // With one list per blank, match those lists in any order without reuse.
+    const answerLists = q.answers.length === inputs.length
+      ? q.answers.map(answerList => answerList.map(normalizeAnswer))
+      : [q.answers.flat().map(normalizeAnswer)];
+    const questionCorrectCount = countMatchedAnswers(studentAnswers, answerLists);
+    correct += questionCorrectCount;
 
     // Add a single entry to wrongAnswers for the entire question
     if (questionCorrectCount < inputs.length) {
@@ -90,7 +116,7 @@ function gradeFillInTheBlankList(section) {
         type: "Fill in the Blank List",
         question: q.prompt,
         student: `${questionCorrectCount}/${inputs.length} correct: ${studentAnswers.join(", ")}`,
-        correct: possibleAnswers.join(", ")
+        correct: answerLists.flat().join(", ")
       });
     }
   });

@@ -6,23 +6,23 @@
   "questions": [
     {
       "prompt": "Name 6 major components/categories of a modern computer system for gaming. ___ ___ ___ ___ ___ ___",
-      "answers": [["CPU","RAM","GPU","Storage","Input","Output", "Motherboard"]]
+      "answers": [["CPU"], ["RAM"], ["GPU"], ["Storage"], ["Input"], ["Output"], ["Motherboard"]]
     },
     {
       "prompt": "What are the two values used in a binary system, like memory for a computer? ___ ___",
-      "answers": [["0","1"]]
+      "answers": [["0", "zero"], ["1", "one"]]
     },
     {
       "prompt": "What are the four aspects of computational thinking? ___ ___ ___ ___",
-      "answers": [["decomposition","pattern recognition","abstraction","algorithmic thinking", "algorithm", "algorithms"]]
+      "answers": [["decomposition", "decompose"], ["pattern recognition", "pattern", "patterns"], ["abstraction", "abstract"], ["algorithmic thinking", "algorithm", "algorithms"]]
     },
     {
       "prompt": "What are the two main categories of software programs? ___ ___",
-      "answers": [[ "System Software","Application Software"]]
+      "answers": [[ "System Software", "System"], ["Application Software", "Application"]]
     },
     {
       "prompt": "What are the two tools programmers use to create models of programs during the program design process (prior to actually writing code)? ___ ___",
-      "answers": [[ "Pseudocode","Flowcharts"]]
+      "answers": [[ "Pseudocode", "Psuedocoding"],["Flowcharts", "Flowchart"]]
     }
   ]
 }

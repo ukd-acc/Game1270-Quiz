@@ -149,6 +149,10 @@ function renderQuiz() {
     </div>
   `;
 
+  ["copy", "cut", "paste"].forEach(eventName => {
+    app.addEventListener(eventName, event => event.preventDefault());
+  });
+
   // Render sections
   const sectionsEl = qs("#sections");
   const tocListEl = qs("#tocList");

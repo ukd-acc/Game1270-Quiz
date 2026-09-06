@@ -30,7 +30,7 @@
     },
     
     {
-      "prompt": "A CPU only understands binary numbers that are written in what language? ___",
+      "prompt": "A CPU only understands binary numbers. This is also referred to as what language? ___",
       "answers": [
         [
           "Machine Language", "Machine Code"

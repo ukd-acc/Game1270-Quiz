@@ -1,0 +1,8 @@
+{
+  "sections": [
+    { "file": "matching.json" },
+    { "file": "multiple_choice.json" },
+    { "file": "truefalse.json" },
+    { "file": "fill_in_the_blank.json" }
+  ]
+}
