@@ -4,15 +4,7 @@
   "instructions": "Provide detailed answers to the following questions. Readjust the text box size as needed",
   "questions": [
     {
-      "prompt": "What is the purpose of a program in regards to the CPU? ___",
-      "answers": [
-        [
-          "The purpose of a program is to tell the CPU what to do. A program is a list of instructions that cause the CPU to perform/execute operations."
-        ]
-      ]
-    },
-    {
-      "prompt": "What does RAM stand for and what is its function? ___",
+      "prompt": "What does RAM stand for and what is its function?",
       "answers": [
         [
           "Random Access Memory. Work area of the computer. Stores a program while the program is running, as well as data that the program is working with."
@@ -20,7 +12,7 @@
       ]
     },
     {
-      "prompt": "What does CPU stand for and what is its function? ___",
+      "prompt": "What does CPU stand for and what is its function?",
       "answers": [
         [
           "Central Processing Unit. Runs programs. Executes instructions. Tells the computer what to do. The brain of the computer."
