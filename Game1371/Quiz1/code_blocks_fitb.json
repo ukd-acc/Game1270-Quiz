@@ -22,7 +22,7 @@
     {
       "prompt": "What does this pseudocode print (if there are multiple numbers, put a space between them)?",
       "code": "count = 1\nWHILE count < 4\n    print(count)\n    count = count + 1\nEND WHILE",
-      "answer": "1\n2\n3"
+      "answer": "1 2 3"
     }
   ]
 }
