@@ -88,7 +88,7 @@
       "prompt": "What type of programming language allows you to create powerful and complex programs without knowing how the CPU works or using machine code? ___",
       "answers": [
         [
-          "High-level Languages", "high level languages"
+          "High-level Languages", "high level languages", "high-level", "high level", "high level languages"
         ]
       ]
     },
