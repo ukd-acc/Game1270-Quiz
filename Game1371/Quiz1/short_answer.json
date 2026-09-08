@@ -4,7 +4,7 @@
   "instructions": "Provide detailed answers to the following questions. Readjust the text box size as needed",
   "questions": [
     {
-      "prompt": "What does RAM stand for and what is its function?",
+      "prompt": "What does RAM stand for and what is its function? (1 pts)",
       "answers": [
         [
           "Random Access Memory. Work area of the computer. Stores a program while the program is running, as well as data that the program is working with."
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "prompt": "What does CPU stand for and what is its function?",
+      "prompt": "What does CPU stand for and what is its function? (1 pts)",
       "answers": [
         [
           "Central Processing Unit. Runs programs. Executes instructions. Tells the computer what to do. The brain of the computer."
@@ -20,7 +20,7 @@
       ]
     },
     {
-      "prompt": "What is the purpose of the build process that uses a compiler, assembler, and linker? ___",
+      "prompt": "What is the purpose of the build process that uses a compiler, assembler, and linker? (2 pts)",
       "answers": [
         [
           "The build process combines the compiler, assembler, and linker to convert source code into an executable program."
@@ -28,10 +28,10 @@
       ]
     },
     {
-      "prompt": "Water Pouring Puzzle: You have an unlimited supply of water and a 3-gallon jug and a 5-gallon jug. Neither jug has measurement markings. Measure exactly 4 gallons. Write out your thought process and every step, including which jug you fill, empty, or pour into the other jug. (5 pts)"
+      "prompt": "Water Pouring Puzzle: You have an unlimited supply of water and a 3-gallon jug and a 5-gallon jug. Neither jug has measurement markings. Measure exactly 4 gallons. Write out your thought process and every step, including which jug you fill, empty, or pour into the other jug. (4 pts)"
     },
     {
-      "prompt": "Explain how the eight strategies (always have a plan, restate the problem, divide the problem, start with what you know, reduce the problem, look for analogies, experiment, don't get frustrated) relate to the four pillars of computational thinking (decomposition, pattern recognition, abstraction, and algorithmic thinking). You may use each strategy more than once, but justify the relationships with examples. (10 pts)"
+      "prompt": "Explain how the eight strategies (always have a plan, restate the problem, divide the problem, start with what you know, reduce the problem, look for analogies, experiment, don't get frustrated) relate to the four pillars of computational thinking (decomposition, pattern recognition, abstraction, and algorithmic thinking). You may use each strategy more than once, but justify the relationships with examples. (6 pts)"
     }
   ]
 }
